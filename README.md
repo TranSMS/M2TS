@@ -7,3 +7,7 @@
 ### python_data
 * paper: https://xin-xia.github.io/publication/ijcai18.pdf
 * data: https://github.com/xing-hu/TL-CodeSum
+## Data-pred
+        Get ASTs for java and python datasets
+## Results
+        Results of the M2TS projection
