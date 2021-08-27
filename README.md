@@ -4,3 +4,6 @@
 ### java_data
 * paper: https://arxiv.org/abs/1707.02275
 * data: https://github.com/EdinburghNLP/code-docstring-corpus
+### python_data
+* paper: https://xin-xia.github.io/publication/ijcai18.pdf
+* data: https://github.com/xing-hu/TL-CodeSum
