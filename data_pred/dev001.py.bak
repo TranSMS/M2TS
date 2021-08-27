@@ -1,0 +1,11 @@
+def setup_scanner(hass, config, see):
+	hosts = [Host(ip, dev_id, hass, config) for (dev_id, ip) in config[const.CONF_HOSTS].items()]
+	interval = (timedelta(seconds=(len(hosts) * config[CONF_PING_COUNT])) + DEFAULT_SCAN_INTERVAL)
+	_LOGGER.info('Started	ping	tracker	with	interval=%s	on	hosts:	%s', interval, ','.join([host.ip_address for host in hosts]))
+	def update(now):
+		'Update	all	the	hosts	on	every	interval	time.'
+		for host in hosts:
+			host.update(see)
+		track_point_in_utc_time(hass, update, (now + interval))
+		return True
+	return update(util.dt.utcnow())
