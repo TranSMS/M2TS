@@ -13,7 +13,7 @@
         Command: python3 source.code ast.json
 ### BERT Pre-training
         Get here to Install the server and client via pip：
-        detail in here: https://github.com/hanxiao/bert-as-service
+detail in here: https://github.com/hanxiao/bert-as-service
 ## Train-model
         Command: Run run.py
 ## Results
