@@ -11,6 +11,8 @@
         Get ASTs for java and python datasets
 ## BERT Pre-training
         Get here to Install the server and client via pip：
-        https://github.com/hanxiao/bert-as-service
+        * https://github.com/hanxiao/bert-as-service
 ## Train-model
-        
+        Command: Run run.py
+## Results
+        Results of the M2TS projection
