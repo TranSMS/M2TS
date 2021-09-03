@@ -8,8 +8,10 @@
 * paper: https://xin-xia.github.io/publication/ijcai18.pdf
 * data: https://github.com/xing-hu/TL-CodeSum
 ## Data-pred
-        Get ASTs for java and python datasets
-## BERT Pre-training
+        Get ASTs and embedding for java and python datasets
+### Get ASTs
+        Command: python3 source.code ast.json
+### BERT Pre-training
         Get here to Install the server and client via pip：
         * https://github.com/hanxiao/bert-as-service
 ## Train-model
