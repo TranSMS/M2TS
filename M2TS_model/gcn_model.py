@@ -6,16 +6,16 @@ import torch.nn.functional as F
 import torch.nn as nn
 import numpy as np
 
-batch_size = 8
+batch_size = 32
 nfeat= 768
 nhid = 768
 nout = 768
 dropout = 0.2
 d_model = 512
 # d_model = 512
-d_ff = 1024  # FeedForward dimension
+d_ff = 2048  # FeedForward dimension
 d_k = d_v = 64  # dimension of K(=Q), V
-n_layers = 12  # number of Encoder of Decoder Layer
+n_layers = 6  # number of Encoder of Decoder Layer
 n_heads = 8  # number of heads in Multi-Head Attention
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -112,7 +112,7 @@ class AST_Model(nn.Module):
         output8 = self.gcn8(output7, A8)
         output9 = self.gcn9(output8, A9)
         output10 = self.gcn10(output9, A10)
-        gcn_output = output1
+        gcn_output = 0.1*output1 + 0.2*output2 + 0.7*output3
         gcn_output = self.ffn(gcn_output)
         # print(gcn_output)
         # print(gcn_output.shape)
