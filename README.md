@@ -9,5 +9,8 @@
 * data: https://github.com/xing-hu/TL-CodeSum
 ## Data-pred
         Get ASTs for java and python datasets
-## Results
-        Results of the M2TS projection
+## BERT Pre-training
+        Get here to Install the server and client via pip：
+        https://github.com/hanxiao/bert-as-service
+## Train-model
+        
