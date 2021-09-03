@@ -25,13 +25,13 @@ import numpy as np
 import torch.nn.functional as F
 from torch.nn.parameter import Parameter
 from torch.nn.modules.module import Module
-batch_size = 8
+batch_size = 32
 epoches = 200
-nl_max_len = 16
+nl_max_len = 30
 # seq_max_len = 111
-train_num = 68  # 960
-max_ast_node = 23  # 60
-src_max_length = 65  # 120
+train_num = 69708  # 960
+max_ast_node = 110  # 60
+src_max_length = 300  # 120
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 tgt_vocab_size, tgt_inv_vocab_dict, dec_inputs, tgt_vocab, dec_outputs = load_nl_data('data/train_nl1.txt', nl_max_len)
