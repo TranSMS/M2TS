@@ -25,13 +25,13 @@ import numpy as np
 import torch.nn.functional as F
 from torch.nn.parameter import Parameter
 from torch.nn.modules.module import Module
-batch_size = 8
-epoches = 20
-nl_max_len = 19
+batch_size = 32
+epoches = 200
+nl_max_len = 30
 # seq_max_len = 111
-train_num = 68  # 960
-max_ast_node = 30  # 60
-src_max_length = 50  # 120
+train_num = 69708  # 960
+max_ast_node = 110  # 60
+src_max_length = 300  # 120
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 tgt_vocab_size, tgt_inv_vocab_dict, dec_inputs, tgt_vocab, dec_outputs = load_nl_data('data/train_nl1.txt', nl_max_len)
@@ -163,20 +163,6 @@ def nltk_sentence_bleu(hypotheses, references, order=4):
     return avg_score
 
 
-def meteor_score1(hypothesis, reference):
-    count = 0
-    total_score = 0.0
-    for i in range(len(hypothesis)):
-        score = round(meteor_score([reference[i]], hypothesis[i]), 4)
-        # print(score)
-        # exit()
-        total_score += score
-        count += 1
-    avg_score = total_score/count
-    # print('METEOR_score: %.4f' % avg_score)
-    return avg_score
-
-
 def predict():
     # Model = Transformer().to(device)
     gcn_model.load_state_dict(torch.load('save_model/gcn_model2.pt'))
@@ -229,11 +215,6 @@ def predict():
         avg_score = nltk_sentence_bleu(pred1, ref)
         meteor = meteor_score1(pred1, ref)
         print('S_BLEU: %.4f' % avg_score)
-        # print('C-BLEU: %.4f' % corup_BLEU)
-        print('METEOR: %.4f' % meteor)
-        rouge = Rouge()
-        rough_score = rouge.get_scores(pred1, ref, avg=True)
-        print(' ROUGE: ', rough_score)
 
     # print(x1)
     #     print([tgt_inv_vocab_dict[n.item()] for n in pred.squeeze()])
