@@ -3,11 +3,11 @@ import torch
 import numpy as np
 
 d_model = 512  # Embedding Size
-d_ff = 1024  # FeedForward dimension
+d_ff = 2048  # FeedForward dimension
 d_k = d_v = 64  # dimension of K(=Q), V
-n_layers = 10  # number of Encoder of Decoder Layer
+n_layers = 6  # number of Encoder of Decoder Layer
 n_heads = 8  # number of heads in Multi-Head Attention
-batch_size = 8
+batch_size = 32
 
 
 class ScaledDotProductAttention(nn.Module):
