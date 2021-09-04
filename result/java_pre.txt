@@ -1,0 +1,16 @@
+creates a new instance of this class .
+ adds the specified element to the group .
+ writes the specified file to the specified file .
+ remove the specified component .
+ returns true if the current path is in the user has a value and false otherwise .
+ returns whether the database to the home .
+ retrieves the number of bytes in the array .
+ adds the given component to the current path .
+ this method is called by the user to the user interface .
+ returns the array of all values in the array .
+ create an instance of this method .
+ returns the current value of the current path .
+ process the source to a transformer object .
+ called when a window is received .
+ return the message as a message .
+ creates a new empty list .
