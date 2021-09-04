@@ -1,5 +1,5 @@
-# M2TS
-    The source code and dataset for M2TS
+# M2TS: Multi-scale Multi-modal Approach Based on Transformer for Source Code Summarization
+The source code, datasets and results for M2TS.
 ## Dataset
 ### java_data
 * paper: https://arxiv.org/abs/1707.02275
