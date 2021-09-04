@@ -29,4 +29,4 @@ networkx 2.5
 scipy 1.1.0  
 treelib 1.6.1
 # Results
-In result file, we give the testing results on two datasets. 
+In result file, we give the testing results on two datasets. The java_pre.txt is the generated summaries for Java methods.
