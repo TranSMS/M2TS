@@ -11,13 +11,13 @@ In M2TS, we use two large-scale datasets for experiments.
 # Data preprocessing
 M2TS uses ASTs and source code modalities, which uses the JDK compiler to parse java methods as ASTs, and the Treelib toolkit to prase Python functions as ASTs. In addition, before embedding ASTs, we use BERT pre-training to embed the information of nodes. 
 ## Get ASTs
-In data-pre file, the get_ast.py generates ASTs for Java method and get_python.py generates ASTs for Python functions. 
+In data-pre file, the get_ast.py generates ASTs for Java method and python_ast.py generates ASTs for Python functions. 
 Command: python3 source.code ast.json
 ### BERT Pre-training
-Get here to Install the server and client via pip：
-detail in here: https://github.com/hanxiao/bert-as-service
+Get here to Install the server and client：  
+detail in here: https://github.com/hanxiao/bert-as-service  
 ## Train-model
-In model_train file, the run.py train the model and run2.py is the model without multi-modal fusion module which can train and test the M2TS. 
+In M2TS_model file, the run.py train the model and run2.py is the model without multi-modal fusion module which can train and test the M2TS. 
 Command: Directly run run.py
 # Requirements
 pytorch 1.7.1  
@@ -28,5 +28,5 @@ nltk 3.5
 networkx 2.5  
 scipy 1.1.0  
 treelib 1.6.1
-## Results
-Results of the M2TS projection
+# Results
+In result file, we give the testing results on two datasets. 
