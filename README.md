@@ -1,17 +1,20 @@
 # M2TS: Multi-scale Multi-modal Approach Based on Transformer for Source Code Summarization
 The source code, datasets and results for M2TS.
 # Datasets
-In M2TS, we use two large-scale datasets for experiments. In data file, we give the two datasets, which obtain from following paper.
-## java dataset
+In M2TS, we use three large-scale datasets for experiments, including two Java and one Python datasets. In data file, we give the three datasets, which obtain from following paper.
+## JAH(Java Hu) dataset
 * paper: https://arxiv.org/abs/1707.02275
 * data: https://github.com/EdinburghNLP/code-docstring-corpus
-## python dataset
+## PYB(Python Braone) dataset
 * paper: https://xin-xia.github.io/publication/ijcai18.pdf
 * data: https://github.com/xing-hu/TL-CodeSum
+## JAL(Java Leclair) dataset
+* paper: https://arxiv.org/pdf/1904.02660.pdf
+* data: http://leclair.tech/data/funcom/
 # Data preprocessing
 M2TS uses ASTs and source code modalities, which uses the JDK compiler to parse java methods as ASTs, and the Treelib toolkit to prase Python functions as ASTs. In addition, before embedding ASTs, we use BERT pre-training to embed the information of nodes. 
 ## Get ASTs
-In data-pre file, the get_ast.py generates ASTs for Java method and python_ast.py generates ASTs for Python functions. 
+In data-pre file, the get_ast.py generates ASTs for two Java datasets and python_ast.py generates ASTs for Python functions. 
 Command: python3 source.code ast.json
 ### BERT Pre-training
 Get here to Install the server and client：  
@@ -29,4 +32,4 @@ networkx 2.5
 scipy 1.1.0  
 treelib 1.6.1
 # Results
-In result file, we give the testing results on two datasets. The java_pre.txt is the generated summaries for Java methods.
+In result file, we give the testing results on three datasets. The java_pre.txt is the generated summaries for JAH dataset.
