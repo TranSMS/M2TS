@@ -5,7 +5,7 @@ In M2TS, we use three large-scale datasets for experiments, including two Java a
 ## JAH(Java Hu) dataset
 * paper: https://arxiv.org/abs/1707.02275
 * data: https://github.com/EdinburghNLP/code-docstring-corpus
-## PYB(Python Braone) dataset
+## PYB(Python Barone) dataset
 * paper: https://xin-xia.github.io/publication/ijcai18.pdf
 * data: https://github.com/xing-hu/TL-CodeSum
 ## JAL(Java Leclair) dataset
