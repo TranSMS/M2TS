@@ -18,8 +18,8 @@ In data-pre file, the get_ast.py generates ASTs for two Java datasets and python
 Command: python3 source.code ast.json
 ### BERT Pre-training
 Get here to Install the server and client, detail in [here](https://github.com/hanxiao/bert-as-service)  
-`pip install bert-serving-server  
- pip install bert-serving-client`
+`pip install bert-serving-server`  
+`pip install bert-serving-client`
 # Train-Test
 In M2TS_model file, the run.py train the model and run2.py is the model without multi-modal fusion module which can train and test the M2TS. 
 Command: Directly run run.py
