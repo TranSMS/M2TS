@@ -12,7 +12,7 @@ In M2TS, we use three large-scale datasets for experiments, including two Java a
 * paper: https://arxiv.org/pdf/1904.02660.pdf
 * data: http://leclair.tech/data/funcom/
 # Data preprocessing
-M2TS uses ASTs and source code modalities, which uses the [JDK](http://www.eclipse.org/jdt/) compiler to parse java methods as ASTs, and the [Treelib](https://treelib.readthedocs.io/en/latest/) toolkit to prase Python functions as ASTs. In addition, before embedding ASTs, we use BERT pre-training to embed the information of nodes. 
+M2TS uses ASTs and source code modalities, which uses the [JDK](http://www.eclipse.org/jdt/) compiler to parse java methods as ASTs, and the [Treelib](https://treelib.readthedocs.io/en/latest/) toolkit to prase Python functions as ASTs. In addition, before embedding ASTs, we use `BERT pre-training` to embed the information of nodes. 
 ## Get ASTs
 In data-pre file, the get_ast.py generates ASTs for two Java datasets and python_ast.py generates ASTs for Python functions. You can run the following command：
 ```
@@ -25,8 +25,11 @@ pip install bert-serving-server
 pip install bert-serving-client
 ```
 # Train-Test
-In M2TS_model file, the run.py train the model and run2.py is the model without multi-modal fusion module which can train and test the M2TS. 
-Command: Directly run run.py
+In M2TS_model file, the `run.py` train the model and `run2.py` is the model for ablation experiments. We evaluate the quality of the generated summaries using four evaluation metrics, you can here get them.  
+Train and test model:  
+```
+Python3 run.py
+```
 # Requirements
 pytorch 1.7.1  
 bert-serving-client 1.10.0  
