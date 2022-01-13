@@ -25,10 +25,17 @@ pip install bert-serving-server
 pip install bert-serving-client
 ```
 # Train-Test
-In M2TS_model file, the `run.py` train the model and `run2.py` is the model for ablation experiments. We evaluate the quality of the generated summaries using four evaluation metrics, you can here get them.  
+In M2TS_model file, the `run.py` train the model and `run2.py` is the model for ablation experiments. We evaluate the quality of the generated summaries using four evaluation metrics.
 Train and test model:  
 ```
 Python3 run.py
+```
+The nlg-eval can be set up in the following way, detail in [here](https://github.com/Maluuba/nlg-eval).  
+Install Java 1.8.0 (or higher).
+
+Install the Python dependencies, run:
+```
+pip install git+https://github.com/Maluuba/nlg-eval.git@master
 ```
 # Requirements
 pytorch 1.7.1  
