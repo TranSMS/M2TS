@@ -14,8 +14,10 @@ In M2TS, we use three large-scale datasets for experiments, including two Java a
 # Data preprocessing
 M2TS uses ASTs and source code modalities, which uses the JDK compiler to parse java methods as ASTs, and the Treelib toolkit to prase Python functions as ASTs. In addition, before embedding ASTs, we use BERT pre-training to embed the information of nodes. 
 ## Get ASTs
-In data-pre file, the get_ast.py generates ASTs for two Java datasets and python_ast.py generates ASTs for Python functions. 
-Command: python3 source.code ast.json
+In data-pre file, the get_ast.py generates ASTs for two Java datasets and python_ast.py generates ASTs for Python functions. You can run the following command：
+```
+python3 source.code ast.json
+```
 ### BERT Pre-training
 Get here to Install the server and client, detail in [here](https://github.com/hanxiao/bert-as-service)  
 ```
