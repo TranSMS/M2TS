@@ -17,7 +17,8 @@ M2TS uses ASTs and source code modalities, which uses the JDK compiler to parse 
 In data-pre file, the get_ast.py generates ASTs for two Java datasets and python_ast.py generates ASTs for Python functions. 
 Command: python3 source.code ast.json
 ### BERT Pre-training
-Get here to Install the server and client：  
+Get here to Install the server and client：
+  pip install bert-serving-server
 detail in here: https://github.com/hanxiao/bert-as-service  
 # Train-Test
 In M2TS_model file, the run.py train the model and run2.py is the model without multi-modal fusion module which can train and test the M2TS. 
