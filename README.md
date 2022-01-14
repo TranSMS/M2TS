@@ -1,5 +1,5 @@
 # M2TS: Multi-scale Multi-modal Approach Based on Transformer for Source Code Summarization
-The source code, datasets and results for M2TS.
+We public the source code, datasets and results for the M2TS.
 # Datasets
 In the M2TS, we use three large-scale datasets for experiments, including two Java and one Python datasets. In data file, we give the three datasets, which obtain from following paper. If you want to train the model, you must download the datasets.
 ## JAH(Java Hu) dataset
