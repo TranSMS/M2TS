@@ -37,6 +37,7 @@ Install the Python dependencies, run:
 pip install git+https://github.com/Maluuba/nlg-eval.git@master
 ```
 # Requirements
+If you want to run the model, you will need to install the following packages.  
 pytorch 1.7.1  
 bert-serving-client 1.10.0  
 bert-serving-server 1.10.0  
