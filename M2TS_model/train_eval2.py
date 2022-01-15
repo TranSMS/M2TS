@@ -10,10 +10,10 @@ def train(gcn_optimizer, trans_optimizer,  data_loader, gcn_model, trans_model, 
     trans_model.train()
     # trans2_model.train()
 
-    for adj, x, a2, a3, a4, a5, enc_inputs, dec_inputs, dec_outputs in data_loader:
+    for adj, x, a2, a3, enc_inputs, dec_inputs, dec_outputs in data_loader:
         # for adj, x, a2, a3 in data_loader:
-        adj, x, a2, a3, a4, a5 = adj.to(device), x.to(device), a2.to(device), a3.to(device), a4.to(device), a5.to(device)
-        ast_outputs, ast_embed = gcn_model(x, adj, a2, a3, a4, a5)  # 变动
+        adj, x, a2, a3 = adj.to(device), x.to(device), a2.to(device), a3.to(device)
+        ast_outputs, ast_embed = gcn_model(x, adj, a2, a3)  # 变动
 
         enc_inputs, dec_inputs, dec_outputs = enc_inputs.to(device), dec_inputs.to(device), dec_outputs.to(device)
 
@@ -39,10 +39,10 @@ def evaluate(data_loader, gcn_model, trans_model, criterion, device):
     # trans2_model.eval()
 
     with torch.no_grad():
-        for adj, x, a2, a3, a4, a5, enc_inputs, dec_inputs, dec_outputs in data_loader:
+        for adj, x, a2, a3, enc_inputs, dec_inputs, dec_outputs in data_loader:
             # for adj, x, a2, a3 in data_loader:
-            adj, x, a2, a3, a4, a5 = adj.to(device), x.to(device), a2.to(device), a3.to(device), a4.to(device), a5.to(device)
-            ast_outputs, ast_embed = gcn_model(x, adj, a2, a3, a4, a5)  # 变动
+            adj, x, a2, a3 = adj.to(device), x.to(device), a2.to(device), a3.to(device)
+            ast_outputs, ast_embed = gcn_model(x, adj, a2, a3)  # 变动
             # ast_outputs = ast_outputs.unsqueeze(0).to(device)
             enc_inputs, dec_inputs, dec_outputs = enc_inputs.to(device), dec_inputs.to(device), dec_outputs.to(device)
             # outputs: [batch_size * tgt_len, tgt_vocab_size]
