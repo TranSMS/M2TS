@@ -79,15 +79,6 @@ def load_nl_data(in_file, nl_max_len,  max_words=50000, sort_by_len=False):
     return nl_total_words, nl_inv_word_dict, nl_index, nl_word_dict, nl2_index
 
 
-# nl_total_words, nl_inv_word_dict, nl_inputs, nl_word_dict, nl_outputs = load_nl_data('data/python2_nl.txt', nl_max_len=44)
-# print(nl_word_dict)
-# print(nl_inv_word_dict)
-# print(nl_inputs[0])
-# print(nl_outputs[0])
-# print(nl_total_words)
-# exit()
-
-
 def load_code_data(in_file, seq_max_len, max_words=60000, sort_by_len=False):
     code = []
     with open(in_file, 'r', encoding='UTF-8') as f:
@@ -130,5 +121,5 @@ def load_code_data(in_file, seq_max_len, max_words=60000, sort_by_len=False):
     return code_total_words, code_index, code_word_dict
 
 
-code_total_words, code_inputs, code_word_dict = load_code_data('data/python2_code.txt', seq_max_len=300)
+# code_total_words, code_inputs, code_word_dict = load_code_data('data/python2_code.txt', seq_max_len=300)
 # print(code_word_dict)
