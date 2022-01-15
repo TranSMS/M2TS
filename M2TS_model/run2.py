@@ -21,84 +21,79 @@ from trans_model2 import Transformer
 from train_eval2 import train, evaluate
 from make_data import load_nl_data, load_code_data
 import torch.optim as optim
+import argparse
 import numpy as np
 import torch.nn.functional as F
 from torch.nn.parameter import Parameter
 from torch.nn.modules.module import Module
-batch_size = 32
-epoches = 200
-nl_max_len = 30
-# seq_max_len = 111
-train_num = 69708  # 960
-max_ast_node = 110  # 60
-src_max_length = 300  # 120
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--epoches', type=int, default=200,
+                    help='Number of epochs to train.')
+parser.add_argument('--lr', type=float, default=0.0001,
+                    help='Initial learning rate.')
+parser.add_argument('--nl_length', type=int, default=30,
+                    help='NL-MAX-Length.')
+parser.add_argument('--AST_Node', type=int, default=30,
+                    help='Number of AST Nodes.')
+parser.add_argument('--Train_data', type=int, default=62738,
+                    help='Number of training data.')
+parser.add_argument('--code_length', type=int, default=300,
+                    help='code-MAX-Length.')
+parser.add_argument('--batch_size', type=int, default=16,
+                    help='Number of the batch.')
+args = parser.parse_args()
+
+
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-tgt_vocab_size, tgt_inv_vocab_dict, dec_inputs, tgt_vocab, dec_outputs = load_nl_data('data/train_nl1.txt', nl_max_len)
-src_vocab_size, enc_inputs, src_vocab, src_inv_vocab_size = load_code_data('data/train_code1.txt', src_max_length)
+tgt_vocab_size, tgt_inv_vocab_dict, dec_inputs, tgt_vocab, dec_outputs = load_nl_data('data/train_nl1.txt', args.nl_length)
+src_vocab_size, enc_inputs, src_vocab, src_inv_vocab_size = load_code_data('data/train_code1.txt', args.code_length)
 print(src_vocab)
 # exit()
-A, A2, A3, A4, A5 = read_batchA('data/train_ast1.txt', max_ast_node)
-X = get_embed('data/train_ast1.txt', max_ast_node)
+A, A2, A3, A4, A5 = read_batchA('data/train_ast1.txt', args.AST_node)
+X = get_embed('data/train_ast1.txt', args.AST_node)
 
-A_1 = A[0:train_num]
-A_2 = A[train_num:len(A)]
-A2_1 = A2[0:train_num]
-A2_2 = A2[train_num:len(A2)]
-A3_1 = A3[0:train_num]
-A3_2 = A3[train_num:len(A3)]
-A4_1 = A4[0:train_num]
-A4_2 = A4[train_num:len(A4)]
-A5_1 = A4[0:train_num]
-A5_2 = A4[train_num:len(A5)]
+A_1 = A[0:args.Train_data]
+A_2 = A[args.Train_data:len(A)]
+A2_1 = A2[0:args.Train_data]
+A2_2 = A2[args.Train_data:len(A2)]
+A3_1 = A3[0:args.Train_data]
+A3_2 = A3[args.Train_data:len(A3)]
 
-X_1 = X[0:train_num]
-X_2 = X[train_num:len(X)]
+X_1 = X[0:args.Train_data]
+X_2 = X[args.Train_data:len(X)]
 
 enc_inputs = torch.LongTensor(enc_inputs)
 dec_inputs = torch.LongTensor(dec_inputs)
 dec_outputs = torch.LongTensor(dec_outputs)
 
-enc_1 = enc_inputs[:train_num]
-enc_2 = enc_inputs[train_num:]
-dec_in_1 = dec_inputs[:train_num]
-dec_in_2 = dec_inputs[train_num:]
-dec_out_1 = dec_outputs[:train_num]
-dec_out_2 = dec_outputs[train_num:]
-# print(len(A_1))
-# print(len(A_2))
-# print(enc_1.shape)
-# print(enc_2.shape)
-# exit()
+enc_1 = enc_inputs[:args.Train_data]
+enc_2 = enc_inputs[args.Train_data:]
+dec_in_1 = dec_inputs[:args.Train_data]
+dec_in_2 = dec_inputs[args.Train_data:]
+dec_out_1 = dec_outputs[:args.Train_data]
+dec_out_2 = dec_outputs[args.Train_data:]
+
 # dataset = MySet(A, X, A2, A3, A4, A5, enc_inputs, dec_inputs, dec_outputs)
-train_data = MySet(A_1, X_1, A2_1, A3_1, A4_1, A5_1, enc_1, dec_in_1, dec_out_1)
-evl_data = MySet(A_2, X_2, A2_2, A3_2, A4_2, A5_2, enc_2, dec_in_2, dec_out_2)
+train_data = MySet(A_1, X_1, A2_1, A3_1, enc_1, dec_in_1, dec_out_1)
+evl_data = MySet(A_2, X_2, A2_2, A3_2, enc_2, dec_in_2, dec_out_2)
 # train_data, evl_data = random_split(dataset, [1040, 260])
 # exit()
-my_sampler1 = MySampler(train_data, batch_size)
-my_sampler2 = MySampler(evl_data, batch_size)
+my_sampler1 = MySampler(train_data, args.batch_size)
+my_sampler2 = MySampler(evl_data, args.batch_size)
 evl_data_loader = DataLoader(evl_data, batch_sampler=my_sampler2)
 train_data_loader = DataLoader(train_data, batch_sampler=my_sampler1)
-# a, x, a2, a3, inputs, _, _ = next(iter(evl_data_loader))
-# print(inputs[0])
-# print(a)
-# print(inputs)
-# exit()
-# trans_loader = Data.DataLoader(MyDataSet(enc_inputs, dec_inputs, dec_outputs), batch_size=batch_size, shuffle=True)
 gcn_model = GCNEncoder().to(device)
 trans_model = Transformer(src_vocab_size, tgt_vocab_size).to(device)
 # trans2_model = Transformer2(src_vocab_size, tgt_vocab_size).to(device)
 criterion = nn.CrossEntropyLoss(ignore_index=0)
-gcn_optimizer = optim.SGD(gcn_model.parameters(), lr=0.0001, momentum=0.99)
-tran_optimizer = optim.SGD(trans_model.parameters(), lr=0.0001, momentum=0.99)
+gcn_optimizer = optim.SGD(gcn_model.parameters(), lr=args.lr, momentum=0.99)
+tran_optimizer = optim.SGD(trans_model.parameters(), lr=args.lr, momentum=0.99)
 
 best_test_loss = float('inf')
-viz = Visdom()
-viz.line([0.], [0.], win='train_loss', opts=dict(title='train_loss'))
-viz.line([0.], [0.], win='val_loss', opts=dict(title='val_loss'))
 
-
-for epoch in range(epoches):
+for epoch in range(args.epoches):
     start_time = time.time()
     train_loss = train(gcn_optimizer, tran_optimizer, train_data_loader, gcn_model, trans_model, criterion, device)
     eval_loss, perplexity = evaluate(evl_data_loader, gcn_model, trans_model, criterion, device)
@@ -114,19 +109,15 @@ for epoch in range(epoches):
         torch.save(trans_model.state_dict(), 'save_model/trans_loss2.pt')
         # torch.save(trans2_model.state_dict(), 'save_model/multi_loss2.pt')
 
-    viz.line([train_loss], [epoch], win='train_loss', update='append')
-    viz.line([eval_loss], [epoch], win='val_loss', update='append')
-
-
 # exit()
 
 
 def greedy_decoder(trans_model, enc_input, ast_outputs, start_symbol):  # 变动
 
     enc_outputs, enc_self_attns = trans_model.encoder(enc_input)
-    dec_input = torch.zeros(1, nl_max_len).type_as(enc_input.data)
+    dec_input = torch.zeros(1, args.nl_length).type_as(enc_input.data)
     next_symbol = start_symbol
-    for i in range(0, nl_max_len):
+    for i in range(0, args.nl_length):
         dec_input[0][i] = next_symbol
         dec_outputs, _, _, _ = trans_model.decoder2(dec_input, enc_input, enc_outputs, ast_outputs)  # 变动
         projected = trans_model.projection(dec_outputs)
@@ -160,6 +151,20 @@ def nltk_sentence_bleu(hypotheses, references, order=4):
     # print(refs)
     # corpus_bleu = nltk.translate.bleu_score.corpus_bleu(refs, hpy2, weights=(0.25, 0.25, 0.25, 0.25))
     # print('corpus_bleu: %.4f sentence_bleu: %.4f' % (corpus_bleu, avg_score))
+    return avg_score
+
+
+def meteor_score1(hypothesis, reference):
+    count = 0
+    total_score = 0.0
+    for i in range(len(hypothesis)):
+        score = round(meteor_score([reference[i]], hypothesis[i]), 4)
+        # print(score)
+        # exit()
+        total_score += score
+        count += 1
+    avg_score = total_score/count
+    # print('METEOR_score: %.4f' % avg_score)
     return avg_score
 
 
@@ -215,6 +220,11 @@ def predict():
         avg_score = nltk_sentence_bleu(pred1, ref)
         meteor = meteor_score1(pred1, ref)
         print('S_BLEU: %.4f' % avg_score)
+        # print('C-BLEU: %.4f' % corup_BLEU)
+        print('METEOR: %.4f' % meteor)
+        rouge = Rouge()
+        rough_score = rouge.get_scores(pred1, ref, avg=True)
+        print(' ROUGE: ', rough_score)
 
     # print(x1)
     #     print([tgt_inv_vocab_dict[n.item()] for n in pred.squeeze()])
