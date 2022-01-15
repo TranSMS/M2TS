@@ -12,13 +12,7 @@ def read_batchA(ast_file, max_node):
     a1 = []
     aa2 = []
     aa3 = []
-    aa4 = []
-    aa5 = []
-    aa6 = []
-    aa7 = []
-    aa8 = []
-    aa9 = []
-    aa10 = []
+
     for line in file.readlines():
         dic = json.loads(line)
 
@@ -61,10 +55,6 @@ def read_batchA(ast_file, max_node):
         a4 = a.dot(a3)
         a5 = a.dot(a4)
         a6 = a.dot(a5)
-        a7 = a.dot(a6)
-        a8 = a.dot(a7)
-        a9 = a.dot(a8)
-        a10 = a.dot(a9)
 
         A2 = normalize_data(a2)
         A2 = np.array(A2)
@@ -79,48 +69,6 @@ def read_batchA(ast_file, max_node):
         A3 = torch.FloatTensor(np.array(A3.todense()))
         aa3.append(A3)
 
-        A4 = normalize_data(a4)
-        A4 = np.array(A4)
-        A4 = sparse.csr_matrix(A4)
-        A4 = torch.FloatTensor(np.array(A4.todense()))
-        aa4.append(A4)
-
-        A5 = normalize_data(a5)
-        A5 = np.array(A5)
-        A5 = sparse.csr_matrix(A5)
-        A5 = torch.FloatTensor(np.array(A5.todense()))
-        aa5.append(A5)
-
-        A6 = normalize_data(a6)
-        A6 = np.array(A6)
-        A6 = sparse.csr_matrix(A6)
-        A6 = torch.FloatTensor(np.array(A6.todense()))
-        aa6.append(A6)
-
-        A7 = normalize_data(a7)
-        A7 = np.array(A7)
-        A7 = sparse.csr_matrix(A7)
-        A7 = torch.FloatTensor(np.array(A7.todense()))
-        aa7.append(A7)
-
-        A8 = normalize_data(a8)
-        A8 = np.array(A8)
-        A8 = sparse.csr_matrix(A8)
-        A8 = torch.FloatTensor(np.array(A8.todense()))
-        aa8.append(A8)
-
-        A9 = normalize_data(a9)
-        A9 = np.array(A9)
-        A9 = sparse.csr_matrix(A9)
-        A9 = torch.FloatTensor(np.array(A9.todense()))
-        aa9.append(A9)
-
-        A10 = normalize_data(a10)
-        A10 = np.array(A10)
-        A10 = sparse.csr_matrix(A10)
-        A10 = torch.FloatTensor(np.array(A10.todense()))
-        aa10.append(A10)
-
         a = np.array(a, dtype=float)
         adj = normalize(a)
         # print(adj)
@@ -130,7 +78,7 @@ def read_batchA(ast_file, max_node):
         a1.append(adj)
     # print(len(a1))
 
-    return a1, aa2, aa3, aa4, aa5, aa6, aa7, aa8, aa9, aa10
+    return a1, aa2, aa3
 
 
 def sparse_mx_to_torch_sparse_tensor(sparse_mx):
