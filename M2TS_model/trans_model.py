@@ -4,7 +4,7 @@ import math
 import numpy as np
 from multi_model import Multi_model
 # from gcn_model import AST_Model
-d_ff = 2048  # FeedForward dimension
+d_ff = 1024  # FeedForward dimension
 d_k = d_v = 64  # dimension of K(=Q), V
 n_layers = 6  # number of Encoder of Decoder Layer
 n_heads = 8  # number of heads in Multi-Head Attention
