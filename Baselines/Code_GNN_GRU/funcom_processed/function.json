@@ -2488,5 +2488,5 @@
     "99397": "    public void setCurationLocation(String value) {\n        this.curationLocation = value;\n    }\n",
     "99399": "    public Integer getSampleCount() {\n        return sampleCount;\n    }\n",
     "99400": "    public void setSampleCount(Integer value) {\n        this.sampleCount = value;\n    }\n",
-    "99405": "    public void setSamples(List<TridasSample> samples) {\n        this.samples = samples;\n    }\n",
+    "99405": "    public void setSamples(List<TridasSample> samples) {\n        this.samples = samples;\n    }\n"
 }
