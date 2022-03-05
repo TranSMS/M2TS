@@ -1840,5 +1840,5 @@
     "91080": "\t/**\n   * Return the time for all operations performed by this node, but not the\n   * time for the children of this node.\n\t *\n\t */\n",
     "91088": "\t/**\n   * Format for display, a name for this node.\n\t *\n\t */\n",
     "91097": "\t/**\n   * Format for display, a name for this node.\n\t *\n\t */\n",
-    "91104": "\t/**\n\t * Get the objects to be displayed when this tree object is expanded.\n\t * <P>\n\t * The objects returned can be of any type, including addtional Inspectables.\n   *\n\t * @return java.util.Vector\tA vector of objects.\n\t */\n",
+    "91104": "\t/**\n\t * Get the objects to be displayed when this tree object is expanded.\n\t * <P>\n\t * The objects returned can be of any type, including addtional Inspectables.\n   *\n\t * @return java.util.Vector\tA vector of objects.\n\t */\n"
 }
