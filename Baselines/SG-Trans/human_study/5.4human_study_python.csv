@@ -1,0 +1,2644 @@
+code,SG-Trans,Adequacy,Conciseness,Fluency,GREAT,Adequacy,Conciseness,Fluency,NeuralCodeSum,Adequacy,Conciseness,Fluency,Transformer,Adequacy,Conciseness,Fluency,CodeTransformer,Adequacy,Conciseness,Fluency
+"def unregister_hosting_service(name):
+    try:
+        _hosting_service_registry.unregister_by_attr(u'hosting_service_id', name)
+    except ItemLookupError as e:
+        logging.error((u'Failed  to  unregister  unknown  hosting  service  ""%s""' % name))
+        raise e
+",unregister a previously registered hosting service by name .,5,4,5,checks if a service is available .,1,5,5,unregister a service .,3,5,5,unregisters a service from the registered machine .,3,3,4,returns the service functions to .,1,1,2
+"def libvlc_media_get_duration(p_md):
+    f = (_Cfunctions.get('libvlc_media_get_duration', None) or _Cfunction('libvlc_media_get_duration', ((1,),), None, ctypes.c_longlong, Media))
+    return f(p_md)
+",get the duration of media descriptor object .,5,5,5,get the current media type .,1,4,5,get the current media descriptor object .,2,4,4,get the reference count of a media descriptor object .,1,3,4,get the the the .,1,1,1
+"def set_config_defaults():
+    set_cors_middleware_defaults()
+",override all configuration default values .,4,4,5,set default configuration options for all requests .,4,3,4,override all configuration cors requests for keystone .,3,3,4,load configuration .,2,4,4,set all of for the and to to .,1,1,1
+"def poly_TC(f, K):
+    if (not f):
+        return K.zero
+    else:
+        return f[(-1)]
+",return trailing coefficient of f .,4,3,5,return the trailing coefficient of f .,4,2,5,return the trailing coefficient of f .,4,2,5,return leading coefficient of f .,5,5,4,return the leading of f .,5,5,4
+"def main():
+    errno = pytest.main(['-x', 'spyder', '-v', '-rw', '--durations=10', '--cov=spyder', '--cov-report=term-missing'])
+    sys.exit(errno)
+",a docstring .,3,4,4,entrypoint to the 6 module as a script .,3,4,5,runs the main program for indicating the main process .,3,4,5,entry point for the application .,1,2,3,tests that that when .,1,2,3
+"def pop(key, default=None):
+    store = load()
+    val = store.pop(key, default)
+    dump(store)
+    return val
+",get a value from the minion datastore .,2,3,2,set the default value of a key .,2,2,2,set a value in the minion datastore .,2,2,3,load a key from the minion datastore .,2,2,1,remove a value from the minion .,1,1,1
+"def to_edgelist(G, nodelist=None):
+    if (nodelist is None):
+        return G.edges(data=True)
+    else:
+        return G.edges(nodelist, data=True)
+",return a list of edges from a dictionary of edges .,2,2,4,return a single spanning graph of a branching .,2,4,4,return adjacency representation of graph as a edgelist string .,2,2,4,return the graph g as a single string .,3,2,4,return true boolean of edges in g graph g .,2,2,4
+"def summary(worker):
+    return _summary_wrap(_summary_format(_summary_dict(worker), worker))
+",return a :class: .,2,3,2,wrap a summary of the nagios summary kolmogorov-smirnov .,3,4,4,return the given worker format that the given worker module .,4,4,4,produces a worker .,3,4,4,given a worker worker .,2,2,1
+"def google():
+    channel = settings.get_auth_google()
+    if (not channel):
+        redirect(URL(f='user', args=request.args, vars=get_vars))
+    from s3oauth import GooglePlusAccount
+    auth.settings.login_form = GooglePlusAccount(channel)
+    form = auth()
+    return {'form': form}
+",login using google .,1,2,2,login using humanitarian .,1,1,2,login using google google user .,4,4,5,login using humanitarian .,3,3,4,get the login login .,2,3,3
+"def get_file(src, dest, permissions=None):
+    if (src == dest):
+        return
+    if is_url(src):
+        urlretrieve(src, dest)
+    else:
+        shutil.copyfile(src, dest)
+    if permissions:
+        os.chmod(dest, permissions)
+    return dest
+",get a file from a directory .,4,4,5,return a backgroundability of the file that can be used as an existing directory .,1,3,4,retrieve a source file .,3,2,1,return copy of a given file or plain url .,1,3,4,downloads an temporary .,1,2,1
+"def flavor_get_by_flavor_id(context, id, read_deleted=None):
+    return IMPL.flavor_get_by_flavor_id(context, id, read_deleted)
+",get instance type by flavor id .,2,2,4,get flavor extra specs by flavor id .,2,1,2,get flavor id by flavor id .,2,2,3,get instance type by flavorid .,4,4,4,get instance type by id id .,1,1,1
+"def _build_status(data, item):
+    stream = item['stream']
+    if ('Running  in' in stream):
+        data.setdefault('Intermediate_Containers', []).append(stream.rstrip().split()[(-1)])
+    if ('Successfully  built' in stream):
+        data['Id'] = stream.rstrip().split()[(-1)]
+",builds a status update from a docker stream .,3,3,4,check a status message of a list of search_maps .,2,2,3,build a status stream from a stream .,3,2,3,build a summary of json object from a stream of strings .,3,1,1,remove a floating .,2,1,1
+"def match(value, pattern='', ignorecase=False, multiline=False):
+    return regex(value, pattern, ignorecase, multiline, 'match')
+",perform a multiline submissions .,3,4,4,match a boolean pattern against the output of the value .,2,3,4,perform a filter that matches the given regular expression .,4,5,5,perform re .,2,2,4,converts a boolean as .,1,1,1
+"def sqlwhere(dictionary):
+    return ('  AND  '.join([('%s  =  %s' % (k, aparam())) for k in dictionary.keys()]), dictionary.values())
+",converts dictionary to an sql where clause sqlquery .,2,3,3,takes a dictionary and a string and interpolates it in the format where values are the possible values .,2,2,3,returns a dictionary with the aparam representation of a dictionary .,4,4,5,lookup a dictionary to keys .,2,3,2,takes a dictionary and a dictionary dictionary dictionary by the .,1,1,1
+"def log(runlevel, message):
+    if runlevel:
+        LOGGER.log(LOG_VALUES[runlevel], message)
+",logs a message at the given runlevel .,3,3,3,logs a message to the proxied file .,3,2,4,logs a log message to the runlevel .,2,3,4,logs a message at the given runlevel .,4,4,5,logs a message at the root runlevel if .,1,1,1
+"def fixed_ip_get_by_instance(context, instance_uuid):
+    return IMPL.fixed_ip_get_by_instance(context, instance_uuid)
+",get fixed ips by instance id or raise if none exist .,5,5,4,get fixed ip by instance id .,2,3,4,get fixed ip by instance .,3,3,4,get fixed ip by instance id or raise if it does not exist .,5,5,4,get fixed ips by instance .,2,1,1
+"def avail_sizes():
+    response = list_common_lookups(kwargs={'lookup': 'server.ram'})
+    ret = {}
+    for item in response['list']:
+        name = item['name']
+        ret[name] = item
+    return ret
+",available sizes .,3,2,3,return available linode sizes .,5,5,5,available lookups sizes .,4,4,4,available images .,3,2,4,return available locations .,3,3,2
+"def subSGMLRefs(s):
+    return re_sgmlrefsub(_replSGMLRefs, s)
+",return the given html string with entity and char references replaced .,3,4,4,return azure html with no multiple whitespaces .,2,3,3,return a string without tags and no multiple spaces .,2,3,2,replace all sequences of whitespace chars with a single space .,2,4,4,return an iterator formatted text .,2,4,5
+"def EmailCheck(email):
+    if (not EMAIL_RE.match(email)):
+        raise ValueError((_('Not  a  valid  email:  %s') % email))
+    return email
+",checks that user is a valid email .,3,3,4,checks the email format .,2,3,4,validates the email address for a valid email address .,3,4,4,parse an email address string .,3,4,5,tries if an email is an email email .,2,4,4
+"def getMin(first, second):
+    return min(first, second)
+",get the app .,3,3,2,get the first result of the trackinfo object .,5,5,5,returns the first element of the form: .,4,3,5,get the extent of the block .,5,4,5,get a second between .,3,3,2
+"def __virtual__():
+    if dns_support:
+        return 'ddns'
+    return (False, 'The  ddns  execution  module  cannot  be  loaded:  dnspython  not  installed.')
+",confirm pypureomapi is available .,1,3,2,check if the global kernel module is available .,1,2,3,only load the module if apache is installed .,1,3,4,set up the module if the mysql libraries is available .,1,3,3,check whether if not to .,1,2,1
+"def discretize_linear_1D(model, x_range):
+    x = np.arange((x_range[0] - 0.5), (x_range[1] + 0.5))
+    values_intermediate_grid = model(x)
+    return (0.5 * (values_intermediate_grid[1:] + values_intermediate_grid[:(-1)]))
+",discretize model by performing a linear interpolation .,1,4,4,discretize model by integrating the model over the shape .,1,3,4,discretize model by performing a linear grid .,3,3,5,discretize model by performing a bilinear interpolation .,1,2,4,compute model by a a bilinear interpolation .,1,2,1
+"def get_password(vm_):
+    return config.get_cloud_config_value('password', vm_, __opts__, default=config.get_cloud_config_value('passwd', vm_, __opts__, search_global=False), search_global=False)
+",returns the password to use .,3,4,4,return the indexed subdomain .,3,4,4,determine if we should wait for the managed cloud automation before running .,3,4,4,returns the tenancy to use .,4,4,4,return the sshinterface to use for .,5,5,5
+"def dict_from_expr(expr, **args):
+    (rep, opt) = _dict_from_expr(expr, build_options(args))
+    return (rep, opt.gens)
+",transform an expression into a multinomial form .,4,5,5,transform an expression into a multinomial form and figure out generators .,2,5,5,transform expressions into a multinomial form .,1,3,4,transform expressions into expression .,1,4,3,transform an expression into a expression expression .,1,1,1
+"def cell_update(context, cell_name, values):
+    return IMPL.cell_update(context, cell_name, values)
+",update a child cell entry .,4,5,5,update a child cell attributes .,5,5,5,set the given properties on an cell and update it .,4,4,3,update a child cell entry .,2,3,3,update a child cell entry .,2,1,1
+"def get_auth_from_url(url):
+    if url:
+        url = unquote(url)
+        parsed = urlparse(url)
+        return (parsed.username, parsed.password)
+    else:
+        return ('', '')
+",given a url with authentication components .,4,4,5,given a url value .,4,4,5,given a url .,5,4,5,given a url with authentication components .,4,4,5,given a url with authentication .,4,4,5
+"def Thing2Literal(o, d):
+    return string_literal(o, d)
+",convert something into a string representation .,5,4,4,convert from minutes:seconds to binary representation .,2,3,4,return a string representation of a literal object .,3,4,4,takes a string and converts it to a tfrecord .,5,4,4,return a return a form form .,5,5,5
+"def is_torrent_or_nzb_file(filename):
+    if (not isinstance(filename, (str, unicode))):
+        return False
+    return (filename.rpartition(u'.')[2].lower() in [u'nzb', u'torrent'])
+",return true if the provided filename is a torrent file .,3,4,5,checks if a file is a deleted and is a number .,1,2,3,determines if a file is a torrent file .,3,4,4,return true if the file is a renamed file .,2,3,3,return if filename filename filename contains a boolean file .,1,2,1
+"def for_int_dtypes_combination(names=('dtype',), no_bool=False, full=None):
+    if no_bool:
+        types = _int_dtypes
+    else:
+        types = _int_bool_dtypes
+    return for_dtypes_combination(types, names, full)
+",decorator for parameterized test the given question .,3,3,4,decorator that checks the fixture with integer and optionally bool dtypes .,2,2,3,decorator that checks the fixture with integer and optionally bool dtypes .,3,4,4,decorator that checks the fixture with a product set of integer names .,2,3,4,decorator that tests the the the .,2,1,1
+"def fixed_ip_count_by_project(context, project_id, session=None):
+    return IMPL.fixed_ip_count_by_project(context, project_id, session=session)
+",count fixed ips used by project .,2,2,3,count number of security groups associated with specified project .,4,3,4,count fixed ip by project .,4,3,4,count floating ips used by project .,3,3,4,count count ips used by project .,1,1,1
+"def restart_process(name):
+    run_as_root(('supervisorctl  restart  %(name)s' % locals()))
+",restart a supervisor process .,3,5,5,restart the process .,4,5,5,restart the specified process .,5,5,5,restart the supervisor process .,3,5,5,stop a supervisor process .,1,5,5
+"def ycbcr2rgb(ycbcr):
+    arr = ycbcr.copy()
+    arr[..., 0] -= 16
+    arr[..., 1] -= 128
+    arr[..., 2] -= 128
+    return _convert(rgb_from_ycbcr, arr)
+",rgb to rgb color space conversion .,3,5,5,rgb to yiq color space conversion .,2,5,5,rgb to haematoxylin-eosin-dab color space conversion .,2,3,5,validate that the rgb image colors and project entry point .,1,3,3,convert an cartesian points of .,1,4,2
+"def topic_list(request, slug, template_name='groups/topics/topic_list.html'):
+    group = get_object_or_404(Group, slug=slug, is_active=True)
+    topic_list = GroupTopic.objects.filter(group=group, is_active=True)
+    return render(request, template_name, {'group': group, 'topic_list': topic_list})
+",returns a group topic list page .,5,5,5,returns a group topic message list page .,5,4,4,returns a group topic topic page .,5,3,4,returns a group topic message list page .,5,4,4,returns a group group to to to .,1,1,1
+"def find_lexer_class(name):
+    if (name in _lexer_cache):
+        return _lexer_cache[name]
+    for (module_name, lname, aliases, _, _) in LEXERS.itervalues():
+        if (name == lname):
+            _load_lexers(module_name)
+            return _lexer_cache[name]
+    for cls in find_plugin_lexers():
+        if (cls.name == name):
+            return cls
+",get a lexer class by name .,5,5,5,find a dictonary descriptor .,1,5,5,return a lexer class by an theano module .,2,5,5,get a lexer by a module .,2,5,5,retrieve a lexer names by a .,1,5,4
+"@_docstring('recording')
+def get_recording_by_id(id, includes=[], release_status=[], release_type=[]):
+    params = _check_filter_and_make_params('recording', includes, release_status, release_type)
+    return _do_mb_query('recording', id, includes, params)
+",get the recording with the musicbrainz id as a dict with a recording key .,3,3,4,get the instrument with the musicbrainz id as a dict with an artist key .,1,3,4,get the recording with the musicbrainz id as a dict with an artist key .,2,3,4,get the instrument with the musicbrainz id as a dict with an artist key .,1,3,4,get the release with the musicbrainz id as a dict with an dict key .,1,3,4
+"def close_file_descriptor_if_open(fd):
+    try:
+        os.close(fd)
+    except OSError as exc:
+        if (exc.errno == errno.EBADF):
+            pass
+        else:
+            error = DaemonOSEnvironmentError(('Failed  to  close  file  descriptor  %(fd)d  (%(exc)s)' % vars()))
+            raise error
+",close a file descriptor .,5,5,5,close the file descriptor by acquire the next close to an existing file descriptor .,3,4,4,close all standard open file descriptors .,1,5,5,generates file descriptor .,1,5,5,check that file that that that the the .,1,1,1
+"def definite_article(word):
+    return 'the'
+",returns the definite article for a given word .,5,5,5,returns the indefinite article for a given word .,1,5,5,returns the definite article for the given word .,5,5,5,returns the indefinite article for a given word .,1,5,5,returns the definite article for a given word .,5,5,5
+"def lineagename_for_filename(config_filename):
+    if (not config_filename.endswith('.conf')):
+        raise errors.CertStorageError('renewal  config  file  name  must  end  in  .conf')
+    return os.path.basename(config_filename[:(- len('.conf'))])
+",returns the lineagename for a configuration filename .,5,5,5,takes config filename .,1,5,5,returns the configuration file associated with the provided filename .,2,5,5,load the configuration file using configuration .,1,5,5,parses a config file a file .,1,3,2
+"def _python_installed(ret, python, user=None):
+    default = __salt__['pyenv.default'](runas=user)
+    for version in __salt__['pyenv.versions'](user):
+        if (version == python):
+            ret['result'] = True
+            ret['comment'] = 'Requested  python  exists.'
+            ret['default'] = (default == python)
+            break
+    return ret
+",check to see if given python version is installed .,5,5,5,return a string containing the given python path .,2,5,5,check to see if the current host is installed .,1,5,5,return the current python version in both de-normalize and the system .,2,3,3,return the output of python files files a .,1,2,2
+"def get_user(keystone, name):
+    users = [x for x in keystone.users.list() if (x.name == name)]
+    count = len(users)
+    if (count == 0):
+        raise KeyError(('No  keystone  users  with  name  %s' % name))
+    elif (count > 1):
+        raise ValueError(('%d  users  with  name  %s' % (count, name)))
+    else:
+        return users[0]
+",retrieve a user by name .,5,5,5,get the name of a user .,2,5,5,retrieve a user list by name .,3,5,5,retrieve the users group by value .,2,5,5,remove a users created == == .,1,1,2
+"def unhex(s):
+    bits = 0
+    for c in s:
+        c = bytes((c,))
+        if ('0' <= c <= '9'):
+            i = ord('0')
+        elif ('a' <= c <= 'f'):
+            i = (ord('a') - 10)
+        elif ('A' <= c <= 'F'):
+            i = (ord('A') - 10)
+        else:
+            assert False, ('non-hex  digit  ' + repr(c))
+        bits = ((bits * 16) + (ord(c) - i))
+    return bits
+",format a string like microsoft to a particular number .,1,3,4,convert a string out of an a long number to a byte string .,2,4,4,return a byte ordinal from a string of bits .,2,4,5,a -> byte string return true if a character is a hexadecimal .,2,3,4,validates a string out of a valid ascii .,1,4,4
+"def url_filename(url):
+    match = upload_title_re.match(url)
+    if match:
+        return match.group('filename')
+    else:
+        return url
+",takes a url and prepends the site_url .,1,5,5,synthesizes an url to a local filename .,2,5,5,custom filename .,1,5,5,return an s3 match that should be used with a filename .,1,3,4,split an url prefix it link is git browser .,1,3,2
+"def get_sw_login_version():
+    return '-'.join(get_sw_version(strip_build_num=True).split('-')[1:(-2)])
+",return the current version .,3,5,5,return the version of these bindings whose tag is 0 .,2,4,5,return the current login version .,4,5,5,return the major string .,1,4,5,split the software and .,1,2,1
+"def _get_objects(obj_type):
+    lst_objs = FakeRetrieveResult()
+    for key in _db_content[obj_type]:
+        lst_objs.add_object(_db_content[obj_type][key])
+    return lst_objs
+",get objects of the type .,3,5,4,get object references of the type .,2,5,4,add objects of the type .,1,5,4,add object to the type of object .,1,4,3,get object of the object .,1,4,4
+"def add_arg(f, *args, **kwargs):
+    if (not hasattr(f, 'arguments')):
+        f.arguments = []
+    if ((args, kwargs) not in f.arguments):
+        f.arguments.insert(0, (args, kwargs))
+",add arguments to the given arguments .,3,5,5,add arguments to a function that may or may be called within the function .,4,4,4,adds items before entry to kwargs we are in api .,1,3,3,add a function to the list of args .,1,5,5,insert a to to a given command .,1,3,5
+"def import_buffer_to_ast(buf, module_name):
+    return hy_compile(import_buffer_to_hst(buf), module_name)
+",import content from ast .,2,5,5,import a module and return its name .,1,5,5,compile a module and returns the content .,1,5,5,import content module into a specific module name .,1,5,5,compile up of ast and raise a scalar .,1,4,4
+"def merge_with(func, *dicts, **kwargs):
+    if ((len(dicts) == 1) and (not isinstance(dicts[0], dict))):
+        dicts = dicts[0]
+    factory = _get_factory(merge_with, kwargs)
+    result = factory()
+    for d in dicts:
+        for (k, v) in iteritems(d):
+            if (k not in result):
+                result[k] = [v]
+            else:
+                result[k].append(v)
+    return valmap(func, result, factory)
+",merges the dictionaries with a list of dictionaries .,5,4,5,merges mapping dictionaries into a single lists .,2,4,5,wrap a list of dictionaries .,1,5,5,merges dictionary b into a like dict b where each dictionary is a .,1,2,3,merge merge apply add a make different a given list only different == different different different list .,1,1,1
+"def strip_html(unclean):
+    if ((not isinstance(unclean, basestring)) and (not is_iterable(unclean)) and (unclean is not None)):
+        return unclean
+    return bleach.clean(unclean, strip=True, tags=[], attributes=[], styles=[])
+",return html with html stripped .,3,4,4,strips all html tags from an html string .,1,5,5,return html with tags stripped and a single space .,1,5,5,helper method that strips html markup from an html string .,1,4,4,helper through list and .,1,2,1
+"def get_health(**kwargs):
+    with _IpmiCommand(**kwargs) as s:
+        return s.get_health()
+",get current hardware batches of the given string .,1,5,5,get current boot device override information .,1,4,5,get current health state .,5,5,5,get current device override the current matrices .,1,4,5,get the instance device density the given .,1,4,4
+"def test_boolean():
+    assert hug.types.boolean('1')
+    assert hug.types.boolean('T')
+    assert (not hug.types.boolean(''))
+    assert hug.types.boolean('False')
+    assert (not hug.types.boolean(False))
+",test to ensure that the boolean type correctly allows the provided boolean values .,5,5,5,tests to ensure that the smart boolean type correctly handles a list of values .,4,4,5,tests that hugs boolean type correctly handles a hug boolean value .,4,5,5,test to ensure the smart boolean type works as expected .,4,4,5,test that ensure that hug type type works handles a .,3,3,4
+"def unregister_hosting_service(name):
+    try:
+        _hosting_service_registry.unregister_by_attr(u'hosting_service_id', name)
+    except ItemLookupError as e:
+        logging.error((u'Failed  to  unregister  unknown  hosting  service  ""%s""' % name))
+        raise e
+",unregister a previously registered hosting service by name .,4,5,5,checks if a service is available .,1,5,5,unregister a service .,5,5,5,unregisters a service from the registered machine .,4,4,5,returns the service functions to .,1,3,3
+"def runproc(cmd):
+    proc = Popen([cmd], shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
+    (stdoutdata, stderrdata) = proc.communicate()
+    return (stdoutdata, stderrdata)
+",run cmd as a shell command .,5,5,5,attempts to standardize the cmd and return a shell .,2,4,5,run commands on a remote host by index .,2,3,5,run commands and throw its stdout .,3,5,5,convert to to read read to to to .,1,2,1
+"def convert_unreachable_exception(e, error_format=u'Facebook  is  unreachable  %s'):
+    exception_class = map_unreachable_exception(e)
+    error_message = (error_format % str(e))
+    exception = exception_class(error_message)
+    return exception
+",translates a model(s) error handler .,4,5,5,return a token: exception that should raise an exception .,1,3,3,returns a string representation of the exception map .,1,3,4,convert exception into error message in a format exception .,4,4,5,builds an exception exception .,4,3,4
+"def get_text(original, token, replace):
+    if replace:
+        return token.text
+    else:
+        return original[token.startchar:token.endchar]
+",return a string with the first whitespace replaced by a text .,3,5,5,return a map of text for the token .,1,4,5,returns a formatted token that could be used with a form .,1,4,5,returns a string with migration replaced by a a ii metres .,1,3,3,return the in the string matching string string .,1,2,2
+"def temp_file_for(path):
+    ext = os.path.splitext(path)[1]
+    with NamedTemporaryFile(suffix=ext, delete=False) as f:
+        return f.name
+",returns the temporary file path for a given temporary file .,3,4,5,return the name of a file .,4,5,5,delete a file and return its name .,1,5,5,delete a file .,1,5,5,delete an object file from path file file path path name path .,1,3,4
+"def saturated(color, factor=150):
+    h = color.hsvHueF()
+    s = color.hsvSaturationF()
+    v = color.valueF()
+    a = color.alphaF()
+    s = ((factor * s) / 100.0)
+    s = max(min(1.0, s), 0.0)
+    return QColor.fromHsvF(h, s, v, a).convertTo(color.spec())
+",normalize a printing .,3,5,5,returns a pylab color that is made by the given number of a color by the current color .,4,4,5,converts a qcolor in the file/addon format to the python_egg_cache location .,3,2,3,converts a qcolor that either an integer or a color matrix .,2,3,4,transform ad color color based .,2,3,3
+"def _absolute_path(path, relative_to=None):
+    if (path and os.path.isabs(path)):
+        return path
+    if (path and (relative_to is not None)):
+        _abspath = os.path.join(relative_to, path)
+        if os.path.isfile(_abspath):
+            log.debug(""Relative  path  '{0}'  converted  to  existing  absolute  path  '{1}'"".format(path, _abspath))
+            return _abspath
+    return path
+",get an absolute path for the initial path .,4,4,5,returns an absolute path for a path relative to the tests/ directory .,4,4,5,convert a path to a relative path .,1,5,5,convert a relative path or absolute path to absolute path .,5,5,5,return the absolute version for .,4,5,4
+"def flatten_list(list_of_list=[[], []]):
+    return sum(list_of_list, [])
+",flattens a list of lists into a list .,5,5,5,flatten a list of lists into a new list .,5,5,5,flatten a list of lists into a single list .,5,5,5,return a list of the value in the list of strings .,1,4,5,returns the number of numbers of .,1,4,3
+"def _tosequence(X):
+    if isinstance(X, Mapping):
+        return [X]
+    else:
+        return tosequence(X)
+",converts from bits to nats .,1,3,5,test to make sure x is a proper matrix or a number of input .,1,3,5,like the matlab function .,1,4,4,is x an annotation input and derivative .,1,4,4,returns a .,1,5,5
+"def libvlc_media_get_duration(p_md):
+    f = (_Cfunctions.get('libvlc_media_get_duration', None) or _Cfunction('libvlc_media_get_duration', ((1,),), None, ctypes.c_longlong, Media))
+    return f(p_md)
+",get the duration of media descriptor object .,5,5,5,get the current media type .,1,5,4,get the current media descriptor object .,1,5,5,get the reference count of a media descriptor object .,1,5,5,get the the the .,1,1,1
+"def resource_patch(context, data_dict):
+    _check_access('resource_patch', context, data_dict)
+    show_context = {'model': context['model'], 'session': context['session'], 'user': context['user'], 'auth_user_obj': context['auth_user_obj']}
+    resource_dict = _get_action('resource_show')(show_context, {'id': _get_or_bust(data_dict, 'id')})
+    patched = dict(resource_dict)
+    patched.update(data_dict)
+    return _update.resource_update(context, patched)
+",patch an action .,2,3,3,patch an organization .,2,3,3,patch an existing resource .,4,4,4,patch a patch .,2,3,2,patch a resource .,5,4,4
+"def pyramid_laplacian(image, max_layer=(-1), downscale=2, sigma=None, order=1, mode='reflect', cval=0):
+    _check_factor(downscale)
+    image = img_as_float(image)
+    if (sigma is None):
+        sigma = ((2 * downscale) / 6.0)
+    layer = 0
+    rows = image.shape[0]
+    cols = image.shape[1]
+    smoothed_image = _smooth(image, sigma, mode, cval)
+    (yield (image - smoothed_image))
+    while (layer != max_layer):
+        layer += 1
+        out_rows = math.ceil((rows / float(downscale)))
+        out_cols = math.ceil((cols / float(downscale)))
+        resized_image = resize(smoothed_image, (out_rows, out_cols), order=order, mode=mode, cval=cval)
+        smoothed_image = _smooth(resized_image, sigma, mode, cval)
+        prev_rows = rows
+        prev_cols = cols
+        rows = resized_image.shape[0]
+        cols = resized_image.shape[1]
+        if ((prev_rows == rows) and (prev_cols == cols)):
+            break
+        (yield (resized_image - smoothed_image))
+",upsample the given image .,3,4,5,interstitial an image by astropy it to the 4-character dataset .,2,3,3,upsample images with half half .,3,3,4,upsample and then smooth image .,4,4,5,return image of image image operation image to image image image .,1,1,1
+"def get_fun(fun):
+    with _get_serv(ret=None, commit=True) as cur:
+        sql = 'SELECT  s.id,s.jid,  s.full_ret\n                                FROM  salt_returns  s\n                                JOIN  (  SELECT  MAX(`jid`)  as  jid\n                                        from  salt_returns  GROUP  BY  fun,  id)  max\n                                ON  s.jid  =  max.jid\n                                WHERE  s.fun  =  %s\n                                '
+        cur.execute(sql, (fun,))
+        data = cur.fetchall()
+        ret = {}
+        if data:
+            for (minion, _, full_ret) in data:
+                ret[minion] = full_ret
+        return ret
+",return a dict of the last function called for all minions .,3,4,4,return a dict of the last function called for all minions .,3,4,4,return a dict of the last function called for all minions .,3,4,4,return a dict of the last function called for all minions .,3,4,4,return a dict of the last function called for all minions .,3,4,4
+"def store_temp_file(filedata, filename, path=None):
+    filename = get_filename_from_path(filename)
+    filename = filename[:100]
+    options = Config()
+    if path:
+        target_path = path
+    else:
+        tmp_path = options.cuckoo.get('tmppath', '/tmp')
+        target_path = os.path.join(tmp_path, 'cuckoo-tmp')
+    if (not os.path.exists(target_path)):
+        os.mkdir(target_path)
+    tmp_dir = tempfile.mkdtemp(prefix='upload_', dir=target_path)
+    tmp_file_path = os.path.join(tmp_dir, filename)
+    with open(tmp_file_path, 'wb') as tmp_file:
+        if hasattr(filedata, 'read'):
+            chunk = filedata.read(1024)
+            while chunk:
+                tmp_file.write(chunk)
+                chunk = filedata.read(1024)
+        else:
+            tmp_file.write(filedata)
+    return tmp_file_path
+",fetch a temporary file to disk .,3,4,5,return a temp file to disk .,3,4,5,retrieve all the config file to a temporary file .,3,4,4,saves and diff a temporary file to a temp file .,4,4,4,creates creates function to to to .,1,1,1
+"def _createTargetDirs():
+    if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+        try:
+            if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+                os.makedirs(paths.POCSUITE_OUTPUT_PATH, 493)
+            warnMsg = (""using  '%s'  as  the  output  directory"" % paths.POCSUITE_OUTPUT_PATH)
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+        except (OSError, IOError) as ex:
+            try:
+                tempDir = tempfile.mkdtemp(prefix='pocsuiteoutput')
+            except Exception as _:
+                errMsg = (""unable  to  write  to  the  temporary  directory  ('%s').  "" % _)
+                errMsg += 'Please  make  sure  that  your  disk  is  not  full  and  '
+                errMsg += 'that  you  have  sufficient  write  permissions  to  '
+                errMsg += 'create  temporary  files  and/or  directories'
+                raise PocsuiteSystemException(errMsg)
+            warnMsg = 'unable  to  create  regular  output  directory  '
+            warnMsg += (""'%s'  (%s).  "" % (paths.POCSUITE_OUTPUT_PATH, getUnicode(ex)))
+            warnMsg += (""Using  temporary  directory  '%s'  instead"" % getUnicode(tempDir))
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+            paths.POCUSITE_OUTPUT_PATH = tempDir
+",creates the project directory .,2,4,5,create the given virtual directory .,3,3,5,create all dirs paths and place the admin paths .,4,4,4,create the file directory .,2,3,4,sets absolute absolute for for .,1,1,1
+"def _setwindowposition(folder_alias, (x, y)):
+    finder = _getfinder()
+    args = {}
+    attrs = {}
+    aeobj_0 = aetypes.ObjectSpecifier(want=aetypes.Type('cfol'), form='alis', seld=folder_alias, fr=None)
+    aeobj_1 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('cwnd'), fr=aeobj_0)
+    aeobj_2 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('posn'), fr=aeobj_1)
+    args['----'] = aeobj_2
+    args['data'] = [x, y]
+    (_reply, args, attrs) = finder.send('core', 'setd', args, attrs)
+    if args.has_key('errn'):
+        raise Error, aetools.decodeerror(args)
+    if args.has_key('----'):
+        return args['----']
+",set the size of a finder window for folder to .,4,3,3,set the size of a finder window for folder to .,4,3,3,set the size of a finder window for folder to .,4,3,3,set the size of a finder window for folder to .,4,3,3,set the size of a finder window for folder to .,4,3,3
+"def walk(top, topdown=True, followlinks=False):
+    names = os.listdir(top)
+    (dirs, nondirs) = ([], [])
+    for name in names:
+        if path.isdir(path.join(top, name)):
+            dirs.append(name)
+        else:
+            nondirs.append(name)
+    if topdown:
+        (yield (top, dirs, nondirs))
+    for name in dirs:
+        fullpath = path.join(top, name)
+        if (followlinks or (not path.islink(fullpath))):
+            for x in walk(fullpath, topdown, followlinks):
+                (yield x)
+    if (not topdown):
+        (yield (top, dirs, nondirs))
+",backport of os .,2,3,4,backport of os .,2,3,4,backport of os .,2,3,4,backport of os .,2,3,4,backport of os .,2,3,4
+"@testing.requires_testing_data
+@requires_mne
+def test_other_volume_source_spaces():
+    tempdir = _TempDir()
+    temp_name = op.join(tempdir, 'temp-src.fif')
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name, '--mri', fname_mri])
+    src = read_source_spaces(temp_name)
+    src_new = setup_volume_source_space(None, pos=7.0, mri=fname_mri, subjects_dir=subjects_dir)
+    _compare_source_spaces(src, src_new, mode='approx')
+    assert_true(('volume,  shape' in repr(src)))
+    del src
+    del src_new
+    assert_raises(ValueError, setup_volume_source_space, 'sample', temp_name, pos=7.0, sphere=[1.0, 1.0], mri=fname_mri, subjects_dir=subjects_dir)
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name])
+    assert_raises(ValueError, read_source_spaces, temp_name)
+",test setting up volume source spaces .,3,4,4,test morphing of source volume info .,2,4,4,test setting up volume source spaces .,3,4,4,test subreddits volume lines .,1,4,4,test reading setting and xml in in in .,1,1,1
+"def SetHelpMenuOtherHelp(mainMenu):
+    global helpIDMap
+    if (helpIDMap is None):
+        helpIDMap = {}
+        cmdID = win32ui.ID_HELP_OTHER
+        excludeList = ['Main  Python  Documentation', 'Pythonwin  Reference']
+        firstList = ListAllHelpFiles()
+        excludeFnames = []
+        for (desc, fname) in firstList:
+            if (desc in excludeList):
+                excludeFnames.append(fname)
+        helpDescs = []
+        for (desc, fname) in firstList:
+            if (fname not in excludeFnames):
+                helpIDMap[cmdID] = (desc, fname)
+                win32ui.GetMainFrame().HookCommand(HandleHelpOtherCommand, cmdID)
+                cmdID = (cmdID + 1)
+    helpMenu = mainMenu.GetSubMenu((mainMenu.GetMenuItemCount() - 1))
+    otherHelpMenuPos = 2
+    otherMenu = helpMenu.GetSubMenu(otherHelpMenuPos)
+    while otherMenu.GetMenuItemCount():
+        otherMenu.DeleteMenu(0, win32con.MF_BYPOSITION)
+    if helpIDMap:
+        for (id, (desc, fname)) in helpIDMap.iteritems():
+            otherMenu.AppendMenu((win32con.MF_ENABLED | win32con.MF_STRING), id, desc)
+    else:
+        helpMenu.EnableMenuItem(otherHelpMenuPos, (win32con.MF_BYPOSITION | win32con.MF_GRAYED))
+",clears the lower-left from the command .,1,2,3,return the list of files .,2,3,4,create a new displayed of files .,3,3,4,joined the cached bridges of all files in the gui .,1,2,2,read history latest output files from read read information data .,2,1,1
+"def update(directory, composer=None, php=None, runas=None, prefer_source=None, prefer_dist=None, no_scripts=None, no_plugins=None, optimize=None, no_dev=None, quiet=False, composer_home='/root'):
+    result = _run_composer('update', directory=directory, extra_flags='--no-progress', composer=composer, php=php, runas=runas, prefer_source=prefer_source, prefer_dist=prefer_dist, no_scripts=no_scripts, no_plugins=no_plugins, optimize=optimize, no_dev=no_dev, quiet=quiet, composer_home=composer_home)
+    return result
+",optimize a previously-encrypted .,2,3,2,update a gemset .,3,4,4,runs composer not been modified .,2,3,3,updates the package definitions with packages .,3,3,4,uses files files in the transformed directory .,3,2,2
+"def testOnSequenceData(module, dataset):
+    target = dataset.getField('target')
+    output = ModuleValidator.calculateModuleOutput(module, dataset)
+    ends = SequenceHelper.getSequenceEnds(dataset)
+    summed_output = zeros(dataset.outdim)
+    class_output = []
+    class_target = []
+    for j in range(len(output)):
+        summed_output += output[j]
+        if (j in ends):
+            class_output.append(argmax(summed_output))
+            class_target.append(argmax(target[j]))
+            summed_output = zeros(dataset.outdim)
+    class_output = array(class_output)
+    class_target = array(class_target)
+    return Validator.classificationPerformance(class_output, class_target)
+",returns a sorted list of pairs to types .,3,3,2,gets the output of eigenvalues test of different modules .,2,3,3,returns the test representation of the dataset .,3,3,4,returns a dataset class that can be used to test the output of nf .,2,3,3,evaluate the of update the minimum of .,2,2,1
+"def populate_tables(db, prefix, tmp_prefix, bounds):
+    bbox = ('ST_SetSRID(ST_MakeBox2D(ST_MakePoint(%.6f,  %.6f),  ST_MakePoint(%.6f,  %.6f)),  900913)' % bounds)
+    db.execute('BEGIN')
+    for table in ('point', 'line', 'roads', 'polygon'):
+        db.execute(('DELETE  FROM  %(prefix)s_%(table)s  WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+        db.execute(('INSERT  INTO  %(prefix)s_%(table)s\n                                            SELECT  *  FROM  %(tmp_prefix)s_%(table)s\n                                            WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+    db.execute('COMMIT')
+",populate permanent tables for all database .,4,4,5,create a changeset tables for all temporary tables .,4,4,5,populate the database tables for osm module .,3,4,4,drop the tables for all temporary tables .,2,3,5,ensure should of of should converting coordinates within .,1,1,1
+"def did_you_mean_units(s, all_units, deprecated_units, format_decomposed):
+    def fix_deprecated(x):
+        if (x in deprecated_units):
+            results = [(x + u'  (deprecated)')]
+            decomposed = _try_decomposed(all_units[x], format_decomposed)
+            if (decomposed is not None):
+                results.append(decomposed)
+            return results
+        return (x,)
+    return did_you_mean(s, all_units, fix=fix_deprecated)
+",populate some num_of_items_to_keep objects .,2,3,3,return a list of benchmark containing all applying or worksheet .,2,3,4,this is a list of all processer found in the unicode() list .,2,3,3,fix a series of units .,2,3,4,takes uses to a a .,1,1,1
+"def ValidateActionsInTarget(target, target_dict, build_file):
+    target_name = target_dict.get('target_name')
+    actions = target_dict.get('actions', [])
+    for action in actions:
+        action_name = action.get('action_name')
+        if (not action_name):
+            raise GypError((""Anonymous  action  in  target  %s.    An  action  must  have  an  'action_name'  field."" % target_name))
+        inputs = action.get('inputs', None)
+        if (inputs is None):
+            raise GypError(('Action  in  target  %s  has  no  inputs.' % target_name))
+        action_command = action.get('action')
+        if (action_command and (not action_command[0])):
+            raise GypError(('Empty  action  as  command  in  target  %s.' % target_name))
+",builds one or more file into the given target node .,3,3,4,validates the action on the target node that is a string weeks .,2,3,2,verifies that the action is in the target list of another actions .,4,4,5,writes all the action into the given target .,3,4,4,ensures the node g the target that this target .,3,3,4
+"def _do_search(conf):
+    connargs = {}
+    for name in ['server', 'port', 'tls', 'binddn', 'bindpw', 'anonymous']:
+        connargs[name] = _config(name, conf)
+    if (connargs['binddn'] and connargs['bindpw']):
+        connargs['anonymous'] = False
+    try:
+        _filter = conf['filter']
+    except KeyError:
+        raise SaltInvocationError('missing  filter')
+    _dn = _config('dn', conf)
+    scope = _config('scope', conf)
+    _lists = (_config('lists', conf) or [])
+    _attrs = (_config('attrs', conf) or [])
+    attrs = (_lists + _attrs)
+    if (not attrs):
+        attrs = None
+    try:
+        result = __salt__['ldap.search'](_filter, _dn, scope, attrs, **connargs)['results']
+    except IndexError:
+        log.debug('LDAP  search  returned  no  results  for  filter  {0}'.format(_filter))
+        result = {}
+    except Exception:
+        log.critical('Failed  to  retrieve  pillar  data  from  LDAP:\n', exc_info=True)
+        return {}
+    return result
+",look for connargs .,3,4,4,filter config for a specific search in the running config dictionary .,4,4,5,return the search for hiera hiera .,2,3,2,show the current config of a node and requests .,3,4,4,return a dict optional dict only .,1,1,2
+"def resource_patch(context, data_dict):
+    _check_access('resource_patch', context, data_dict)
+    show_context = {'model': context['model'], 'session': context['session'], 'user': context['user'], 'auth_user_obj': context['auth_user_obj']}
+    resource_dict = _get_action('resource_show')(show_context, {'id': _get_or_bust(data_dict, 'id')})
+    patched = dict(resource_dict)
+    patched.update(data_dict)
+    return _update.resource_update(context, patched)
+",patch an action .,2,3,3,patch an organization .,2,3,3,patch an existing resource .,4,4,4,patch a patch .,2,3,2,patch a resource .,5,4,4
+"def pyramid_laplacian(image, max_layer=(-1), downscale=2, sigma=None, order=1, mode='reflect', cval=0):
+    _check_factor(downscale)
+    image = img_as_float(image)
+    if (sigma is None):
+        sigma = ((2 * downscale) / 6.0)
+    layer = 0
+    rows = image.shape[0]
+    cols = image.shape[1]
+    smoothed_image = _smooth(image, sigma, mode, cval)
+    (yield (image - smoothed_image))
+    while (layer != max_layer):
+        layer += 1
+        out_rows = math.ceil((rows / float(downscale)))
+        out_cols = math.ceil((cols / float(downscale)))
+        resized_image = resize(smoothed_image, (out_rows, out_cols), order=order, mode=mode, cval=cval)
+        smoothed_image = _smooth(resized_image, sigma, mode, cval)
+        prev_rows = rows
+        prev_cols = cols
+        rows = resized_image.shape[0]
+        cols = resized_image.shape[1]
+        if ((prev_rows == rows) and (prev_cols == cols)):
+            break
+        (yield (resized_image - smoothed_image))
+",upsample the given image .,3,4,5,interstitial an image by astropy it to the 4-character dataset .,2,3,3,upsample images with half half .,3,3,4,upsample and then smooth image .,4,4,5,return image of image image operation image to image image image .,1,1,1
+"def get_fun(fun):
+    with _get_serv(ret=None, commit=True) as cur:
+        sql = 'SELECT  s.id,s.jid,  s.full_ret\n                                FROM  salt_returns  s\n                                JOIN  (  SELECT  MAX(`jid`)  as  jid\n                                        from  salt_returns  GROUP  BY  fun,  id)  max\n                                ON  s.jid  =  max.jid\n                                WHERE  s.fun  =  %s\n                                '
+        cur.execute(sql, (fun,))
+        data = cur.fetchall()
+        ret = {}
+        if data:
+            for (minion, _, full_ret) in data:
+                ret[minion] = full_ret
+        return ret
+",return a dict of the last function called for all minions .,3,4,4,return a dict of the last function called for all minions .,3,4,4,return a dict of the last function called for all minions .,3,4,4,return a dict of the last function called for all minions .,3,4,4,return a dict of the last function called for all minions .,3,4,4
+"def get_svc_avail_path():
+    return AVAIL_SVR_DIRS
+",return the available file path .,4,5,5,returns available services .,3,5,5,get the available path .,4,5,5,return a path available on the services .,5,5,5,get a of available .,2,1,1
+"def store_temp_file(filedata, filename, path=None):
+    filename = get_filename_from_path(filename)
+    filename = filename[:100]
+    options = Config()
+    if path:
+        target_path = path
+    else:
+        tmp_path = options.cuckoo.get('tmppath', '/tmp')
+        target_path = os.path.join(tmp_path, 'cuckoo-tmp')
+    if (not os.path.exists(target_path)):
+        os.mkdir(target_path)
+    tmp_dir = tempfile.mkdtemp(prefix='upload_', dir=target_path)
+    tmp_file_path = os.path.join(tmp_dir, filename)
+    with open(tmp_file_path, 'wb') as tmp_file:
+        if hasattr(filedata, 'read'):
+            chunk = filedata.read(1024)
+            while chunk:
+                tmp_file.write(chunk)
+                chunk = filedata.read(1024)
+        else:
+            tmp_file.write(filedata)
+    return tmp_file_path
+",fetch a temporary file to disk .,3,4,5,return a temp file to disk .,3,4,5,retrieve all the config file to a temporary file .,3,4,4,saves and diff a temporary file to a temp file .,4,4,4,creates creates function to to to .,1,1,1
+"def _createTargetDirs():
+    if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+        try:
+            if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+                os.makedirs(paths.POCSUITE_OUTPUT_PATH, 493)
+            warnMsg = (""using  '%s'  as  the  output  directory"" % paths.POCSUITE_OUTPUT_PATH)
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+        except (OSError, IOError) as ex:
+            try:
+                tempDir = tempfile.mkdtemp(prefix='pocsuiteoutput')
+            except Exception as _:
+                errMsg = (""unable  to  write  to  the  temporary  directory  ('%s').  "" % _)
+                errMsg += 'Please  make  sure  that  your  disk  is  not  full  and  '
+                errMsg += 'that  you  have  sufficient  write  permissions  to  '
+                errMsg += 'create  temporary  files  and/or  directories'
+                raise PocsuiteSystemException(errMsg)
+            warnMsg = 'unable  to  create  regular  output  directory  '
+            warnMsg += (""'%s'  (%s).  "" % (paths.POCSUITE_OUTPUT_PATH, getUnicode(ex)))
+            warnMsg += (""Using  temporary  directory  '%s'  instead"" % getUnicode(tempDir))
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+            paths.POCUSITE_OUTPUT_PATH = tempDir
+",creates the project directory .,2,4,5,create the given virtual directory .,3,3,5,create all dirs paths and place the admin paths .,4,4,4,create the file directory .,2,3,4,sets absolute absolute for for .,1,1,1
+"def unhex(s):
+    bits = 0
+    for c in s:
+        c = bytes((c,))
+        if ('0' <= c <= '9'):
+            i = ord('0')
+        elif ('a' <= c <= 'f'):
+            i = (ord('a') - 10)
+        elif ('A' <= c <= 'F'):
+            i = (ord('A') - 10)
+        else:
+            assert False, ('non-hex  digit  ' + repr(c))
+        bits = ((bits * 16) + (ord(c) - i))
+    return bits
+",format a string like microsoft to a particular number .,3,2,3,convert a string out of an a long number to a byte string .,2,3,4,return a byte ordinal from a string of bits .,3,4,4,a -> byte string return true if a character is a hexadecimal .,2,2,3,validates a string out of a valid ascii .,3,3,4
+"def _setwindowposition(folder_alias, (x, y)):
+    finder = _getfinder()
+    args = {}
+    attrs = {}
+    aeobj_0 = aetypes.ObjectSpecifier(want=aetypes.Type('cfol'), form='alis', seld=folder_alias, fr=None)
+    aeobj_1 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('cwnd'), fr=aeobj_0)
+    aeobj_2 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('posn'), fr=aeobj_1)
+    args['----'] = aeobj_2
+    args['data'] = [x, y]
+    (_reply, args, attrs) = finder.send('core', 'setd', args, attrs)
+    if args.has_key('errn'):
+        raise Error, aetools.decodeerror(args)
+    if args.has_key('----'):
+        return args['----']
+",set the size of a finder window for folder to .,4,3,2,set the size of a finder window for folder to .,4,3,2,set the size of a finder window for folder to .,4,3,2,set the size of a finder window for folder to .,4,3,2,set the size of a finder window for folder to .,4,3,2
+"def walk(top, topdown=True, followlinks=False):
+    names = os.listdir(top)
+    (dirs, nondirs) = ([], [])
+    for name in names:
+        if path.isdir(path.join(top, name)):
+            dirs.append(name)
+        else:
+            nondirs.append(name)
+    if topdown:
+        (yield (top, dirs, nondirs))
+    for name in dirs:
+        fullpath = path.join(top, name)
+        if (followlinks or (not path.islink(fullpath))):
+            for x in walk(fullpath, topdown, followlinks):
+                (yield x)
+    if (not topdown):
+        (yield (top, dirs, nondirs))
+",backport of os .,2,3,4,backport of os .,2,3,4,backport of os .,2,3,4,backport of os .,2,3,4,backport of os .,2,3,4
+"def url_filename(url):
+    match = upload_title_re.match(url)
+    if match:
+        return match.group('filename')
+    else:
+        return url
+",takes a url and prepends the site_url .,3,3,4,synthesizes an url to a local filename .,4,4,5,custom filename .,3,4,5,return an s3 match that should be used with a filename .,2,3,3,split an url prefix it link is git browser .,2,3,4
+"@testing.requires_testing_data
+@requires_mne
+def test_other_volume_source_spaces():
+    tempdir = _TempDir()
+    temp_name = op.join(tempdir, 'temp-src.fif')
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name, '--mri', fname_mri])
+    src = read_source_spaces(temp_name)
+    src_new = setup_volume_source_space(None, pos=7.0, mri=fname_mri, subjects_dir=subjects_dir)
+    _compare_source_spaces(src, src_new, mode='approx')
+    assert_true(('volume,  shape' in repr(src)))
+    del src
+    del src_new
+    assert_raises(ValueError, setup_volume_source_space, 'sample', temp_name, pos=7.0, sphere=[1.0, 1.0], mri=fname_mri, subjects_dir=subjects_dir)
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name])
+    assert_raises(ValueError, read_source_spaces, temp_name)
+",test setting up volume source spaces .,3,4,4,test morphing of source volume info .,2,4,4,test setting up volume source spaces .,3,4,4,test subreddits volume lines .,1,4,4,test reading setting and xml in in in .,1,1,1
+"def get_preamble():
+    latex_preamble = rcParams.get(u'pgf.preamble', u'')
+    if (type(latex_preamble) == list):
+        latex_preamble = u'\n'.join(latex_preamble)
+    return latex_preamble
+",given the first and type .,1,3,3,get latex marker value .,2,4,4,construct a accountbroker for the preamble and latex .,3,4,4,return the list of paths for the given project .,3,4,4,convert latex and and xml and .,2,3,1
+"def analyze_modules(project, task_handle=taskhandle.NullTaskHandle()):
+    resources = project.get_python_files()
+    job_set = task_handle.create_jobset('Analyzing  Modules', len(resources))
+    for resource in resources:
+        job_set.started_job(resource.path)
+        analyze_module(project, resource)
+        job_set.finished_job()
+",list resources that are complete for a given file .,4,4,4,return a list of file names of analyze in the project .,3,4,4,try to unpickle jobset on all modules .,3,3,3,create conv file names .,1,3,4,decorator whether for .,1,2,1
+"def get_sw_login_version():
+    return '-'.join(get_sw_version(strip_build_num=True).split('-')[1:(-2)])
+",return the current version .,3,5,5,return the version of these bindings whose tag is 0 .,2,3,4,return the current login version .,4,5,5,return the major string .,2,4,4,split the software and .,1,2,2
+"def SetHelpMenuOtherHelp(mainMenu):
+    global helpIDMap
+    if (helpIDMap is None):
+        helpIDMap = {}
+        cmdID = win32ui.ID_HELP_OTHER
+        excludeList = ['Main  Python  Documentation', 'Pythonwin  Reference']
+        firstList = ListAllHelpFiles()
+        excludeFnames = []
+        for (desc, fname) in firstList:
+            if (desc in excludeList):
+                excludeFnames.append(fname)
+        helpDescs = []
+        for (desc, fname) in firstList:
+            if (fname not in excludeFnames):
+                helpIDMap[cmdID] = (desc, fname)
+                win32ui.GetMainFrame().HookCommand(HandleHelpOtherCommand, cmdID)
+                cmdID = (cmdID + 1)
+    helpMenu = mainMenu.GetSubMenu((mainMenu.GetMenuItemCount() - 1))
+    otherHelpMenuPos = 2
+    otherMenu = helpMenu.GetSubMenu(otherHelpMenuPos)
+    while otherMenu.GetMenuItemCount():
+        otherMenu.DeleteMenu(0, win32con.MF_BYPOSITION)
+    if helpIDMap:
+        for (id, (desc, fname)) in helpIDMap.iteritems():
+            otherMenu.AppendMenu((win32con.MF_ENABLED | win32con.MF_STRING), id, desc)
+    else:
+        helpMenu.EnableMenuItem(otherHelpMenuPos, (win32con.MF_BYPOSITION | win32con.MF_GRAYED))
+",clears the lower-left from the command .,1,2,3,return the list of files .,2,3,4,create a new displayed of files .,3,3,4,joined the cached bridges of all files in the gui .,1,2,2,read history latest output files from read read information data .,2,1,1
+"def update(directory, composer=None, php=None, runas=None, prefer_source=None, prefer_dist=None, no_scripts=None, no_plugins=None, optimize=None, no_dev=None, quiet=False, composer_home='/root'):
+    result = _run_composer('update', directory=directory, extra_flags='--no-progress', composer=composer, php=php, runas=runas, prefer_source=prefer_source, prefer_dist=prefer_dist, no_scripts=no_scripts, no_plugins=no_plugins, optimize=optimize, no_dev=no_dev, quiet=quiet, composer_home=composer_home)
+    return result
+",optimize a previously-encrypted .,3,5,5,update a gemset .,2,5,5,runs composer not been modified .,3,5,5,updates the package definitions with packages .,4,5,5,uses files files in the transformed directory .,3,3,2
+"def testOnSequenceData(module, dataset):
+    target = dataset.getField('target')
+    output = ModuleValidator.calculateModuleOutput(module, dataset)
+    ends = SequenceHelper.getSequenceEnds(dataset)
+    summed_output = zeros(dataset.outdim)
+    class_output = []
+    class_target = []
+    for j in range(len(output)):
+        summed_output += output[j]
+        if (j in ends):
+            class_output.append(argmax(summed_output))
+            class_target.append(argmax(target[j]))
+            summed_output = zeros(dataset.outdim)
+    class_output = array(class_output)
+    class_target = array(class_target)
+    return Validator.classificationPerformance(class_output, class_target)
+",returns a sorted list of pairs to types .,3,5,5,gets the output of eigenvalues test of different modules .,4,5,5,returns the test representation of the dataset .,4,5,5,returns a dataset class that can be used to test the output of nf .,3,3,3,evaluate the of update the minimum of .,3,2,2
+"@retry_on_failure
+def test_inet_pton():
+    if (not is_cli):
+        return
+    socket.inet_pton(socket.AF_INET, '127.0.0.1')
+    AssertError(socket.error, socket.inet_pton, socket.AF_INET, 'garbage  dkfjdkfjdkfj')
+",tests socket .,4,4,4,tests socket .,4,4,4,tests socket .,4,4,4,tests socket .,4,4,4,check that is .,2,3,2
+"def getPath(edges, pathIndexes, loop, z):
+    path = []
+    for pathIndexIndex in xrange(len(pathIndexes)):
+        pathIndex = pathIndexes[pathIndexIndex]
+        edge = edges[pathIndex]
+        carveIntersection = getCarveIntersectionFromEdge(edge, loop, z)
+        path.append(carveIntersection)
+    return path
+",get the mount point between edge and including the edge plus a path .,4,3,3,get the generator nodes from a path .,3,4,5,get the path from the edge that get the edge .,3,2,3,get get both tcl from path .,3,3,2,get point point from the edge intersections on .,4,3,2
+"def get_load(jid):
+    serv = _get_serv(ret=None)
+    data = serv.get('load:{0}'.format(jid))
+    if data:
+        return json.loads(data)
+    return {}
+",return the load data that marks a specified jid .,4,5,5,return the load data that marks a specified jid .,4,5,5,return the load data that marks a specified jid .,4,5,5,return the load data that marks a specified jid .,4,5,5,return the load data that marks a specified jid .,4,5,5
+"def _default_selem(func):
+    @functools.wraps(func)
+    def func_out(image, selem=None, *args, **kwargs):
+        if (selem is None):
+            selem = ndi.generate_binary_structure(image.ndim, image.ndim)
+        return func(image, selem=selem, *args, **kwargs)
+    return func_out
+",decorator to add a default structuring element to morphology functions .,5,5,4,decorator to add a default structuring element to morphology functions .,5,5,4,generates a cross-shaped structuring element .,3,5,5,decorator to add a cross-shaped structuring element to morphology functions .,5,5,5,return to apply the gradient image image in be in for .,3,3,2
+"@preserve_value(sys, 'dont_write_bytecode')
+def _load_module_no_bytecode(filename, module_file, module_file_path, py_source_description):
+    sys.dont_write_bytecode = 1
+    new_module = imp.load_module(os.path.splitext(filename)[0].replace('-', '_'), module_file, module_file_path, py_source_description)
+    return new_module
+",helper function to load a module while setting sys .,4,5,5,helper function to load a module while setting sys .,4,5,5,helper function to load a module while setting sys .,4,5,5,helper function to load a module while setting sys .,4,5,5,helper function to load a module .,3,5,5
+"def populate_tables(db, prefix, tmp_prefix, bounds):
+    bbox = ('ST_SetSRID(ST_MakeBox2D(ST_MakePoint(%.6f,  %.6f),  ST_MakePoint(%.6f,  %.6f)),  900913)' % bounds)
+    db.execute('BEGIN')
+    for table in ('point', 'line', 'roads', 'polygon'):
+        db.execute(('DELETE  FROM  %(prefix)s_%(table)s  WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+        db.execute(('INSERT  INTO  %(prefix)s_%(table)s\n                                            SELECT  *  FROM  %(tmp_prefix)s_%(table)s\n                                            WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+    db.execute('COMMIT')
+",populate permanent tables for all database .,3,4,3,create a changeset tables for all temporary tables .,4,4,5,populate the database tables for osm module .,3,5,4,drop the tables for all temporary tables .,2,3,4,ensure should of of should converting coordinates within .,1,2,1
+"def round_if_near_integer(a, epsilon=0.0001):
+    if (abs((a - round(a))) <= epsilon):
+        return round(a)
+    else:
+        return a
+",round a lowercase array into a float integer .,3,4,3,return true if n is a .,4,4,5,round a 1-d array with the value from a in unknown .,3,5,4,locate for a given value to a range for sub-menu .,2,3,4,normalizes function .,1,2,1
+"def get_linode_id_from_name(name):
+    nodes = _query('linode', 'list')['DATA']
+    linode_id = ''
+    for node in nodes:
+        if (name == node['LABEL']):
+            linode_id = node['LINODEID']
+            return linode_id
+    if (not linode_id):
+        raise SaltCloudNotFound('The  specified  name,  {0},  could  not  be  found.'.format(name))
+",get the linode select id from linode .,4,3,4,given a line-separated .,3,5,5,return the id for a linode .,4,5,5,retrieve all registered f(a) for a given node .,4,4,4,return a linode to to a given .,4,4,2
+"def unregister_hosting_service(name):
+    try:
+        _hosting_service_registry.unregister_by_attr(u'hosting_service_id', name)
+    except ItemLookupError as e:
+        logging.error((u'Failed  to  unregister  unknown  hosting  service  ""%s""' % name))
+        raise e
+",unregister a previously registered hosting service by name .,4,5,5,checks if a service is available .,3,5,5,unregister a service .,3,5,5,unregisters a service from the registered machine .,3,5,5,returns the service functions to .,2,3,3
+"def libvlc_media_get_duration(p_md):
+    f = (_Cfunctions.get('libvlc_media_get_duration', None) or _Cfunction('libvlc_media_get_duration', ((1,),), None, ctypes.c_longlong, Media))
+    return f(p_md)
+",get the duration of media descriptor object .,4,5,5,get the current media type .,3,5,5,get the current media descriptor object .,3,5,5,get the reference count of a media descriptor object .,4,5,5,get the the the .,1,1,1
+"def set_config_defaults():
+    set_cors_middleware_defaults()
+",override all configuration default values .,3,5,5,set default configuration options for all requests .,3,5,5,override all configuration cors requests for keystone .,4,5,5,load configuration .,3,5,5,set all of for the and to to .,1,1,1
+"def poly_TC(f, K):
+    if (not f):
+        return K.zero
+    else:
+        return f[(-1)]
+",return trailing coefficient of f .,4,5,5,return the trailing coefficient of f .,4,5,5,return the trailing coefficient of f .,4,5,5,return leading coefficient of f .,3,5,5,return the leading of f .,2,5,3
+"def main():
+    errno = pytest.main(['-x', 'spyder', '-v', '-rw', '--durations=10', '--cov=spyder', '--cov-report=term-missing'])
+    sys.exit(errno)
+",a docstring .,2,5,5,entrypoint to the 6 module as a script .,4,5,5,runs the main program for indicating the main process .,3,3,5,entry point for the application .,3,5,5,tests that that when .,1,1,1
+"def pop(key, default=None):
+    store = load()
+    val = store.pop(key, default)
+    dump(store)
+    return val
+",get a value from the minion datastore .,3,5,5,set the default value of a key .,3,5,5,set a value in the minion datastore .,4,5,5,load a key from the minion datastore .,3,5,5,remove a value from the minion .,3,5,5
+"def to_edgelist(G, nodelist=None):
+    if (nodelist is None):
+        return G.edges(data=True)
+    else:
+        return G.edges(nodelist, data=True)
+",return a list of edges from a dictionary of edges .,3,5,5,return a single spanning graph of a branching .,4,5,5,return adjacency representation of graph as a edgelist string .,4,5,5,return the graph g as a single string .,3,5,4,return true boolean of edges in g graph g .,3,3,3
+"def summary(worker):
+    return _summary_wrap(_summary_format(_summary_dict(worker), worker))
+",return a :class: .,3,4,2,wrap a summary of the nagios summary kolmogorov-smirnov .,4,4,4,return the given worker format that the given worker module .,4,4,5,produces a worker .,2,5,5,given a worker worker .,3,3,2
+"def google():
+    channel = settings.get_auth_google()
+    if (not channel):
+        redirect(URL(f='user', args=request.args, vars=get_vars))
+    from s3oauth import GooglePlusAccount
+    auth.settings.login_form = GooglePlusAccount(channel)
+    form = auth()
+    return {'form': form}
+",login using google .,3,5,5,login using humanitarian .,3,5,5,login using google google user .,3,3,3,login using humanitarian .,3,5,5,get the login login .,3,3,3
+"def get_file(src, dest, permissions=None):
+    if (src == dest):
+        return
+    if is_url(src):
+        urlretrieve(src, dest)
+    else:
+        shutil.copyfile(src, dest)
+    if permissions:
+        os.chmod(dest, permissions)
+    return dest
+",get a file from a directory .,3,5,5,return a backgroundability of the file that can be used as an existing directory .,4,5,5,retrieve a source file .,3,4,4,return copy of a given file or plain url .,5,5,5,downloads an temporary .,5,4,3
+"def flavor_get_by_flavor_id(context, id, read_deleted=None):
+    return IMPL.flavor_get_by_flavor_id(context, id, read_deleted)
+",get instance type by flavor id .,3,5,5,get flavor extra specs by flavor id .,3,5,5,get flavor id by flavor id .,2,2,3,get instance type by flavorid .,4,5,5,get instance type by id id .,4,3,2
+"def _build_status(data, item):
+    stream = item['stream']
+    if ('Running  in' in stream):
+        data.setdefault('Intermediate_Containers', []).append(stream.rstrip().split()[(-1)])
+    if ('Successfully  built' in stream):
+        data['Id'] = stream.rstrip().split()[(-1)]
+",builds a status update from a docker stream .,4,5,5,check a status message of a list of search_maps .,3,5,5,build a status stream from a stream .,3,2,4,build a summary of json object from a stream of strings .,3,4,5,remove a floating .,2,5,5
+"def match(value, pattern='', ignorecase=False, multiline=False):
+    return regex(value, pattern, ignorecase, multiline, 'match')
+",perform a multiline submissions .,3,5,5,match a boolean pattern against the output of the value .,4,5,5,perform a filter that matches the given regular expression .,4,5,5,perform re .,1,3,1,converts a boolean as .,2,3,1
+"def sqlwhere(dictionary):
+    return ('  AND  '.join([('%s  =  %s' % (k, aparam())) for k in dictionary.keys()]), dictionary.values())
+",converts dictionary to an sql where clause sqlquery .,4,4,5,takes a dictionary and a string and interpolates it in the format where values are the possible values .,3,2,5,returns a dictionary with the aparam representation of a dictionary .,3,3,5,lookup a dictionary to keys .,2,5,5,takes a dictionary and a dictionary dictionary dictionary by the .,1,2,1
+"def log(runlevel, message):
+    if runlevel:
+        LOGGER.log(LOG_VALUES[runlevel], message)
+",logs a message at the given runlevel .,4,5,5,logs a message to the proxied file .,4,5,5,logs a log message to the runlevel .,3,2,4,logs a message at the given runlevel .,4,5,5,logs a message at the root runlevel if .,3,3,2
+"def fixed_ip_get_by_instance(context, instance_uuid):
+    return IMPL.fixed_ip_get_by_instance(context, instance_uuid)
+",get fixed ips by instance id or raise if none exist .,5,5,5,get fixed ip by instance id .,3,5,5,get fixed ip by instance .,3,4,4,get fixed ip by instance id or raise if it does not exist .,4,5,5,get fixed ips by instance .,3,4,4
+"def avail_sizes():
+    response = list_common_lookups(kwargs={'lookup': 'server.ram'})
+    ret = {}
+    for item in response['list']:
+        name = item['name']
+        ret[name] = item
+    return ret
+",available sizes .,3,5,5,return available linode sizes .,5,5,5,available lookups sizes .,4,5,5,available images .,3,5,5,return available locations .,4,5,5
+"def subSGMLRefs(s):
+    return re_sgmlrefsub(_replSGMLRefs, s)
+",return the given html string with entity and char references replaced .,4,5,5,return azure html with no multiple whitespaces .,5,5,5,return a string without tags and no multiple spaces .,4,5,5,replace all sequences of whitespace chars with a single space .,4,5,5,return an iterator formatted text .,2,5,5
+"def EmailCheck(email):
+    if (not EMAIL_RE.match(email)):
+        raise ValueError((_('Not  a  valid  email:  %s') % email))
+    return email
+",checks that user is a valid email .,4,5,5,checks the email format .,4,5,5,validates the email address for a valid email address .,4,2,5,parse an email address string .,3,5,5,tries if an email is an email email .,2,2,1
+"def getMin(first, second):
+    return min(first, second)
+",get the app .,2,5,5,get the first result of the trackinfo object .,4,5,5,returns the first element of the form: .,3,5,5,get the extent of the block .,3,5,5,get a second between .,2,3,1
+"def __virtual__():
+    if dns_support:
+        return 'ddns'
+    return (False, 'The  ddns  execution  module  cannot  be  loaded:  dnspython  not  installed.')
+",confirm pypureomapi is available .,1,4,4,check if the global kernel module is available .,1,5,5,only load the module if apache is installed .,1,4,4,set up the module if the mysql libraries is available .,1,4,4,check whether if not to .,1,3,2
+"def discretize_linear_1D(model, x_range):
+    x = np.arange((x_range[0] - 0.5), (x_range[1] + 0.5))
+    values_intermediate_grid = model(x)
+    return (0.5 * (values_intermediate_grid[1:] + values_intermediate_grid[:(-1)]))
+",discretize model by performing a linear interpolation .,2,5,5,discretize model by integrating the model over the shape .,1,5,5,discretize model by performing a linear grid .,3,5,5,discretize model by performing a bilinear interpolation .,2,5,5,compute model by a a bilinear interpolation .,1,5,5
+"def get_password(vm_):
+    return config.get_cloud_config_value('password', vm_, __opts__, default=config.get_cloud_config_value('passwd', vm_, __opts__, search_global=False), search_global=False)
+",returns the password to use .,5,5,4,return the indexed subdomain .,1,5,4,determine if we should wait for the managed cloud automation before running .,1,4,4,returns the tenancy to use .,1,5,5,return the sshinterface to use for .,1,4,3
+"def dict_from_expr(expr, **args):
+    (rep, opt) = _dict_from_expr(expr, build_options(args))
+    return (rep, opt.gens)
+",transform an expression into a multinomial form .,1,5,5,transform an expression into a multinomial form and figure out generators .,1,5,5,transform expressions into a multinomial form .,1,5,5,transform expressions into expression .,1,4,4,transform an expression into a expression expression .,1,2,2
+"def cell_update(context, cell_name, values):
+    return IMPL.cell_update(context, cell_name, values)
+",update a child cell entry .,4,5,5,update a child cell attributes .,4,5,3,set the given properties on an cell and update it .,4,4,4,update a child cell entry .,4,5,5,update a child cell entry .,4,5,5
+"def get_auth_from_url(url):
+    if url:
+        url = unquote(url)
+        parsed = urlparse(url)
+        return (parsed.username, parsed.password)
+    else:
+        return ('', '')
+",given a url with authentication components .,3,3,3,given a url value .,1,3,2,given a url .,1,3,2,given a url with authentication components .,3,3,3,given a url with authentication .,3,3,3
+"def Thing2Literal(o, d):
+    return string_literal(o, d)
+",convert something into a string representation .,3,4,4,convert from minutes:seconds to binary representation .,1,4,3,return a string representation of a literal object .,4,5,5,takes a string and converts it to a tfrecord .,1,4,4,return a return a form form .,1,1,1
+"def is_torrent_or_nzb_file(filename):
+    if (not isinstance(filename, (str, unicode))):
+        return False
+    return (filename.rpartition(u'.')[2].lower() in [u'nzb', u'torrent'])
+",return true if the provided filename is a torrent file .,1,5,5,checks if a file is a deleted and is a number .,1,3,3,determines if a file is a torrent file .,1,4,4,return true if the file is a renamed file .,1,5,5,return if filename filename filename contains a boolean file .,1,1,1
+"def for_int_dtypes_combination(names=('dtype',), no_bool=False, full=None):
+    if no_bool:
+        types = _int_dtypes
+    else:
+        types = _int_bool_dtypes
+    return for_dtypes_combination(types, names, full)
+",decorator for parameterized test the given question .,1,3,2,decorator that checks the fixture with integer and optionally bool dtypes .,3,4,4,decorator that checks the fixture with integer and optionally bool dtypes .,3,4,4,decorator that checks the fixture with a product set of integer names .,2,3,3,decorator that tests the the the .,1,1,1
+"def fixed_ip_count_by_project(context, project_id, session=None):
+    return IMPL.fixed_ip_count_by_project(context, project_id, session=session)
+",count fixed ips used by project .,3,4,4,count number of security groups associated with specified project .,1,4,4,count fixed ip by project .,3,3,3,count floating ips used by project .,2,4,3,count count ips used by project .,3,2,2
+"def restart_process(name):
+    run_as_root(('supervisorctl  restart  %(name)s' % locals()))
+",restart a supervisor process .,4,5,5,restart the process .,4,5,5,restart the specified process .,4,5,5,restart the supervisor process .,4,5,5,stop a supervisor process .,1,5,5
+"def ycbcr2rgb(ycbcr):
+    arr = ycbcr.copy()
+    arr[..., 0] -= 16
+    arr[..., 1] -= 128
+    arr[..., 2] -= 128
+    return _convert(rgb_from_ycbcr, arr)
+",rgb to rgb color space conversion .,4,3,3,rgb to yiq color space conversion .,3,3,3,rgb to haematoxylin-eosin-dab color space conversion .,2,2,3,validate that the rgb image colors and project entry point .,1,2,2,convert an cartesian points of .,1,2,1
+"def topic_list(request, slug, template_name='groups/topics/topic_list.html'):
+    group = get_object_or_404(Group, slug=slug, is_active=True)
+    topic_list = GroupTopic.objects.filter(group=group, is_active=True)
+    return render(request, template_name, {'group': group, 'topic_list': topic_list})
+",returns a group topic list page .,5,5,5,returns a group topic message list page .,4,5,5,returns a group topic topic page .,4,2,2,returns a group topic message list page .,4,5,5,returns a group group to to to .,1,1,1
+"def find_lexer_class(name):
+    if (name in _lexer_cache):
+        return _lexer_cache[name]
+    for (module_name, lname, aliases, _, _) in LEXERS.itervalues():
+        if (name == lname):
+            _load_lexers(module_name)
+            return _lexer_cache[name]
+    for cls in find_plugin_lexers():
+        if (cls.name == name):
+            return cls
+",get a lexer class by name .,4,5,5,find a dictonary descriptor .,2,5,5,return a lexer class by an theano module .,3,5,5,get a lexer by a module .,3,5,5,retrieve a lexer names by a .,4,3,1
+"@_docstring('recording')
+def get_recording_by_id(id, includes=[], release_status=[], release_type=[]):
+    params = _check_filter_and_make_params('recording', includes, release_status, release_type)
+    return _do_mb_query('recording', id, includes, params)
+",get the recording with the musicbrainz id as a dict with a recording key .,3,3,4,get the instrument with the musicbrainz id as a dict with an artist key .,2,3,3,get the recording with the musicbrainz id as a dict with an artist key .,2,3,3,get the instrument with the musicbrainz id as a dict with an artist key .,2,3,3,get the release with the musicbrainz id as a dict with an dict key .,1,3,3
+"def close_file_descriptor_if_open(fd):
+    try:
+        os.close(fd)
+    except OSError as exc:
+        if (exc.errno == errno.EBADF):
+            pass
+        else:
+            error = DaemonOSEnvironmentError(('Failed  to  close  file  descriptor  %(fd)d  (%(exc)s)' % vars()))
+            raise error
+",close a file descriptor .,4,5,5,close the file descriptor by acquire the next close to an existing file descriptor .,3,3,4,close all standard open file descriptors .,3,3,3,generates file descriptor .,1,4,3,check that file that that that the the .,1,1,1
+"def definite_article(word):
+    return 'the'
+",returns the definite article for a given word .,2,4,4,returns the indefinite article for a given word .,1,4,4,returns the definite article for the given word .,2,4,4,returns the indefinite article for a given word .,1,4,4,returns the definite article for a given word .,2,4,4
+"def lineagename_for_filename(config_filename):
+    if (not config_filename.endswith('.conf')):
+        raise errors.CertStorageError('renewal  config  file  name  must  end  in  .conf')
+    return os.path.basename(config_filename[:(- len('.conf'))])
+",returns the lineagename for a configuration filename .,2,4,4,takes config filename .,3,5,4,returns the configuration file associated with the provided filename .,4,5,5,load the configuration file using configuration .,2,4,4,parses a config file a file .,1,1,1
+"def _python_installed(ret, python, user=None):
+    default = __salt__['pyenv.default'](runas=user)
+    for version in __salt__['pyenv.versions'](user):
+        if (version == python):
+            ret['result'] = True
+            ret['comment'] = 'Requested  python  exists.'
+            ret['default'] = (default == python)
+            break
+    return ret
+",check to see if given python version is installed .,3,4,4,return a string containing the given python path .,2,5,5,check to see if the current host is installed .,2,5,5,return the current python version in both de-normalize and the system .,2,2,3,return the output of python files files a .,1,1,1
+"def get_user(keystone, name):
+    users = [x for x in keystone.users.list() if (x.name == name)]
+    count = len(users)
+    if (count == 0):
+        raise KeyError(('No  keystone  users  with  name  %s' % name))
+    elif (count > 1):
+        raise ValueError(('%d  users  with  name  %s' % (count, name)))
+    else:
+        return users[0]
+",retrieve a user by name .,3,5,5,get the name of a user .,3,5,5,retrieve a user list by name .,2,5,5,retrieve the users group by value .,2,5,5,remove a users created == == .,1,1,1
+"def unhex(s):
+    bits = 0
+    for c in s:
+        c = bytes((c,))
+        if ('0' <= c <= '9'):
+            i = ord('0')
+        elif ('a' <= c <= 'f'):
+            i = (ord('a') - 10)
+        elif ('A' <= c <= 'F'):
+            i = (ord('A') - 10)
+        else:
+            assert False, ('non-hex  digit  ' + repr(c))
+        bits = ((bits * 16) + (ord(c) - i))
+    return bits
+",format a string like microsoft to a particular number .,1,2,3,convert a string out of an a long number to a byte string .,3,3,4,return a byte ordinal from a string of bits .,3,4,3,a -> byte string return true if a character is a hexadecimal .,2,3,3,validates a string out of a valid ascii .,2,4,4
+"def url_filename(url):
+    match = upload_title_re.match(url)
+    if match:
+        return match.group('filename')
+    else:
+        return url
+",takes a url and prepends the site_url .,1,3,4,synthesizes an url to a local filename .,2,4,4,custom filename .,1,4,4,return an s3 match that should be used with a filename .,1,2,3,split an url prefix it link is git browser .,1,2,2
+"def get_sw_login_version():
+    return '-'.join(get_sw_version(strip_build_num=True).split('-')[1:(-2)])
+",return the current version .,3,5,5,return the version of these bindings whose tag is 0 .,1,4,4,return the current login version .,5,5,5,return the major string .,1,5,5,split the software and .,1,1,1
+"def _get_objects(obj_type):
+    lst_objs = FakeRetrieveResult()
+    for key in _db_content[obj_type]:
+        lst_objs.add_object(_db_content[obj_type][key])
+    return lst_objs
+",get objects of the type .,4,5,5,get object references of the type .,2,3,4,add objects of the type .,1,3,4,add object to the type of object .,1,3,4,get object of the object .,1,1,1
+"def add_arg(f, *args, **kwargs):
+    if (not hasattr(f, 'arguments')):
+        f.arguments = []
+    if ((args, kwargs) not in f.arguments):
+        f.arguments.insert(0, (args, kwargs))
+",add arguments to the given arguments .,3,3,4,add arguments to a function that may or may be called within the function .,1,2,2,adds items before entry to kwargs we are in api .,1,1,1,add a function to the list of args .,1,5,5,insert a to to a given command .,1,1,1
+"def import_buffer_to_ast(buf, module_name):
+    return hy_compile(import_buffer_to_hst(buf), module_name)
+",import content from ast .,2,4,4,import a module and return its name .,1,5,5,compile a module and returns the content .,5,5,5,import content module into a specific module name .,1,3,3,compile up of ast and raise a scalar .,2,3,3
+"def merge_with(func, *dicts, **kwargs):
+    if ((len(dicts) == 1) and (not isinstance(dicts[0], dict))):
+        dicts = dicts[0]
+    factory = _get_factory(merge_with, kwargs)
+    result = factory()
+    for d in dicts:
+        for (k, v) in iteritems(d):
+            if (k not in result):
+                result[k] = [v]
+            else:
+                result[k].append(v)
+    return valmap(func, result, factory)
+",merges the dictionaries with a list of dictionaries .,2,3,3,merges mapping dictionaries into a single lists .,2,4,4,wrap a list of dictionaries .,1,4,4,merges dictionary b into a like dict b where each dictionary is a .,1,1,1,merge merge apply add a make different a given list only different == different different different list .,1,1,1
+"def strip_html(unclean):
+    if ((not isinstance(unclean, basestring)) and (not is_iterable(unclean)) and (unclean is not None)):
+        return unclean
+    return bleach.clean(unclean, strip=True, tags=[], attributes=[], styles=[])
+",return html with html stripped .,3,3,3,strips all html tags from an html string .,2,4,4,return html with tags stripped and a single space .,4,4,5,helper method that strips html markup from an html string .,4,3,3,helper through list and .,1,1,1
+"def get_health(**kwargs):
+    with _IpmiCommand(**kwargs) as s:
+        return s.get_health()
+",get current hardware batches of the given string .,1,3,4,get current boot device override information .,1,4,4,get current health state .,5,5,5,get current device override the current matrices .,1,4,4,get the instance device density the given .,1,1,1
+"def test_boolean():
+    assert hug.types.boolean('1')
+    assert hug.types.boolean('T')
+    assert (not hug.types.boolean(''))
+    assert hug.types.boolean('False')
+    assert (not hug.types.boolean(False))
+",test to ensure that the boolean type correctly allows the provided boolean values .,4,5,5,tests to ensure that the smart boolean type correctly handles a list of values .,3,4,4,tests that hugs boolean type correctly handles a hug boolean value .,4,4,4,test to ensure the smart boolean type works as expected .,3,4,5,test that ensure that hug type type works handles a .,2,1,1
+"def unregister_hosting_service(name):
+    try:
+        _hosting_service_registry.unregister_by_attr(u'hosting_service_id', name)
+    except ItemLookupError as e:
+        logging.error((u'Failed  to  unregister  unknown  hosting  service  ""%s""' % name))
+        raise e
+",unregister a previously registered hosting service by name .,5,5,5,checks if a service is available .,1,4,4,unregister a service .,3,4,5,unregisters a service from the registered machine .,3,4,4,returns the service functions to .,2,3,2
+"def runproc(cmd):
+    proc = Popen([cmd], shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
+    (stdoutdata, stderrdata) = proc.communicate()
+    return (stdoutdata, stderrdata)
+",run cmd as a shell command .,5,5,5,attempts to standardize the cmd and return a shell .,2,3,5,run commands on a remote host by index .,2,4,5,run commands and throw its stdout .,4,5,5,convert to to read read to to to .,1,1,1
+"def convert_unreachable_exception(e, error_format=u'Facebook  is  unreachable  %s'):
+    exception_class = map_unreachable_exception(e)
+    error_message = (error_format % str(e))
+    exception = exception_class(error_message)
+    return exception
+",translates a model(s) error handler .,2,3,4,return a token: exception that should raise an exception .,3,3,4,returns a string representation of the exception map .,4,5,5,convert exception into error message in a format exception .,5,5,5,builds an exception exception .,2,2,3
+"def get_text(original, token, replace):
+    if replace:
+        return token.text
+    else:
+        return original[token.startchar:token.endchar]
+",return a string with the first whitespace replaced by a text .,4,5,5,return a map of text for the token .,2,4,5,returns a formatted token that could be used with a form .,3,4,4,returns a string with migration replaced by a a ii metres .,3,3,3,return the in the string matching string string .,2,1,1
+"def temp_file_for(path):
+    ext = os.path.splitext(path)[1]
+    with NamedTemporaryFile(suffix=ext, delete=False) as f:
+        return f.name
+",returns the temporary file path for a given temporary file .,2,3,4,return the name of a file .,3,5,5,delete a file and return its name .,5,5,5,delete a file .,3,5,5,delete an object file from path file file path path name path .,2,2,2
+"def saturated(color, factor=150):
+    h = color.hsvHueF()
+    s = color.hsvSaturationF()
+    v = color.valueF()
+    a = color.alphaF()
+    s = ((factor * s) / 100.0)
+    s = max(min(1.0, s), 0.0)
+    return QColor.fromHsvF(h, s, v, a).convertTo(color.spec())
+",normalize a printing .,2,5,5,returns a pylab color that is made by the given number of a color by the current color .,3,4,5,converts a qcolor in the file/addon format to the python_egg_cache location .,5,5,5,converts a qcolor that either an integer or a color matrix .,3,4,4,transform ad color color based .,2,2,2
+"def _absolute_path(path, relative_to=None):
+    if (path and os.path.isabs(path)):
+        return path
+    if (path and (relative_to is not None)):
+        _abspath = os.path.join(relative_to, path)
+        if os.path.isfile(_abspath):
+            log.debug(""Relative  path  '{0}'  converted  to  existing  absolute  path  '{1}'"".format(path, _abspath))
+            return _abspath
+    return path
+",get an absolute path for the initial path .,4,5,5,returns an absolute path for a path relative to the tests/ directory .,4,5,5,convert a path to a relative path .,2,5,5,convert a relative path or absolute path to absolute path .,5,5,5,return the absolute version for .,1,3,2
+"def flatten_list(list_of_list=[[], []]):
+    return sum(list_of_list, [])
+",flattens a list of lists into a list .,5,5,5,flatten a list of lists into a new list .,5,5,5,flatten a list of lists into a single list .,5,5,5,return a list of the value in the list of strings .,2,5,5,returns the number of numbers of .,1,5,2
+"def _tosequence(X):
+    if isinstance(X, Mapping):
+        return [X]
+    else:
+        return tosequence(X)
+",converts from bits to nats .,1,5,5,test to make sure x is a proper matrix or a number of input .,1,5,5,like the matlab function .,2,5,5,is x an annotation input and derivative .,1,5,5,returns a .,1,3,1
+"def libvlc_media_get_duration(p_md):
+    f = (_Cfunctions.get('libvlc_media_get_duration', None) or _Cfunction('libvlc_media_get_duration', ((1,),), None, ctypes.c_longlong, Media))
+    return f(p_md)
+",get the duration of media descriptor object .,5,5,5,get the current media type .,2,5,5,get the current media descriptor object .,3,5,5,get the reference count of a media descriptor object .,2,5,5,get the the the .,1,1,1
+"def resource_patch(context, data_dict):
+    _check_access('resource_patch', context, data_dict)
+    show_context = {'model': context['model'], 'session': context['session'], 'user': context['user'], 'auth_user_obj': context['auth_user_obj']}
+    resource_dict = _get_action('resource_show')(show_context, {'id': _get_or_bust(data_dict, 'id')})
+    patched = dict(resource_dict)
+    patched.update(data_dict)
+    return _update.resource_update(context, patched)
+",patch an action .,3,5,5,patch an organization .,1,5,5,patch an existing resource .,5,5,5,patch a patch .,2,2,5,patch a resource .,4,5,5
+"def pyramid_laplacian(image, max_layer=(-1), downscale=2, sigma=None, order=1, mode='reflect', cval=0):
+    _check_factor(downscale)
+    image = img_as_float(image)
+    if (sigma is None):
+        sigma = ((2 * downscale) / 6.0)
+    layer = 0
+    rows = image.shape[0]
+    cols = image.shape[1]
+    smoothed_image = _smooth(image, sigma, mode, cval)
+    (yield (image - smoothed_image))
+    while (layer != max_layer):
+        layer += 1
+        out_rows = math.ceil((rows / float(downscale)))
+        out_cols = math.ceil((cols / float(downscale)))
+        resized_image = resize(smoothed_image, (out_rows, out_cols), order=order, mode=mode, cval=cval)
+        smoothed_image = _smooth(resized_image, sigma, mode, cval)
+        prev_rows = rows
+        prev_cols = cols
+        rows = resized_image.shape[0]
+        cols = resized_image.shape[1]
+        if ((prev_rows == rows) and (prev_cols == cols)):
+            break
+        (yield (resized_image - smoothed_image))
+",upsample the given image .,4,5,5,interstitial an image by astropy it to the 4-character dataset .,2,5,5,upsample images with half half .,2,3,3,upsample and then smooth image .,3,4,5,return image of image image operation image to image image image .,1,1,1
+"def get_fun(fun):
+    with _get_serv(ret=None, commit=True) as cur:
+        sql = 'SELECT  s.id,s.jid,  s.full_ret\n                                FROM  salt_returns  s\n                                JOIN  (  SELECT  MAX(`jid`)  as  jid\n                                        from  salt_returns  GROUP  BY  fun,  id)  max\n                                ON  s.jid  =  max.jid\n                                WHERE  s.fun  =  %s\n                                '
+        cur.execute(sql, (fun,))
+        data = cur.fetchall()
+        ret = {}
+        if data:
+            for (minion, _, full_ret) in data:
+                ret[minion] = full_ret
+        return ret
+",return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5
+"def store_temp_file(filedata, filename, path=None):
+    filename = get_filename_from_path(filename)
+    filename = filename[:100]
+    options = Config()
+    if path:
+        target_path = path
+    else:
+        tmp_path = options.cuckoo.get('tmppath', '/tmp')
+        target_path = os.path.join(tmp_path, 'cuckoo-tmp')
+    if (not os.path.exists(target_path)):
+        os.mkdir(target_path)
+    tmp_dir = tempfile.mkdtemp(prefix='upload_', dir=target_path)
+    tmp_file_path = os.path.join(tmp_dir, filename)
+    with open(tmp_file_path, 'wb') as tmp_file:
+        if hasattr(filedata, 'read'):
+            chunk = filedata.read(1024)
+            while chunk:
+                tmp_file.write(chunk)
+                chunk = filedata.read(1024)
+        else:
+            tmp_file.write(filedata)
+    return tmp_file_path
+",fetch a temporary file to disk .,5,5,5,return a temp file to disk .,4,5,5,retrieve all the config file to a temporary file .,3,5,5,saves and diff a temporary file to a temp file .,3,4,5,creates creates function to to to .,1,2,1
+"def _createTargetDirs():
+    if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+        try:
+            if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+                os.makedirs(paths.POCSUITE_OUTPUT_PATH, 493)
+            warnMsg = (""using  '%s'  as  the  output  directory"" % paths.POCSUITE_OUTPUT_PATH)
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+        except (OSError, IOError) as ex:
+            try:
+                tempDir = tempfile.mkdtemp(prefix='pocsuiteoutput')
+            except Exception as _:
+                errMsg = (""unable  to  write  to  the  temporary  directory  ('%s').  "" % _)
+                errMsg += 'Please  make  sure  that  your  disk  is  not  full  and  '
+                errMsg += 'that  you  have  sufficient  write  permissions  to  '
+                errMsg += 'create  temporary  files  and/or  directories'
+                raise PocsuiteSystemException(errMsg)
+            warnMsg = 'unable  to  create  regular  output  directory  '
+            warnMsg += (""'%s'  (%s).  "" % (paths.POCSUITE_OUTPUT_PATH, getUnicode(ex)))
+            warnMsg += (""Using  temporary  directory  '%s'  instead"" % getUnicode(tempDir))
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+            paths.POCUSITE_OUTPUT_PATH = tempDir
+",creates the project directory .,3,5,5,create the given virtual directory .,5,5,2,create all dirs paths and place the admin paths .,5,5,3,create the file directory .,5,5,1,sets absolute absolute for for .,1,1,4
+"def _setwindowposition(folder_alias, (x, y)):
+    finder = _getfinder()
+    args = {}
+    attrs = {}
+    aeobj_0 = aetypes.ObjectSpecifier(want=aetypes.Type('cfol'), form='alis', seld=folder_alias, fr=None)
+    aeobj_1 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('cwnd'), fr=aeobj_0)
+    aeobj_2 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('posn'), fr=aeobj_1)
+    args['----'] = aeobj_2
+    args['data'] = [x, y]
+    (_reply, args, attrs) = finder.send('core', 'setd', args, attrs)
+    if args.has_key('errn'):
+        raise Error, aetools.decodeerror(args)
+    if args.has_key('----'):
+        return args['----']
+",set the size of a finder window for folder to .,4,4,4,set the size of a finder window for folder to .,4,4,4,set the size of a finder window for folder to .,4,4,4,set the size of a finder window for folder to .,4,4,4,set the size of a finder window for folder to .,4,4,4
+"def walk(top, topdown=True, followlinks=False):
+    names = os.listdir(top)
+    (dirs, nondirs) = ([], [])
+    for name in names:
+        if path.isdir(path.join(top, name)):
+            dirs.append(name)
+        else:
+            nondirs.append(name)
+    if topdown:
+        (yield (top, dirs, nondirs))
+    for name in dirs:
+        fullpath = path.join(top, name)
+        if (followlinks or (not path.islink(fullpath))):
+            for x in walk(fullpath, topdown, followlinks):
+                (yield x)
+    if (not topdown):
+        (yield (top, dirs, nondirs))
+",backport of os .,3,3,3,backport of os .,3,3,3,backport of os .,3,3,3,backport of os .,3,3,3,backport of os .,3,3,3
+"@testing.requires_testing_data
+@requires_mne
+def test_other_volume_source_spaces():
+    tempdir = _TempDir()
+    temp_name = op.join(tempdir, 'temp-src.fif')
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name, '--mri', fname_mri])
+    src = read_source_spaces(temp_name)
+    src_new = setup_volume_source_space(None, pos=7.0, mri=fname_mri, subjects_dir=subjects_dir)
+    _compare_source_spaces(src, src_new, mode='approx')
+    assert_true(('volume,  shape' in repr(src)))
+    del src
+    del src_new
+    assert_raises(ValueError, setup_volume_source_space, 'sample', temp_name, pos=7.0, sphere=[1.0, 1.0], mri=fname_mri, subjects_dir=subjects_dir)
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name])
+    assert_raises(ValueError, read_source_spaces, temp_name)
+",test setting up volume source spaces .,5,5,5,test morphing of source volume info .,3,5,4,test setting up volume source spaces .,5,5,5,test subreddits volume lines .,3,4,4,test reading setting and xml in in in .,1,1,1
+"def SetHelpMenuOtherHelp(mainMenu):
+    global helpIDMap
+    if (helpIDMap is None):
+        helpIDMap = {}
+        cmdID = win32ui.ID_HELP_OTHER
+        excludeList = ['Main  Python  Documentation', 'Pythonwin  Reference']
+        firstList = ListAllHelpFiles()
+        excludeFnames = []
+        for (desc, fname) in firstList:
+            if (desc in excludeList):
+                excludeFnames.append(fname)
+        helpDescs = []
+        for (desc, fname) in firstList:
+            if (fname not in excludeFnames):
+                helpIDMap[cmdID] = (desc, fname)
+                win32ui.GetMainFrame().HookCommand(HandleHelpOtherCommand, cmdID)
+                cmdID = (cmdID + 1)
+    helpMenu = mainMenu.GetSubMenu((mainMenu.GetMenuItemCount() - 1))
+    otherHelpMenuPos = 2
+    otherMenu = helpMenu.GetSubMenu(otherHelpMenuPos)
+    while otherMenu.GetMenuItemCount():
+        otherMenu.DeleteMenu(0, win32con.MF_BYPOSITION)
+    if helpIDMap:
+        for (id, (desc, fname)) in helpIDMap.iteritems():
+            otherMenu.AppendMenu((win32con.MF_ENABLED | win32con.MF_STRING), id, desc)
+    else:
+        helpMenu.EnableMenuItem(otherHelpMenuPos, (win32con.MF_BYPOSITION | win32con.MF_GRAYED))
+",clears the lower-left from the command .,1,5,5,return the list of files .,1,5,5,create a new displayed of files .,5,5,5,joined the cached bridges of all files in the gui .,3,5,1,read history latest output files from read read information data .,3,3,3
+"def update(directory, composer=None, php=None, runas=None, prefer_source=None, prefer_dist=None, no_scripts=None, no_plugins=None, optimize=None, no_dev=None, quiet=False, composer_home='/root'):
+    result = _run_composer('update', directory=directory, extra_flags='--no-progress', composer=composer, php=php, runas=runas, prefer_source=prefer_source, prefer_dist=prefer_dist, no_scripts=no_scripts, no_plugins=no_plugins, optimize=optimize, no_dev=no_dev, quiet=quiet, composer_home=composer_home)
+    return result
+",optimize a previously-encrypted .,2,5,3,update a gemset .,4,5,5,runs composer not been modified .,4,5,5,updates the package definitions with packages .,3,4,4,uses files files in the transformed directory .,2,2,2
+"def testOnSequenceData(module, dataset):
+    target = dataset.getField('target')
+    output = ModuleValidator.calculateModuleOutput(module, dataset)
+    ends = SequenceHelper.getSequenceEnds(dataset)
+    summed_output = zeros(dataset.outdim)
+    class_output = []
+    class_target = []
+    for j in range(len(output)):
+        summed_output += output[j]
+        if (j in ends):
+            class_output.append(argmax(summed_output))
+            class_target.append(argmax(target[j]))
+            summed_output = zeros(dataset.outdim)
+    class_output = array(class_output)
+    class_target = array(class_target)
+    return Validator.classificationPerformance(class_output, class_target)
+",returns a sorted list of pairs to types .,2,5,5,gets the output of eigenvalues test of different modules .,5,5,5,returns the test representation of the dataset .,4,5,5,returns a dataset class that can be used to test the output of nf .,4,5,4,evaluate the of update the minimum of .,2,5,3
+"def populate_tables(db, prefix, tmp_prefix, bounds):
+    bbox = ('ST_SetSRID(ST_MakeBox2D(ST_MakePoint(%.6f,  %.6f),  ST_MakePoint(%.6f,  %.6f)),  900913)' % bounds)
+    db.execute('BEGIN')
+    for table in ('point', 'line', 'roads', 'polygon'):
+        db.execute(('DELETE  FROM  %(prefix)s_%(table)s  WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+        db.execute(('INSERT  INTO  %(prefix)s_%(table)s\n                                            SELECT  *  FROM  %(tmp_prefix)s_%(table)s\n                                            WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+    db.execute('COMMIT')
+",populate permanent tables for all database .,4,5,5,create a changeset tables for all temporary tables .,3,5,5,populate the database tables for osm module .,3,5,5,drop the tables for all temporary tables .,2,5,5,ensure should of of should converting coordinates within .,1,2,2
+"def did_you_mean_units(s, all_units, deprecated_units, format_decomposed):
+    def fix_deprecated(x):
+        if (x in deprecated_units):
+            results = [(x + u'  (deprecated)')]
+            decomposed = _try_decomposed(all_units[x], format_decomposed)
+            if (decomposed is not None):
+                results.append(decomposed)
+            return results
+        return (x,)
+    return did_you_mean(s, all_units, fix=fix_deprecated)
+",populate some num_of_items_to_keep objects .,4,5,5,return a list of benchmark containing all applying or worksheet .,2,5,5,this is a list of all processer found in the unicode() list .,2,4,5,fix a series of units .,3,5,5,takes uses to a a .,1,1,1
+"def ValidateActionsInTarget(target, target_dict, build_file):
+    target_name = target_dict.get('target_name')
+    actions = target_dict.get('actions', [])
+    for action in actions:
+        action_name = action.get('action_name')
+        if (not action_name):
+            raise GypError((""Anonymous  action  in  target  %s.    An  action  must  have  an  'action_name'  field."" % target_name))
+        inputs = action.get('inputs', None)
+        if (inputs is None):
+            raise GypError(('Action  in  target  %s  has  no  inputs.' % target_name))
+        action_command = action.get('action')
+        if (action_command and (not action_command[0])):
+            raise GypError(('Empty  action  as  command  in  target  %s.' % target_name))
+",builds one or more file into the given target node .,2,5,5,validates the action on the target node that is a string weeks .,4,5,5,verifies that the action is in the target list of another actions .,5,5,5,writes all the action into the given target .,4,5,5,ensures the node g the target that this target .,3,2,2
+"def _do_search(conf):
+    connargs = {}
+    for name in ['server', 'port', 'tls', 'binddn', 'bindpw', 'anonymous']:
+        connargs[name] = _config(name, conf)
+    if (connargs['binddn'] and connargs['bindpw']):
+        connargs['anonymous'] = False
+    try:
+        _filter = conf['filter']
+    except KeyError:
+        raise SaltInvocationError('missing  filter')
+    _dn = _config('dn', conf)
+    scope = _config('scope', conf)
+    _lists = (_config('lists', conf) or [])
+    _attrs = (_config('attrs', conf) or [])
+    attrs = (_lists + _attrs)
+    if (not attrs):
+        attrs = None
+    try:
+        result = __salt__['ldap.search'](_filter, _dn, scope, attrs, **connargs)['results']
+    except IndexError:
+        log.debug('LDAP  search  returned  no  results  for  filter  {0}'.format(_filter))
+        result = {}
+    except Exception:
+        log.critical('Failed  to  retrieve  pillar  data  from  LDAP:\n', exc_info=True)
+        return {}
+    return result
+",look for connargs .,5,5,5,filter config for a specific search in the running config dictionary .,5,5,5,return the search for hiera hiera .,2,3,2,show the current config of a node and requests .,5,5,5,return a dict optional dict only .,1,2,1
+"def resource_patch(context, data_dict):
+    _check_access('resource_patch', context, data_dict)
+    show_context = {'model': context['model'], 'session': context['session'], 'user': context['user'], 'auth_user_obj': context['auth_user_obj']}
+    resource_dict = _get_action('resource_show')(show_context, {'id': _get_or_bust(data_dict, 'id')})
+    patched = dict(resource_dict)
+    patched.update(data_dict)
+    return _update.resource_update(context, patched)
+",patch an action .,2,5,5,patch an organization .,3,5,5,patch an existing resource .,5,5,5,patch a patch .,2,5,5,patch a resource .,5,5,5
+"def pyramid_laplacian(image, max_layer=(-1), downscale=2, sigma=None, order=1, mode='reflect', cval=0):
+    _check_factor(downscale)
+    image = img_as_float(image)
+    if (sigma is None):
+        sigma = ((2 * downscale) / 6.0)
+    layer = 0
+    rows = image.shape[0]
+    cols = image.shape[1]
+    smoothed_image = _smooth(image, sigma, mode, cval)
+    (yield (image - smoothed_image))
+    while (layer != max_layer):
+        layer += 1
+        out_rows = math.ceil((rows / float(downscale)))
+        out_cols = math.ceil((cols / float(downscale)))
+        resized_image = resize(smoothed_image, (out_rows, out_cols), order=order, mode=mode, cval=cval)
+        smoothed_image = _smooth(resized_image, sigma, mode, cval)
+        prev_rows = rows
+        prev_cols = cols
+        rows = resized_image.shape[0]
+        cols = resized_image.shape[1]
+        if ((prev_rows == rows) and (prev_cols == cols)):
+            break
+        (yield (resized_image - smoothed_image))
+",upsample the given image .,4,5,5,interstitial an image by astropy it to the 4-character dataset .,2,5,5,upsample images with half half .,2,3,3,upsample and then smooth image .,3,4,5,return image of image image operation image to image image image .,1,1,1
+"def get_fun(fun):
+    with _get_serv(ret=None, commit=True) as cur:
+        sql = 'SELECT  s.id,s.jid,  s.full_ret\n                                FROM  salt_returns  s\n                                JOIN  (  SELECT  MAX(`jid`)  as  jid\n                                        from  salt_returns  GROUP  BY  fun,  id)  max\n                                ON  s.jid  =  max.jid\n                                WHERE  s.fun  =  %s\n                                '
+        cur.execute(sql, (fun,))
+        data = cur.fetchall()
+        ret = {}
+        if data:
+            for (minion, _, full_ret) in data:
+                ret[minion] = full_ret
+        return ret
+",return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5
+"def get_svc_avail_path():
+    return AVAIL_SVR_DIRS
+",return the available file path .,5,5,5,returns available services .,3,5,5,get the available path .,5,5,5,return a path available on the services .,5,5,5,get a of available .,3,5,2
+"def store_temp_file(filedata, filename, path=None):
+    filename = get_filename_from_path(filename)
+    filename = filename[:100]
+    options = Config()
+    if path:
+        target_path = path
+    else:
+        tmp_path = options.cuckoo.get('tmppath', '/tmp')
+        target_path = os.path.join(tmp_path, 'cuckoo-tmp')
+    if (not os.path.exists(target_path)):
+        os.mkdir(target_path)
+    tmp_dir = tempfile.mkdtemp(prefix='upload_', dir=target_path)
+    tmp_file_path = os.path.join(tmp_dir, filename)
+    with open(tmp_file_path, 'wb') as tmp_file:
+        if hasattr(filedata, 'read'):
+            chunk = filedata.read(1024)
+            while chunk:
+                tmp_file.write(chunk)
+                chunk = filedata.read(1024)
+        else:
+            tmp_file.write(filedata)
+    return tmp_file_path
+",fetch a temporary file to disk .,4,5,5,return a temp file to disk .,3,5,5,retrieve all the config file to a temporary file .,5,5,5,saves and diff a temporary file to a temp file .,4,5,5,creates creates function to to to .,1,1,1
+"def _createTargetDirs():
+    if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+        try:
+            if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+                os.makedirs(paths.POCSUITE_OUTPUT_PATH, 493)
+            warnMsg = (""using  '%s'  as  the  output  directory"" % paths.POCSUITE_OUTPUT_PATH)
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+        except (OSError, IOError) as ex:
+            try:
+                tempDir = tempfile.mkdtemp(prefix='pocsuiteoutput')
+            except Exception as _:
+                errMsg = (""unable  to  write  to  the  temporary  directory  ('%s').  "" % _)
+                errMsg += 'Please  make  sure  that  your  disk  is  not  full  and  '
+                errMsg += 'that  you  have  sufficient  write  permissions  to  '
+                errMsg += 'create  temporary  files  and/or  directories'
+                raise PocsuiteSystemException(errMsg)
+            warnMsg = 'unable  to  create  regular  output  directory  '
+            warnMsg += (""'%s'  (%s).  "" % (paths.POCSUITE_OUTPUT_PATH, getUnicode(ex)))
+            warnMsg += (""Using  temporary  directory  '%s'  instead"" % getUnicode(tempDir))
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+            paths.POCUSITE_OUTPUT_PATH = tempDir
+",creates the project directory .,2,4,5,create the given virtual directory .,3,3,5,create all dirs paths and place the admin paths .,4,4,4,create the file directory .,2,3,4,sets absolute absolute for for .,1,1,1
+"def unhex(s):
+    bits = 0
+    for c in s:
+        c = bytes((c,))
+        if ('0' <= c <= '9'):
+            i = ord('0')
+        elif ('a' <= c <= 'f'):
+            i = (ord('a') - 10)
+        elif ('A' <= c <= 'F'):
+            i = (ord('A') - 10)
+        else:
+            assert False, ('non-hex  digit  ' + repr(c))
+        bits = ((bits * 16) + (ord(c) - i))
+    return bits
+",format a string like microsoft to a particular number .,3,2,3,convert a string out of an a long number to a byte string .,2,3,4,return a byte ordinal from a string of bits .,3,4,4,a -> byte string return true if a character is a hexadecimal .,2,2,3,validates a string out of a valid ascii .,3,3,4
+"def _setwindowposition(folder_alias, (x, y)):
+    finder = _getfinder()
+    args = {}
+    attrs = {}
+    aeobj_0 = aetypes.ObjectSpecifier(want=aetypes.Type('cfol'), form='alis', seld=folder_alias, fr=None)
+    aeobj_1 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('cwnd'), fr=aeobj_0)
+    aeobj_2 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('posn'), fr=aeobj_1)
+    args['----'] = aeobj_2
+    args['data'] = [x, y]
+    (_reply, args, attrs) = finder.send('core', 'setd', args, attrs)
+    if args.has_key('errn'):
+        raise Error, aetools.decodeerror(args)
+    if args.has_key('----'):
+        return args['----']
+",set the size of a finder window for folder to .,4,3,2,set the size of a finder window for folder to .,4,3,2,set the size of a finder window for folder to .,4,3,2,set the size of a finder window for folder to .,4,3,2,set the size of a finder window for folder to .,4,3,2
+"def walk(top, topdown=True, followlinks=False):
+    names = os.listdir(top)
+    (dirs, nondirs) = ([], [])
+    for name in names:
+        if path.isdir(path.join(top, name)):
+            dirs.append(name)
+        else:
+            nondirs.append(name)
+    if topdown:
+        (yield (top, dirs, nondirs))
+    for name in dirs:
+        fullpath = path.join(top, name)
+        if (followlinks or (not path.islink(fullpath))):
+            for x in walk(fullpath, topdown, followlinks):
+                (yield x)
+    if (not topdown):
+        (yield (top, dirs, nondirs))
+",backport of os .,2,3,4,backport of os .,2,3,4,backport of os .,2,3,4,backport of os .,2,3,4,backport of os .,2,3,4
+"def url_filename(url):
+    match = upload_title_re.match(url)
+    if match:
+        return match.group('filename')
+    else:
+        return url
+",takes a url and prepends the site_url .,3,3,4,synthesizes an url to a local filename .,4,4,5,custom filename .,3,4,5,return an s3 match that should be used with a filename .,2,3,3,split an url prefix it link is git browser .,2,3,4
+"@testing.requires_testing_data
+@requires_mne
+def test_other_volume_source_spaces():
+    tempdir = _TempDir()
+    temp_name = op.join(tempdir, 'temp-src.fif')
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name, '--mri', fname_mri])
+    src = read_source_spaces(temp_name)
+    src_new = setup_volume_source_space(None, pos=7.0, mri=fname_mri, subjects_dir=subjects_dir)
+    _compare_source_spaces(src, src_new, mode='approx')
+    assert_true(('volume,  shape' in repr(src)))
+    del src
+    del src_new
+    assert_raises(ValueError, setup_volume_source_space, 'sample', temp_name, pos=7.0, sphere=[1.0, 1.0], mri=fname_mri, subjects_dir=subjects_dir)
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name])
+    assert_raises(ValueError, read_source_spaces, temp_name)
+",test setting up volume source spaces .,3,4,4,test morphing of source volume info .,2,4,4,test setting up volume source spaces .,3,4,4,test subreddits volume lines .,1,4,4,test reading setting and xml in in in .,1,1,1
+"def get_preamble():
+    latex_preamble = rcParams.get(u'pgf.preamble', u'')
+    if (type(latex_preamble) == list):
+        latex_preamble = u'\n'.join(latex_preamble)
+    return latex_preamble
+",given the first and type .,1,3,3,get latex marker value .,2,4,4,construct a accountbroker for the preamble and latex .,3,4,4,return the list of paths for the given project .,3,4,4,convert latex and and xml and .,2,3,1
+"def analyze_modules(project, task_handle=taskhandle.NullTaskHandle()):
+    resources = project.get_python_files()
+    job_set = task_handle.create_jobset('Analyzing  Modules', len(resources))
+    for resource in resources:
+        job_set.started_job(resource.path)
+        analyze_module(project, resource)
+        job_set.finished_job()
+",list resources that are complete for a given file .,4,4,4,return a list of file names of analyze in the project .,3,4,4,try to unpickle jobset on all modules .,3,3,3,create conv file names .,1,3,4,decorator whether for .,1,2,1
+"def get_sw_login_version():
+    return '-'.join(get_sw_version(strip_build_num=True).split('-')[1:(-2)])
+",return the current version .,3,5,5,return the version of these bindings whose tag is 0 .,2,3,4,return the current login version .,4,5,5,return the major string .,2,4,4,split the software and .,1,2,2
+"def SetHelpMenuOtherHelp(mainMenu):
+    global helpIDMap
+    if (helpIDMap is None):
+        helpIDMap = {}
+        cmdID = win32ui.ID_HELP_OTHER
+        excludeList = ['Main  Python  Documentation', 'Pythonwin  Reference']
+        firstList = ListAllHelpFiles()
+        excludeFnames = []
+        for (desc, fname) in firstList:
+            if (desc in excludeList):
+                excludeFnames.append(fname)
+        helpDescs = []
+        for (desc, fname) in firstList:
+            if (fname not in excludeFnames):
+                helpIDMap[cmdID] = (desc, fname)
+                win32ui.GetMainFrame().HookCommand(HandleHelpOtherCommand, cmdID)
+                cmdID = (cmdID + 1)
+    helpMenu = mainMenu.GetSubMenu((mainMenu.GetMenuItemCount() - 1))
+    otherHelpMenuPos = 2
+    otherMenu = helpMenu.GetSubMenu(otherHelpMenuPos)
+    while otherMenu.GetMenuItemCount():
+        otherMenu.DeleteMenu(0, win32con.MF_BYPOSITION)
+    if helpIDMap:
+        for (id, (desc, fname)) in helpIDMap.iteritems():
+            otherMenu.AppendMenu((win32con.MF_ENABLED | win32con.MF_STRING), id, desc)
+    else:
+        helpMenu.EnableMenuItem(otherHelpMenuPos, (win32con.MF_BYPOSITION | win32con.MF_GRAYED))
+",clears the lower-left from the command .,1,2,3,return the list of files .,2,3,4,create a new displayed of files .,3,3,4,joined the cached bridges of all files in the gui .,1,2,2,read history latest output files from read read information data .,2,1,1
+"def update(directory, composer=None, php=None, runas=None, prefer_source=None, prefer_dist=None, no_scripts=None, no_plugins=None, optimize=None, no_dev=None, quiet=False, composer_home='/root'):
+    result = _run_composer('update', directory=directory, extra_flags='--no-progress', composer=composer, php=php, runas=runas, prefer_source=prefer_source, prefer_dist=prefer_dist, no_scripts=no_scripts, no_plugins=no_plugins, optimize=optimize, no_dev=no_dev, quiet=quiet, composer_home=composer_home)
+    return result
+",optimize a previously-encrypted .,2,3,2,update a gemset .,3,4,4,runs composer not been modified .,2,3,3,updates the package definitions with packages .,3,3,4,uses files files in the transformed directory .,3,2,2
+"def testOnSequenceData(module, dataset):
+    target = dataset.getField('target')
+    output = ModuleValidator.calculateModuleOutput(module, dataset)
+    ends = SequenceHelper.getSequenceEnds(dataset)
+    summed_output = zeros(dataset.outdim)
+    class_output = []
+    class_target = []
+    for j in range(len(output)):
+        summed_output += output[j]
+        if (j in ends):
+            class_output.append(argmax(summed_output))
+            class_target.append(argmax(target[j]))
+            summed_output = zeros(dataset.outdim)
+    class_output = array(class_output)
+    class_target = array(class_target)
+    return Validator.classificationPerformance(class_output, class_target)
+",returns a sorted list of pairs to types .,3,3,2,gets the output of eigenvalues test of different modules .,2,3,3,returns the test representation of the dataset .,3,3,4,returns a dataset class that can be used to test the output of nf .,2,3,3,evaluate the of update the minimum of .,2,2,1
+"@retry_on_failure
+def test_inet_pton():
+    if (not is_cli):
+        return
+    socket.inet_pton(socket.AF_INET, '127.0.0.1')
+    AssertError(socket.error, socket.inet_pton, socket.AF_INET, 'garbage  dkfjdkfjdkfj')
+",tests socket .,3,4,4,tests socket .,3,4,4,tests socket .,3,4,4,tests socket .,3,4,4,check that is .,1,2,1
+"def getPath(edges, pathIndexes, loop, z):
+    path = []
+    for pathIndexIndex in xrange(len(pathIndexes)):
+        pathIndex = pathIndexes[pathIndexIndex]
+        edge = edges[pathIndex]
+        carveIntersection = getCarveIntersectionFromEdge(edge, loop, z)
+        path.append(carveIntersection)
+    return path
+",get the mount point between edge and including the edge plus a path .,2,3,3,get the generator nodes from a path .,2,4,3,get the path from the edge that get the edge .,2,2,1,get get both tcl from path .,1,3,3,get point point from the edge intersections on .,2,1,2
+"def get_load(jid):
+    serv = _get_serv(ret=None)
+    data = serv.get('load:{0}'.format(jid))
+    if data:
+        return json.loads(data)
+    return {}
+",return the load data that marks a specified jid .,4,4,5,return the load data that marks a specified jid .,4,4,5,return the load data that marks a specified jid .,4,4,5,return the load data that marks a specified jid .,4,4,5,return the load data that marks a specified jid .,4,4,5
+"def _default_selem(func):
+    @functools.wraps(func)
+    def func_out(image, selem=None, *args, **kwargs):
+        if (selem is None):
+            selem = ndi.generate_binary_structure(image.ndim, image.ndim)
+        return func(image, selem=selem, *args, **kwargs)
+    return func_out
+",decorator to add a default structuring element to morphology functions .,3,4,4,decorator to add a default structuring element to morphology functions .,3,4,4,generates a cross-shaped structuring element .,2,4,5,decorator to add a cross-shaped structuring element to morphology functions .,2,3,5,return to apply the gradient image image in be in for .,1,2,1
+"@preserve_value(sys, 'dont_write_bytecode')
+def _load_module_no_bytecode(filename, module_file, module_file_path, py_source_description):
+    sys.dont_write_bytecode = 1
+    new_module = imp.load_module(os.path.splitext(filename)[0].replace('-', '_'), module_file, module_file_path, py_source_description)
+    return new_module
+",helper function to load a module while setting sys .,4,4,5,helper function to load a module while setting sys .,4,4,5,helper function to load a module while setting sys .,4,4,5,helper function to load a module while setting sys .,4,4,5,helper function to load a module .,3,4,5
+"def populate_tables(db, prefix, tmp_prefix, bounds):
+    bbox = ('ST_SetSRID(ST_MakeBox2D(ST_MakePoint(%.6f,  %.6f),  ST_MakePoint(%.6f,  %.6f)),  900913)' % bounds)
+    db.execute('BEGIN')
+    for table in ('point', 'line', 'roads', 'polygon'):
+        db.execute(('DELETE  FROM  %(prefix)s_%(table)s  WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+        db.execute(('INSERT  INTO  %(prefix)s_%(table)s\n                                            SELECT  *  FROM  %(tmp_prefix)s_%(table)s\n                                            WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+    db.execute('COMMIT')
+",populate permanent tables for all database .,4,4,5,create a changeset tables for all temporary tables .,4,4,5,populate the database tables for osm module .,3,4,4,drop the tables for all temporary tables .,2,3,5,ensure should of of should converting coordinates within .,1,1,1
+"def round_if_near_integer(a, epsilon=0.0001):
+    if (abs((a - round(a))) <= epsilon):
+        return round(a)
+    else:
+        return a
+",round a lowercase array into a float integer .,3,3,4,return true if n is a .,1,4,4,round a 1-d array with the value from a in unknown .,1,3,2,locate for a given value to a range for sub-menu .,2,3,4,normalizes function .,3,4,5
+"def get_linode_id_from_name(name):
+    nodes = _query('linode', 'list')['DATA']
+    linode_id = ''
+    for node in nodes:
+        if (name == node['LABEL']):
+            linode_id = node['LINODEID']
+            return linode_id
+    if (not linode_id):
+        raise SaltCloudNotFound('The  specified  name,  {0},  could  not  be  found.'.format(name))
+",get the linode select id from linode .,4,3,3,given a line-separated .,2,3,2,return the id for a linode .,3,4,4,retrieve all registered f(a) for a given node .,2,3,3,return a linode to to a given .,2,2,1
+"def unregister_hosting_service(name):
+    try:
+        _hosting_service_registry.unregister_by_attr(u'hosting_service_id', name)
+    except ItemLookupError as e:
+        logging.error((u'Failed  to  unregister  unknown  hosting  service  ""%s""' % name))
+        raise e
+",unregister a previously registered hosting service by name .,3,4,4,checks if a service is available .,2,4,4,unregister a service .,3,5,5,unregisters a service from the registered machine .,3,3,3,returns the service functions to .,2,2,1
+"def libvlc_media_get_duration(p_md):
+    f = (_Cfunctions.get('libvlc_media_get_duration', None) or _Cfunction('libvlc_media_get_duration', ((1,),), None, ctypes.c_longlong, Media))
+    return f(p_md)
+",get the duration of media descriptor object .,4,4,5,get the current media type .,3,4,5,get the current media descriptor object .,2,4,4,get the reference count of a media descriptor object .,2,4,3,get the the the .,1,1,1
+"def set_config_defaults():
+    set_cors_middleware_defaults()
+",override all configuration default values .,3,4,5,set default configuration options for all requests .,4,3,4,override all configuration cors requests for keystone .,3,3,3,load configuration .,2,4,4,set all of for the and to to .,1,1,1
+"def poly_TC(f, K):
+    if (not f):
+        return K.zero
+    else:
+        return f[(-1)]
+",return trailing coefficient of f .,3,4,4,return the trailing coefficient of f .,3,4,5,return the trailing coefficient of f .,3,4,5,return leading coefficient of f .,1,2,3,return the leading of f .,1,2,3
+"def main():
+    errno = pytest.main(['-x', 'spyder', '-v', '-rw', '--durations=10', '--cov=spyder', '--cov-report=term-missing'])
+    sys.exit(errno)
+",a docstring .,2,3,2,entrypoint to the 6 module as a script .,2,2,2,runs the main program for indicating the main process .,2,2,3,entry point for the application .,2,2,1,tests that that when .,1,1,1
+"def pop(key, default=None):
+    store = load()
+    val = store.pop(key, default)
+    dump(store)
+    return val
+",get a value from the minion datastore .,2,2,4,set the default value of a key .,2,4,4,set a value in the minion datastore .,2,2,4,load a key from the minion datastore .,3,2,4,remove a value from the minion .,2,2,4
+"def to_edgelist(G, nodelist=None):
+    if (nodelist is None):
+        return G.edges(data=True)
+    else:
+        return G.edges(nodelist, data=True)
+",return a list of edges from a dictionary of edges .,2,3,2,return a single spanning graph of a branching .,3,4,4,return adjacency representation of graph as a edgelist string .,4,4,4,return the graph g as a single string .,3,4,4,return true boolean of edges in g graph g .,2,2,1
+"def summary(worker):
+    return _summary_wrap(_summary_format(_summary_dict(worker), worker))
+",return a :class: .,1,2,2,wrap a summary of the nagios summary kolmogorov-smirnov .,1,1,2,return the given worker format that the given worker module .,4,4,5,produces a worker .,3,3,4,given a worker worker .,2,3,3
+"def google():
+    channel = settings.get_auth_google()
+    if (not channel):
+        redirect(URL(f='user', args=request.args, vars=get_vars))
+    from s3oauth import GooglePlusAccount
+    auth.settings.login_form = GooglePlusAccount(channel)
+    form = auth()
+    return {'form': form}
+",login using google .,4,4,5,login using humanitarian .,1,3,4,login using google google user .,3,2,1,login using humanitarian .,1,3,4,get the login login .,1,2,1
+"def get_file(src, dest, permissions=None):
+    if (src == dest):
+        return
+    if is_url(src):
+        urlretrieve(src, dest)
+    else:
+        shutil.copyfile(src, dest)
+    if permissions:
+        os.chmod(dest, permissions)
+    return dest
+",get a file from a directory .,2,2,4,return a backgroundability of the file that can be used as an existing directory .,2,1,2,retrieve a source file .,2,2,3,return copy of a given file or plain url .,4,4,4,downloads an temporary .,1,1,1
+"def flavor_get_by_flavor_id(context, id, read_deleted=None):
+    return IMPL.flavor_get_by_flavor_id(context, id, read_deleted)
+",get instance type by flavor id .,5,5,5,get flavor extra specs by flavor id .,2,5,5,get flavor id by flavor id .,2,5,4,get instance type by flavorid .,2,5,5,get instance type by id id .,2,3,3
+"def _build_status(data, item):
+    stream = item['stream']
+    if ('Running  in' in stream):
+        data.setdefault('Intermediate_Containers', []).append(stream.rstrip().split()[(-1)])
+    if ('Successfully  built' in stream):
+        data['Id'] = stream.rstrip().split()[(-1)]
+",builds a status update from a docker stream .,3,5,5,check a status message of a list of search_maps .,2,4,5,build a status stream from a stream .,2,3,4,build a summary of json object from a stream of strings .,2,3,2,remove a floating .,1,2,3
+"def match(value, pattern='', ignorecase=False, multiline=False):
+    return regex(value, pattern, ignorecase, multiline, 'match')
+",perform a multiline submissions .,1,3,3,match a boolean pattern against the output of the value .,3,4,4,perform a filter that matches the given regular expression .,4,4,4,perform re .,1,4,3,converts a boolean as .,1,3,3
+"def sqlwhere(dictionary):
+    return ('  AND  '.join([('%s  =  %s' % (k, aparam())) for k in dictionary.keys()]), dictionary.values())
+",converts dictionary to an sql where clause sqlquery .,2,2,3,takes a dictionary and a string and interpolates it in the format where values are the possible values .,1,2,2,returns a dictionary with the aparam representation of a dictionary .,4,4,4,lookup a dictionary to keys .,2,3,3,takes a dictionary and a dictionary dictionary dictionary by the .,2,3,3
+"def log(runlevel, message):
+    if runlevel:
+        LOGGER.log(LOG_VALUES[runlevel], message)
+",logs a message at the given runlevel .,5,5,5,logs a message to the proxied file .,2,3,3,logs a log message to the runlevel .,2,3,2,logs a message at the given runlevel .,5,5,5,logs a message at the root runlevel if .,1,2,2
+"def fixed_ip_get_by_instance(context, instance_uuid):
+    return IMPL.fixed_ip_get_by_instance(context, instance_uuid)
+",get fixed ips by instance id or raise if none exist .,1,2,2,get fixed ip by instance id .,5,5,5,get fixed ip by instance .,2,3,3,get fixed ip by instance id or raise if it does not exist .,3,3,4,get fixed ips by instance .,5,5,4
+"def avail_sizes():
+    response = list_common_lookups(kwargs={'lookup': 'server.ram'})
+    ret = {}
+    for item in response['list']:
+        name = item['name']
+        ret[name] = item
+    return ret
+",available sizes .,5,5,5,return available linode sizes .,2,3,3,available lookups sizes .,3,4,4,available images .,1,2,1,return available locations .,2,3,3
+"def subSGMLRefs(s):
+    return re_sgmlrefsub(_replSGMLRefs, s)
+",return the given html string with entity and char references replaced .,4,4,4,return azure html with no multiple whitespaces .,2,3,3,return a string without tags and no multiple spaces .,1,2,2,replace all sequences of whitespace chars with a single space .,2,4,3,return an iterator formatted text .,2,3,3
+"def EmailCheck(email):
+    if (not EMAIL_RE.match(email)):
+        raise ValueError((_('Not  a  valid  email:  %s') % email))
+    return email
+",checks that user is a valid email .,1,2,3,checks the email format .,2,3,3,validates the email address for a valid email address .,5,5,5,parse an email address string .,2,2,3,tries if an email is an email email .,2,2,2
+"def getMin(first, second):
+    return min(first, second)
+",get the app .,3,5,5,get the first result of the trackinfo object .,2,3,3,returns the first element of the form: .,2,3,3,get the extent of the block .,2,2,2,get a second between .,2,2,2
+"def __virtual__():
+    if dns_support:
+        return 'ddns'
+    return (False, 'The  ddns  execution  module  cannot  be  loaded:  dnspython  not  installed.')
+",confirm pypureomapi is available .,3,3,3,check if the global kernel module is available .,2,2,3,only load the module if apache is installed .,1,1,3,set up the module if the mysql libraries is available .,1,1,3,check whether if not to .,3,4,4
+"def discretize_linear_1D(model, x_range):
+    x = np.arange((x_range[0] - 0.5), (x_range[1] + 0.5))
+    values_intermediate_grid = model(x)
+    return (0.5 * (values_intermediate_grid[1:] + values_intermediate_grid[:(-1)]))
+",discretize model by performing a linear interpolation .,5,4,4,discretize model by integrating the model over the shape .,2,3,3,discretize model by performing a linear grid .,2,3,3,discretize model by performing a bilinear interpolation .,2,3,3,compute model by a a bilinear interpolation .,1,2,2
+"def get_password(vm_):
+    return config.get_cloud_config_value('password', vm_, __opts__, default=config.get_cloud_config_value('passwd', vm_, __opts__, search_global=False), search_global=False)
+",returns the password to use .,5,5,5,return the indexed subdomain .,2,3,3,determine if we should wait for the managed cloud automation before running .,1,2,2,returns the tenancy to use .,2,3,3,return the sshinterface to use for .,2,2,2
+"def dict_from_expr(expr, **args):
+    (rep, opt) = _dict_from_expr(expr, build_options(args))
+    return (rep, opt.gens)
+",transform an expression into a multinomial form .,4,4,4,transform an expression into a multinomial form and figure out generators .,2,3,3,transform expressions into a multinomial form .,4,4,4,transform expressions into expression .,2,2,2,transform an expression into a expression expression .,2,1,1
+"def cell_update(context, cell_name, values):
+    return IMPL.cell_update(context, cell_name, values)
+",update a child cell entry .,3,4,4,update a child cell attributes .,5,5,5,set the given properties on an cell and update it .,3,3,3,update a child cell entry .,2,3,3,update a child cell entry .,3,3,4
+"def get_auth_from_url(url):
+    if url:
+        url = unquote(url)
+        parsed = urlparse(url)
+        return (parsed.username, parsed.password)
+    else:
+        return ('', '')
+",given a url with authentication components .,5,5,5,given a url value .,3,2,2,given a url .,2,2,3,given a url with authentication components .,5,5,5,given a url with authentication .,3,2,2
+"def Thing2Literal(o, d):
+    return string_literal(o, d)
+",convert something into a string representation .,2,3,3,convert from minutes:seconds to binary representation .,3,3,3,return a string representation of a literal object .,5,5,5,takes a string and converts it to a tfrecord .,2,3,3,return a return a form form .,1,1,1
+"def is_torrent_or_nzb_file(filename):
+    if (not isinstance(filename, (str, unicode))):
+        return False
+    return (filename.rpartition(u'.')[2].lower() in [u'nzb', u'torrent'])
+",return true if the provided filename is a torrent file .,5,5,5,checks if a file is a deleted and is a number .,1,2,2,determines if a file is a torrent file .,3,3,3,return true if the file is a renamed file .,2,2,2,return if filename filename filename contains a boolean file .,1,2,2
+"def for_int_dtypes_combination(names=('dtype',), no_bool=False, full=None):
+    if no_bool:
+        types = _int_dtypes
+    else:
+        types = _int_bool_dtypes
+    return for_dtypes_combination(types, names, full)
+",decorator for parameterized test the given question .,2,3,3,decorator that checks the fixture with integer and optionally bool dtypes .,3,4,4,decorator that checks the fixture with integer and optionally bool dtypes .,3,4,4,decorator that checks the fixture with a product set of integer names .,2,3,3,decorator that tests the the the .,1,2,3
+"def fixed_ip_count_by_project(context, project_id, session=None):
+    return IMPL.fixed_ip_count_by_project(context, project_id, session=session)
+",count fixed ips used by project .,4,5,5,count number of security groups associated with specified project .,2,3,3,count fixed ip by project .,2,3,3,count floating ips used by project .,2,3,3,count count ips used by project .,1,2,1
+"def restart_process(name):
+    run_as_root(('supervisorctl  restart  %(name)s' % locals()))
+",restart a supervisor process .,3,4,4,restart the process .,2,3,3,restart the specified process .,4,5,5,restart the supervisor process .,4,5,5,stop a supervisor process .,2,3,3
+"def ycbcr2rgb(ycbcr):
+    arr = ycbcr.copy()
+    arr[..., 0] -= 16
+    arr[..., 1] -= 128
+    arr[..., 2] -= 128
+    return _convert(rgb_from_ycbcr, arr)
+",rgb to rgb color space conversion .,4,4,4,rgb to yiq color space conversion .,4,4,4,rgb to haematoxylin-eosin-dab color space conversion .,1,2,2,validate that the rgb image colors and project entry point .,1,2,2,convert an cartesian points of .,1,2,2
+"def topic_list(request, slug, template_name='groups/topics/topic_list.html'):
+    group = get_object_or_404(Group, slug=slug, is_active=True)
+    topic_list = GroupTopic.objects.filter(group=group, is_active=True)
+    return render(request, template_name, {'group': group, 'topic_list': topic_list})
+",returns a group topic list page .,3,4,4,returns a group topic message list page .,3,4,4,returns a group topic topic page .,3,4,4,returns a group topic message list page .,3,4,4,returns a group group to to to .,2,3,3
+"def find_lexer_class(name):
+    if (name in _lexer_cache):
+        return _lexer_cache[name]
+    for (module_name, lname, aliases, _, _) in LEXERS.itervalues():
+        if (name == lname):
+            _load_lexers(module_name)
+            return _lexer_cache[name]
+    for cls in find_plugin_lexers():
+        if (cls.name == name):
+            return cls
+",get a lexer class by name .,5,5,5,find a dictonary descriptor .,2,3,3,return a lexer class by an theano module .,2,2,2,get a lexer by a module .,3,4,4,retrieve a lexer names by a .,2,3,3
+"@_docstring('recording')
+def get_recording_by_id(id, includes=[], release_status=[], release_type=[]):
+    params = _check_filter_and_make_params('recording', includes, release_status, release_type)
+    return _do_mb_query('recording', id, includes, params)
+",get the recording with the musicbrainz id as a dict with a recording key .,5,5,5,get the instrument with the musicbrainz id as a dict with an artist key .,2,3,3,get the recording with the musicbrainz id as a dict with an artist key .,4,5,5,get the instrument with the musicbrainz id as a dict with an artist key .,2,3,3,get the release with the musicbrainz id as a dict with an dict key .,2,2,2
+"def close_file_descriptor_if_open(fd):
+    try:
+        os.close(fd)
+    except OSError as exc:
+        if (exc.errno == errno.EBADF):
+            pass
+        else:
+            error = DaemonOSEnvironmentError(('Failed  to  close  file  descriptor  %(fd)d  (%(exc)s)' % vars()))
+            raise error
+",close a file descriptor .,5,5,5,close the file descriptor by acquire the next close to an existing file descriptor .,2,2,2,close all standard open file descriptors .,2,3,3,generates file descriptor .,1,1,2,check that file that that that the the .,1,2,2
+"def definite_article(word):
+    return 'the'
+",returns the definite article for a given word .,4,5,5,returns the indefinite article for a given word .,2,3,3,returns the definite article for the given word .,2,3,3,returns the indefinite article for a given word .,5,5,5,returns the definite article for a given word .,4,5,5
+"def lineagename_for_filename(config_filename):
+    if (not config_filename.endswith('.conf')):
+        raise errors.CertStorageError('renewal  config  file  name  must  end  in  .conf')
+    return os.path.basename(config_filename[:(- len('.conf'))])
+",returns the lineagename for a configuration filename .,5,4,5,takes config filename .,2,3,3,returns the configuration file associated with the provided filename .,2,3,2,load the configuration file using configuration .,1,2,3,parses a config file a file .,3,3,4
+"def _python_installed(ret, python, user=None):
+    default = __salt__['pyenv.default'](runas=user)
+    for version in __salt__['pyenv.versions'](user):
+        if (version == python):
+            ret['result'] = True
+            ret['comment'] = 'Requested  python  exists.'
+            ret['default'] = (default == python)
+            break
+    return ret
+",check to see if given python version is installed .,5,5,5,return a string containing the given python path .,2,2,2,check to see if the current host is installed .,3,3,2,return the current python version in both de-normalize and the system .,2,2,3,return the output of python files files a .,1,3,3
+"def get_user(keystone, name):
+    users = [x for x in keystone.users.list() if (x.name == name)]
+    count = len(users)
+    if (count == 0):
+        raise KeyError(('No  keystone  users  with  name  %s' % name))
+    elif (count > 1):
+        raise ValueError(('%d  users  with  name  %s' % (count, name)))
+    else:
+        return users[0]
+",retrieve a user by name .,3,3,4,get the name of a user .,2,3,2,retrieve a user list by name .,2,3,3,retrieve the users group by value .,2,2,4,remove a users created == == .,1,1,3
+"def unhex(s):
+    bits = 0
+    for c in s:
+        c = bytes((c,))
+        if ('0' <= c <= '9'):
+            i = ord('0')
+        elif ('a' <= c <= 'f'):
+            i = (ord('a') - 10)
+        elif ('A' <= c <= 'F'):
+            i = (ord('A') - 10)
+        else:
+            assert False, ('non-hex  digit  ' + repr(c))
+        bits = ((bits * 16) + (ord(c) - i))
+    return bits
+",format a string like microsoft to a particular number .,5,5,5,convert a string out of an a long number to a byte string .,5,5,4,return a byte ordinal from a string of bits .,3,5,5,a -> byte string return true if a character is a hexadecimal .,1,2,2,validates a string out of a valid ascii .,2,5,5
+"def url_filename(url):
+    match = upload_title_re.match(url)
+    if match:
+        return match.group('filename')
+    else:
+        return url
+",takes a url and prepends the site_url .,2,2,4,synthesizes an url to a local filename .,5,5,5,custom filename .,3,5,5,return an s3 match that should be used with a filename .,4,4,3,split an url prefix it link is git browser .,3,3,4
+"def get_sw_login_version():
+    return '-'.join(get_sw_version(strip_build_num=True).split('-')[1:(-2)])
+",return the current version .,4,5,5,return the version of these bindings whose tag is 0 .,3,3,4,return the current login version .,5,5,5,return the major string .,2,5,5,split the software and .,1,3,2
+"def _get_objects(obj_type):
+    lst_objs = FakeRetrieveResult()
+    for key in _db_content[obj_type]:
+        lst_objs.add_object(_db_content[obj_type][key])
+    return lst_objs
+",get objects of the type .,5,5,5,get object references of the type .,5,4,5,add objects of the type .,5,5,5,add object to the type of object .,3,3,3,get object of the object .,1,3,2
+"def add_arg(f, *args, **kwargs):
+    if (not hasattr(f, 'arguments')):
+        f.arguments = []
+    if ((args, kwargs) not in f.arguments):
+        f.arguments.insert(0, (args, kwargs))
+",add arguments to the given arguments .,3,4,4,add arguments to a function that may or may be called within the function .,5,3,3,adds items before entry to kwargs we are in api .,1,2,3,add a function to the list of args .,1,3,3,insert a to to a given command .,1,3,3
+"def import_buffer_to_ast(buf, module_name):
+    return hy_compile(import_buffer_to_hst(buf), module_name)
+",import content from ast .,2,5,5,import a module and return its name .,3,5,5,compile a module and returns the content .,5,5,5,import content module into a specific module name .,4,4,5,compile up of ast and raise a scalar .,2,3,5
+"def merge_with(func, *dicts, **kwargs):
+    if ((len(dicts) == 1) and (not isinstance(dicts[0], dict))):
+        dicts = dicts[0]
+    factory = _get_factory(merge_with, kwargs)
+    result = factory()
+    for d in dicts:
+        for (k, v) in iteritems(d):
+            if (k not in result):
+                result[k] = [v]
+            else:
+                result[k].append(v)
+    return valmap(func, result, factory)
+",merges the dictionaries with a list of dictionaries .,3,4,4,merges mapping dictionaries into a single lists .,5,5,5,wrap a list of dictionaries .,3,5,5,merges dictionary b into a like dict b where each dictionary is a .,2,2,2,merge merge apply add a make different a given list only different == different different different list .,1,1,1
+"def strip_html(unclean):
+    if ((not isinstance(unclean, basestring)) and (not is_iterable(unclean)) and (unclean is not None)):
+        return unclean
+    return bleach.clean(unclean, strip=True, tags=[], attributes=[], styles=[])
+",return html with html stripped .,5,5,5,strips all html tags from an html string .,5,5,5,return html with tags stripped and a single space .,3,3,5,helper method that strips html markup from an html string .,5,3,5,helper through list and .,2,3,1
+"def get_health(**kwargs):
+    with _IpmiCommand(**kwargs) as s:
+        return s.get_health()
+",get current hardware batches of the given string .,3,5,5,get current boot device override information .,5,5,5,get current health state .,4,5,5,get current device override the current matrices .,3,3,4,get the instance device density the given .,2,4,4
+"def test_boolean():
+    assert hug.types.boolean('1')
+    assert hug.types.boolean('T')
+    assert (not hug.types.boolean(''))
+    assert hug.types.boolean('False')
+    assert (not hug.types.boolean(False))
+",test to ensure that the boolean type correctly allows the provided boolean values .,4,3,4,tests to ensure that the smart boolean type correctly handles a list of values .,5,5,5,tests that hugs boolean type correctly handles a hug boolean value .,4,2,4,test to ensure the smart boolean type works as expected .,3,5,5,test that ensure that hug type type works handles a .,1,1,1
+"def unregister_hosting_service(name):
+    try:
+        _hosting_service_registry.unregister_by_attr(u'hosting_service_id', name)
+    except ItemLookupError as e:
+        logging.error((u'Failed  to  unregister  unknown  hosting  service  ""%s""' % name))
+        raise e
+",unregister a previously registered hosting service by name .,5,4,5,checks if a service is available .,3,5,5,unregister a service .,3,5,5,unregisters a service from the registered machine .,4,3,5,returns the service functions to .,1,2,1
+"def runproc(cmd):
+    proc = Popen([cmd], shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
+    (stdoutdata, stderrdata) = proc.communicate()
+    return (stdoutdata, stderrdata)
+",run cmd as a shell command .,5,5,5,attempts to standardize the cmd and return a shell .,3,4,4,run commands on a remote host by index .,2,5,5,run commands and throw its stdout .,3,3,5,convert to to read read to to to .,1,2,1
+"def convert_unreachable_exception(e, error_format=u'Facebook  is  unreachable  %s'):
+    exception_class = map_unreachable_exception(e)
+    error_message = (error_format % str(e))
+    exception = exception_class(error_message)
+    return exception
+",translates a model(s) error handler .,4,5,5,return a token: exception that should raise an exception .,4,3,4,returns a string representation of the exception map .,3,5,5,convert exception into error message in a format exception .,5,3,5,builds an exception exception .,3,5,3
+"def get_text(original, token, replace):
+    if replace:
+        return token.text
+    else:
+        return original[token.startchar:token.endchar]
+",return a string with the first whitespace replaced by a text .,2,4,5,return a map of text for the token .,4,5,5,returns a formatted token that could be used with a form .,3,4,5,returns a string with migration replaced by a a ii metres .,4,4,3,return the in the string matching string string .,1,2,1
+"def temp_file_for(path):
+    ext = os.path.splitext(path)[1]
+    with NamedTemporaryFile(suffix=ext, delete=False) as f:
+        return f.name
+",returns the temporary file path for a given temporary file .,2,4,5,return the name of a file .,5,5,5,delete a file and return its name .,2,4,5,delete a file .,1,3,5,delete an object file from path file file path path name path .,1,1,1
+"def saturated(color, factor=150):
+    h = color.hsvHueF()
+    s = color.hsvSaturationF()
+    v = color.valueF()
+    a = color.alphaF()
+    s = ((factor * s) / 100.0)
+    s = max(min(1.0, s), 0.0)
+    return QColor.fromHsvF(h, s, v, a).convertTo(color.spec())
+",normalize a printing .,4,5,5,returns a pylab color that is made by the given number of a color by the current color .,5,3,4,converts a qcolor in the file/addon format to the python_egg_cache location .,4,3,5,converts a qcolor that either an integer or a color matrix .,3,4,5,transform ad color color based .,2,4,2
+"def _absolute_path(path, relative_to=None):
+    if (path and os.path.isabs(path)):
+        return path
+    if (path and (relative_to is not None)):
+        _abspath = os.path.join(relative_to, path)
+        if os.path.isfile(_abspath):
+            log.debug(""Relative  path  '{0}'  converted  to  existing  absolute  path  '{1}'"".format(path, _abspath))
+            return _abspath
+    return path
+",get an absolute path for the initial path .,5,5,5,returns an absolute path for a path relative to the tests/ directory .,4,3,5,convert a path to a relative path .,2,5,5,convert a relative path or absolute path to absolute path .,5,4,5,return the absolute version for .,1,2,1
+"def flatten_list(list_of_list=[[], []]):
+    return sum(list_of_list, [])
+",flattens a list of lists into a list .,5,5,5,flatten a list of lists into a new list .,5,5,5,flatten a list of lists into a single list .,5,5,5,return a list of the value in the list of strings .,2,4,5,returns the number of numbers of .,1,1,1
+"def _tosequence(X):
+    if isinstance(X, Mapping):
+        return [X]
+    else:
+        return tosequence(X)
+",converts from bits to nats .,2,5,5,test to make sure x is a proper matrix or a number of input .,5,5,4,like the matlab function .,1,4,5,is x an annotation input and derivative .,2,4,5,returns a .,1,4,3
+"def libvlc_media_get_duration(p_md):
+    f = (_Cfunctions.get('libvlc_media_get_duration', None) or _Cfunction('libvlc_media_get_duration', ((1,),), None, ctypes.c_longlong, Media))
+    return f(p_md)
+",get the duration of media descriptor object .,4,5,5,get the current media type .,2,5,5,get the current media descriptor object .,5,5,5,get the reference count of a media descriptor object .,2,4,5,get the the the .,1,2,1
+"def resource_patch(context, data_dict):
+    _check_access('resource_patch', context, data_dict)
+    show_context = {'model': context['model'], 'session': context['session'], 'user': context['user'], 'auth_user_obj': context['auth_user_obj']}
+    resource_dict = _get_action('resource_show')(show_context, {'id': _get_or_bust(data_dict, 'id')})
+    patched = dict(resource_dict)
+    patched.update(data_dict)
+    return _update.resource_update(context, patched)
+",patch an action .,3,5,5,patch an organization .,3,5,5,patch an existing resource .,5,5,5,patch a patch .,4,5,5,patch a resource .,4,5,5
+"def pyramid_laplacian(image, max_layer=(-1), downscale=2, sigma=None, order=1, mode='reflect', cval=0):
+    _check_factor(downscale)
+    image = img_as_float(image)
+    if (sigma is None):
+        sigma = ((2 * downscale) / 6.0)
+    layer = 0
+    rows = image.shape[0]
+    cols = image.shape[1]
+    smoothed_image = _smooth(image, sigma, mode, cval)
+    (yield (image - smoothed_image))
+    while (layer != max_layer):
+        layer += 1
+        out_rows = math.ceil((rows / float(downscale)))
+        out_cols = math.ceil((cols / float(downscale)))
+        resized_image = resize(smoothed_image, (out_rows, out_cols), order=order, mode=mode, cval=cval)
+        smoothed_image = _smooth(resized_image, sigma, mode, cval)
+        prev_rows = rows
+        prev_cols = cols
+        rows = resized_image.shape[0]
+        cols = resized_image.shape[1]
+        if ((prev_rows == rows) and (prev_cols == cols)):
+            break
+        (yield (resized_image - smoothed_image))
+",upsample the given image .,5,5,5,interstitial an image by astropy it to the 4-character dataset .,5,3,5,upsample images with half half .,3,5,4,upsample and then smooth image .,3,5,5,return image of image image operation image to image image image .,1,1,1
+"def get_fun(fun):
+    with _get_serv(ret=None, commit=True) as cur:
+        sql = 'SELECT  s.id,s.jid,  s.full_ret\n                                FROM  salt_returns  s\n                                JOIN  (  SELECT  MAX(`jid`)  as  jid\n                                        from  salt_returns  GROUP  BY  fun,  id)  max\n                                ON  s.jid  =  max.jid\n                                WHERE  s.fun  =  %s\n                                '
+        cur.execute(sql, (fun,))
+        data = cur.fetchall()
+        ret = {}
+        if data:
+            for (minion, _, full_ret) in data:
+                ret[minion] = full_ret
+        return ret
+",return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5,return a dict of the last function called for all minions .,5,5,5
+"def store_temp_file(filedata, filename, path=None):
+    filename = get_filename_from_path(filename)
+    filename = filename[:100]
+    options = Config()
+    if path:
+        target_path = path
+    else:
+        tmp_path = options.cuckoo.get('tmppath', '/tmp')
+        target_path = os.path.join(tmp_path, 'cuckoo-tmp')
+    if (not os.path.exists(target_path)):
+        os.mkdir(target_path)
+    tmp_dir = tempfile.mkdtemp(prefix='upload_', dir=target_path)
+    tmp_file_path = os.path.join(tmp_dir, filename)
+    with open(tmp_file_path, 'wb') as tmp_file:
+        if hasattr(filedata, 'read'):
+            chunk = filedata.read(1024)
+            while chunk:
+                tmp_file.write(chunk)
+                chunk = filedata.read(1024)
+        else:
+            tmp_file.write(filedata)
+    return tmp_file_path
+",fetch a temporary file to disk .,4,5,5,return a temp file to disk .,4,5,5,retrieve all the config file to a temporary file .,3,4,5,saves and diff a temporary file to a temp file .,5,4,5,creates creates function to to to .,1,2,1
+"def _createTargetDirs():
+    if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+        try:
+            if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+                os.makedirs(paths.POCSUITE_OUTPUT_PATH, 493)
+            warnMsg = (""using  '%s'  as  the  output  directory"" % paths.POCSUITE_OUTPUT_PATH)
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+        except (OSError, IOError) as ex:
+            try:
+                tempDir = tempfile.mkdtemp(prefix='pocsuiteoutput')
+            except Exception as _:
+                errMsg = (""unable  to  write  to  the  temporary  directory  ('%s').  "" % _)
+                errMsg += 'Please  make  sure  that  your  disk  is  not  full  and  '
+                errMsg += 'that  you  have  sufficient  write  permissions  to  '
+                errMsg += 'create  temporary  files  and/or  directories'
+                raise PocsuiteSystemException(errMsg)
+            warnMsg = 'unable  to  create  regular  output  directory  '
+            warnMsg += (""'%s'  (%s).  "" % (paths.POCSUITE_OUTPUT_PATH, getUnicode(ex)))
+            warnMsg += (""Using  temporary  directory  '%s'  instead"" % getUnicode(tempDir))
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+            paths.POCUSITE_OUTPUT_PATH = tempDir
+",creates the project directory .,4,5,5,create the given virtual directory .,4,5,5,create all dirs paths and place the admin paths .,5,3,5,create the file directory .,4,5,5,sets absolute absolute for for .,1,1,1
+"def _setwindowposition(folder_alias, (x, y)):
+    finder = _getfinder()
+    args = {}
+    attrs = {}
+    aeobj_0 = aetypes.ObjectSpecifier(want=aetypes.Type('cfol'), form='alis', seld=folder_alias, fr=None)
+    aeobj_1 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('cwnd'), fr=aeobj_0)
+    aeobj_2 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('posn'), fr=aeobj_1)
+    args['----'] = aeobj_2
+    args['data'] = [x, y]
+    (_reply, args, attrs) = finder.send('core', 'setd', args, attrs)
+    if args.has_key('errn'):
+        raise Error, aetools.decodeerror(args)
+    if args.has_key('----'):
+        return args['----']
+",set the size of a finder window for folder to .,4,5,4,set the size of a finder window for folder to .,4,5,4,set the size of a finder window for folder to .,4,5,4,set the size of a finder window for folder to .,4,5,4,set the size of a finder window for folder to .,4,5,4
+"def walk(top, topdown=True, followlinks=False):
+    names = os.listdir(top)
+    (dirs, nondirs) = ([], [])
+    for name in names:
+        if path.isdir(path.join(top, name)):
+            dirs.append(name)
+        else:
+            nondirs.append(name)
+    if topdown:
+        (yield (top, dirs, nondirs))
+    for name in dirs:
+        fullpath = path.join(top, name)
+        if (followlinks or (not path.islink(fullpath))):
+            for x in walk(fullpath, topdown, followlinks):
+                (yield x)
+    if (not topdown):
+        (yield (top, dirs, nondirs))
+",backport of os .,4,5,5,backport of os .,4,5,5,backport of os .,4,5,5,backport of os .,4,5,5,backport of os .,4,5,5
+"@testing.requires_testing_data
+@requires_mne
+def test_other_volume_source_spaces():
+    tempdir = _TempDir()
+    temp_name = op.join(tempdir, 'temp-src.fif')
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name, '--mri', fname_mri])
+    src = read_source_spaces(temp_name)
+    src_new = setup_volume_source_space(None, pos=7.0, mri=fname_mri, subjects_dir=subjects_dir)
+    _compare_source_spaces(src, src_new, mode='approx')
+    assert_true(('volume,  shape' in repr(src)))
+    del src
+    del src_new
+    assert_raises(ValueError, setup_volume_source_space, 'sample', temp_name, pos=7.0, sphere=[1.0, 1.0], mri=fname_mri, subjects_dir=subjects_dir)
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name])
+    assert_raises(ValueError, read_source_spaces, temp_name)
+",test setting up volume source spaces .,5,5,5,test morphing of source volume info .,4,5,5,test setting up volume source spaces .,5,5,5,test subreddits volume lines .,3,5,5,test reading setting and xml in in in .,1,2,1
+"def SetHelpMenuOtherHelp(mainMenu):
+    global helpIDMap
+    if (helpIDMap is None):
+        helpIDMap = {}
+        cmdID = win32ui.ID_HELP_OTHER
+        excludeList = ['Main  Python  Documentation', 'Pythonwin  Reference']
+        firstList = ListAllHelpFiles()
+        excludeFnames = []
+        for (desc, fname) in firstList:
+            if (desc in excludeList):
+                excludeFnames.append(fname)
+        helpDescs = []
+        for (desc, fname) in firstList:
+            if (fname not in excludeFnames):
+                helpIDMap[cmdID] = (desc, fname)
+                win32ui.GetMainFrame().HookCommand(HandleHelpOtherCommand, cmdID)
+                cmdID = (cmdID + 1)
+    helpMenu = mainMenu.GetSubMenu((mainMenu.GetMenuItemCount() - 1))
+    otherHelpMenuPos = 2
+    otherMenu = helpMenu.GetSubMenu(otherHelpMenuPos)
+    while otherMenu.GetMenuItemCount():
+        otherMenu.DeleteMenu(0, win32con.MF_BYPOSITION)
+    if helpIDMap:
+        for (id, (desc, fname)) in helpIDMap.iteritems():
+            otherMenu.AppendMenu((win32con.MF_ENABLED | win32con.MF_STRING), id, desc)
+    else:
+        helpMenu.EnableMenuItem(otherHelpMenuPos, (win32con.MF_BYPOSITION | win32con.MF_GRAYED))
+",clears the lower-left from the command .,1,5,5,return the list of files .,3,5,5,create a new displayed of files .,5,5,5,joined the cached bridges of all files in the gui .,2,4,5,read history latest output files from read read information data .,2,3,3
+"def update(directory, composer=None, php=None, runas=None, prefer_source=None, prefer_dist=None, no_scripts=None, no_plugins=None, optimize=None, no_dev=None, quiet=False, composer_home='/root'):
+    result = _run_composer('update', directory=directory, extra_flags='--no-progress', composer=composer, php=php, runas=runas, prefer_source=prefer_source, prefer_dist=prefer_dist, no_scripts=no_scripts, no_plugins=no_plugins, optimize=optimize, no_dev=no_dev, quiet=quiet, composer_home=composer_home)
+    return result
+",optimize a previously-encrypted .,3,5,5,update a gemset .,4,5,4,runs composer not been modified .,3,5,5,updates the package definitions with packages .,4,5,5,uses files files in the transformed directory .,2,4,3
+"def testOnSequenceData(module, dataset):
+    target = dataset.getField('target')
+    output = ModuleValidator.calculateModuleOutput(module, dataset)
+    ends = SequenceHelper.getSequenceEnds(dataset)
+    summed_output = zeros(dataset.outdim)
+    class_output = []
+    class_target = []
+    for j in range(len(output)):
+        summed_output += output[j]
+        if (j in ends):
+            class_output.append(argmax(summed_output))
+            class_target.append(argmax(target[j]))
+            summed_output = zeros(dataset.outdim)
+    class_output = array(class_output)
+    class_target = array(class_target)
+    return Validator.classificationPerformance(class_output, class_target)
+",returns a sorted list of pairs to types .,1,5,3,gets the output of eigenvalues test of different modules .,2,5,5,returns the test representation of the dataset .,3,5,5,returns a dataset class that can be used to test the output of nf .,1,4,4,evaluate the of update the minimum of .,1,3,2
+"def populate_tables(db, prefix, tmp_prefix, bounds):
+    bbox = ('ST_SetSRID(ST_MakeBox2D(ST_MakePoint(%.6f,  %.6f),  ST_MakePoint(%.6f,  %.6f)),  900913)' % bounds)
+    db.execute('BEGIN')
+    for table in ('point', 'line', 'roads', 'polygon'):
+        db.execute(('DELETE  FROM  %(prefix)s_%(table)s  WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+        db.execute(('INSERT  INTO  %(prefix)s_%(table)s\n                                            SELECT  *  FROM  %(tmp_prefix)s_%(table)s\n                                            WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+    db.execute('COMMIT')
+",populate permanent tables for all database .,2,5,5,create a changeset tables for all temporary tables .,3,5,5,populate the database tables for osm module .,2,5,4,drop the tables for all temporary tables .,2,5,5,ensure should of of should converting coordinates within .,1,2,1
+"def did_you_mean_units(s, all_units, deprecated_units, format_decomposed):
+    def fix_deprecated(x):
+        if (x in deprecated_units):
+            results = [(x + u'  (deprecated)')]
+            decomposed = _try_decomposed(all_units[x], format_decomposed)
+            if (decomposed is not None):
+                results.append(decomposed)
+            return results
+        return (x,)
+    return did_you_mean(s, all_units, fix=fix_deprecated)
+",populate some num_of_items_to_keep objects .,4,4,3,return a list of benchmark containing all applying or worksheet .,2,5,5,this is a list of all processer found in the unicode() list .,3,4,3,fix a series of units .,4,5,5,takes uses to a a .,1,1,1
+"def ValidateActionsInTarget(target, target_dict, build_file):
+    target_name = target_dict.get('target_name')
+    actions = target_dict.get('actions', [])
+    for action in actions:
+        action_name = action.get('action_name')
+        if (not action_name):
+            raise GypError((""Anonymous  action  in  target  %s.    An  action  must  have  an  'action_name'  field."" % target_name))
+        inputs = action.get('inputs', None)
+        if (inputs is None):
+            raise GypError(('Action  in  target  %s  has  no  inputs.' % target_name))
+        action_command = action.get('action')
+        if (action_command and (not action_command[0])):
+            raise GypError(('Empty  action  as  command  in  target  %s.' % target_name))
+",builds one or more file into the given target node .,1,5,5,validates the action on the target node that is a string weeks .,5,4,3,verifies that the action is in the target list of another actions .,4,5,5,writes all the action into the given target .,2,5,5,ensures the node g the target that this target .,5,4,3
+"def _do_search(conf):
+    connargs = {}
+    for name in ['server', 'port', 'tls', 'binddn', 'bindpw', 'anonymous']:
+        connargs[name] = _config(name, conf)
+    if (connargs['binddn'] and connargs['bindpw']):
+        connargs['anonymous'] = False
+    try:
+        _filter = conf['filter']
+    except KeyError:
+        raise SaltInvocationError('missing  filter')
+    _dn = _config('dn', conf)
+    scope = _config('scope', conf)
+    _lists = (_config('lists', conf) or [])
+    _attrs = (_config('attrs', conf) or [])
+    attrs = (_lists + _attrs)
+    if (not attrs):
+        attrs = None
+    try:
+        result = __salt__['ldap.search'](_filter, _dn, scope, attrs, **connargs)['results']
+    except IndexError:
+        log.debug('LDAP  search  returned  no  results  for  filter  {0}'.format(_filter))
+        result = {}
+    except Exception:
+        log.critical('Failed  to  retrieve  pillar  data  from  LDAP:\n', exc_info=True)
+        return {}
+    return result
+",look for connargs .,2,5,3,filter config for a specific search in the running config dictionary .,3,5,5,return the search for hiera hiera .,2,3,3,show the current config of a node and requests .,4,5,5,return a dict optional dict only .,2,5,5
+"def resource_patch(context, data_dict):
+    _check_access('resource_patch', context, data_dict)
+    show_context = {'model': context['model'], 'session': context['session'], 'user': context['user'], 'auth_user_obj': context['auth_user_obj']}
+    resource_dict = _get_action('resource_show')(show_context, {'id': _get_or_bust(data_dict, 'id')})
+    patched = dict(resource_dict)
+    patched.update(data_dict)
+    return _update.resource_update(context, patched)
+",patch an action .,3,5,5,patch an organization .,3,5,5,patch an existing resource .,4,5,5,patch a patch .,1,2,3,patch a resource .,3,5,5
+"def pyramid_laplacian(image, max_layer=(-1), downscale=2, sigma=None, order=1, mode='reflect', cval=0):
+    _check_factor(downscale)
+    image = img_as_float(image)
+    if (sigma is None):
+        sigma = ((2 * downscale) / 6.0)
+    layer = 0
+    rows = image.shape[0]
+    cols = image.shape[1]
+    smoothed_image = _smooth(image, sigma, mode, cval)
+    (yield (image - smoothed_image))
+    while (layer != max_layer):
+        layer += 1
+        out_rows = math.ceil((rows / float(downscale)))
+        out_cols = math.ceil((cols / float(downscale)))
+        resized_image = resize(smoothed_image, (out_rows, out_cols), order=order, mode=mode, cval=cval)
+        smoothed_image = _smooth(resized_image, sigma, mode, cval)
+        prev_rows = rows
+        prev_cols = cols
+        rows = resized_image.shape[0]
+        cols = resized_image.shape[1]
+        if ((prev_rows == rows) and (prev_cols == cols)):
+            break
+        (yield (resized_image - smoothed_image))
+",upsample the given image .,1,5,5,interstitial an image by astropy it to the 4-character dataset .,2,5,5,upsample images with half half .,1,3,3,upsample and then smooth image .,1,5,5,return image of image image operation image to image image image .,1,1,1
+"def get_fun(fun):
+    with _get_serv(ret=None, commit=True) as cur:
+        sql = 'SELECT  s.id,s.jid,  s.full_ret\n                                FROM  salt_returns  s\n                                JOIN  (  SELECT  MAX(`jid`)  as  jid\n                                        from  salt_returns  GROUP  BY  fun,  id)  max\n                                ON  s.jid  =  max.jid\n                                WHERE  s.fun  =  %s\n                                '
+        cur.execute(sql, (fun,))
+        data = cur.fetchall()
+        ret = {}
+        if data:
+            for (minion, _, full_ret) in data:
+                ret[minion] = full_ret
+        return ret
+",return a dict of the last function called for all minions .,4,5,5,return a dict of the last function called for all minions .,4,5,5,return a dict of the last function called for all minions .,4,5,5,return a dict of the last function called for all minions .,4,5,5,return a dict of the last function called for all minions .,4,5,5
+"def get_svc_avail_path():
+    return AVAIL_SVR_DIRS
+",return the available file path .,4,5,5,returns available services .,3,5,5,get the available path .,4,5,5,return a path available on the services .,4,5,5,get a of available .,1,5,1
+"def store_temp_file(filedata, filename, path=None):
+    filename = get_filename_from_path(filename)
+    filename = filename[:100]
+    options = Config()
+    if path:
+        target_path = path
+    else:
+        tmp_path = options.cuckoo.get('tmppath', '/tmp')
+        target_path = os.path.join(tmp_path, 'cuckoo-tmp')
+    if (not os.path.exists(target_path)):
+        os.mkdir(target_path)
+    tmp_dir = tempfile.mkdtemp(prefix='upload_', dir=target_path)
+    tmp_file_path = os.path.join(tmp_dir, filename)
+    with open(tmp_file_path, 'wb') as tmp_file:
+        if hasattr(filedata, 'read'):
+            chunk = filedata.read(1024)
+            while chunk:
+                tmp_file.write(chunk)
+                chunk = filedata.read(1024)
+        else:
+            tmp_file.write(filedata)
+    return tmp_file_path
+",fetch a temporary file to disk .,3,5,5,return a temp file to disk .,4,5,5,retrieve all the config file to a temporary file .,1,5,5,saves and diff a temporary file to a temp file .,2,5,5,creates creates function to to to .,1,1,1
+"def _createTargetDirs():
+    if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+        try:
+            if (not os.path.isdir(paths.POCSUITE_OUTPUT_PATH)):
+                os.makedirs(paths.POCSUITE_OUTPUT_PATH, 493)
+            warnMsg = (""using  '%s'  as  the  output  directory"" % paths.POCSUITE_OUTPUT_PATH)
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+        except (OSError, IOError) as ex:
+            try:
+                tempDir = tempfile.mkdtemp(prefix='pocsuiteoutput')
+            except Exception as _:
+                errMsg = (""unable  to  write  to  the  temporary  directory  ('%s').  "" % _)
+                errMsg += 'Please  make  sure  that  your  disk  is  not  full  and  '
+                errMsg += 'that  you  have  sufficient  write  permissions  to  '
+                errMsg += 'create  temporary  files  and/or  directories'
+                raise PocsuiteSystemException(errMsg)
+            warnMsg = 'unable  to  create  regular  output  directory  '
+            warnMsg += (""'%s'  (%s).  "" % (paths.POCSUITE_OUTPUT_PATH, getUnicode(ex)))
+            warnMsg += (""Using  temporary  directory  '%s'  instead"" % getUnicode(tempDir))
+            logger.log(CUSTOM_LOGGING.WARNING, warnMsg)
+            paths.POCUSITE_OUTPUT_PATH = tempDir
+",creates the project directory .,4,5,5,create the given virtual directory .,4,5,5,create all dirs paths and place the admin paths .,2,5,5,create the file directory .,4,5,5,sets absolute absolute for for .,1,1,1
+"def unhex(s):
+    bits = 0
+    for c in s:
+        c = bytes((c,))
+        if ('0' <= c <= '9'):
+            i = ord('0')
+        elif ('a' <= c <= 'f'):
+            i = (ord('a') - 10)
+        elif ('A' <= c <= 'F'):
+            i = (ord('A') - 10)
+        else:
+            assert False, ('non-hex  digit  ' + repr(c))
+        bits = ((bits * 16) + (ord(c) - i))
+    return bits
+",format a string like microsoft to a particular number .,2,5,5,convert a string out of an a long number to a byte string .,3,5,5,return a byte ordinal from a string of bits .,3,5,5,a -> byte string return true if a character is a hexadecimal .,1,5,4,validates a string out of a valid ascii .,1,4,3
+"def _setwindowposition(folder_alias, (x, y)):
+    finder = _getfinder()
+    args = {}
+    attrs = {}
+    aeobj_0 = aetypes.ObjectSpecifier(want=aetypes.Type('cfol'), form='alis', seld=folder_alias, fr=None)
+    aeobj_1 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('cwnd'), fr=aeobj_0)
+    aeobj_2 = aetypes.ObjectSpecifier(want=aetypes.Type('prop'), form='prop', seld=aetypes.Type('posn'), fr=aeobj_1)
+    args['----'] = aeobj_2
+    args['data'] = [x, y]
+    (_reply, args, attrs) = finder.send('core', 'setd', args, attrs)
+    if args.has_key('errn'):
+        raise Error, aetools.decodeerror(args)
+    if args.has_key('----'):
+        return args['----']
+",set the size of a finder window for folder to .,3,5,3,set the size of a finder window for folder to .,3,5,3,set the size of a finder window for folder to .,3,5,3,set the size of a finder window for folder to .,3,5,3,set the size of a finder window for folder to .,3,5,3
+"def walk(top, topdown=True, followlinks=False):
+    names = os.listdir(top)
+    (dirs, nondirs) = ([], [])
+    for name in names:
+        if path.isdir(path.join(top, name)):
+            dirs.append(name)
+        else:
+            nondirs.append(name)
+    if topdown:
+        (yield (top, dirs, nondirs))
+    for name in dirs:
+        fullpath = path.join(top, name)
+        if (followlinks or (not path.islink(fullpath))):
+            for x in walk(fullpath, topdown, followlinks):
+                (yield x)
+    if (not topdown):
+        (yield (top, dirs, nondirs))
+",backport of os .,3,5,5,backport of os .,3,5,5,backport of os .,3,5,5,backport of os .,3,5,5,backport of os .,3,5,5
+"def url_filename(url):
+    match = upload_title_re.match(url)
+    if match:
+        return match.group('filename')
+    else:
+        return url
+",takes a url and prepends the site_url .,3,5,5,synthesizes an url to a local filename .,3,5,5,custom filename .,1,5,5,return an s3 match that should be used with a filename .,4,5,5,split an url prefix it link is git browser .,4,4,3
+"@testing.requires_testing_data
+@requires_mne
+def test_other_volume_source_spaces():
+    tempdir = _TempDir()
+    temp_name = op.join(tempdir, 'temp-src.fif')
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name, '--mri', fname_mri])
+    src = read_source_spaces(temp_name)
+    src_new = setup_volume_source_space(None, pos=7.0, mri=fname_mri, subjects_dir=subjects_dir)
+    _compare_source_spaces(src, src_new, mode='approx')
+    assert_true(('volume,  shape' in repr(src)))
+    del src
+    del src_new
+    assert_raises(ValueError, setup_volume_source_space, 'sample', temp_name, pos=7.0, sphere=[1.0, 1.0], mri=fname_mri, subjects_dir=subjects_dir)
+    run_subprocess(['mne_volume_source_space', '--grid', '7.0', '--src', temp_name])
+    assert_raises(ValueError, read_source_spaces, temp_name)
+",test setting up volume source spaces .,3,5,5,test morphing of source volume info .,3,5,5,test setting up volume source spaces .,4,5,5,test subreddits volume lines .,2,5,5,test reading setting and xml in in in .,1,2,2
+"def get_preamble():
+    latex_preamble = rcParams.get(u'pgf.preamble', u'')
+    if (type(latex_preamble) == list):
+        latex_preamble = u'\n'.join(latex_preamble)
+    return latex_preamble
+",given the first and type .,1,4,4,get latex marker value .,4,5,5,construct a accountbroker for the preamble and latex .,2,4,5,return the list of paths for the given project .,2,5,5,convert latex and and xml and .,1,3,3
+"def analyze_modules(project, task_handle=taskhandle.NullTaskHandle()):
+    resources = project.get_python_files()
+    job_set = task_handle.create_jobset('Analyzing  Modules', len(resources))
+    for resource in resources:
+        job_set.started_job(resource.path)
+        analyze_module(project, resource)
+        job_set.finished_job()
+",list resources that are complete for a given file .,2,5,5,return a list of file names of analyze in the project .,4,5,5,try to unpickle jobset on all modules .,3,5,5,create conv file names .,1,5,5,decorator whether for .,1,4,1
+"def get_sw_login_version():
+    return '-'.join(get_sw_version(strip_build_num=True).split('-')[1:(-2)])
+",return the current version .,4,5,5,return the version of these bindings whose tag is 0 .,4,4,4,return the current login version .,5,5,5,return the major string .,2,5,5,split the software and .,1,4,3
+"def SetHelpMenuOtherHelp(mainMenu):
+    global helpIDMap
+    if (helpIDMap is None):
+        helpIDMap = {}
+        cmdID = win32ui.ID_HELP_OTHER
+        excludeList = ['Main  Python  Documentation', 'Pythonwin  Reference']
+        firstList = ListAllHelpFiles()
+        excludeFnames = []
+        for (desc, fname) in firstList:
+            if (desc in excludeList):
+                excludeFnames.append(fname)
+        helpDescs = []
+        for (desc, fname) in firstList:
+            if (fname not in excludeFnames):
+                helpIDMap[cmdID] = (desc, fname)
+                win32ui.GetMainFrame().HookCommand(HandleHelpOtherCommand, cmdID)
+                cmdID = (cmdID + 1)
+    helpMenu = mainMenu.GetSubMenu((mainMenu.GetMenuItemCount() - 1))
+    otherHelpMenuPos = 2
+    otherMenu = helpMenu.GetSubMenu(otherHelpMenuPos)
+    while otherMenu.GetMenuItemCount():
+        otherMenu.DeleteMenu(0, win32con.MF_BYPOSITION)
+    if helpIDMap:
+        for (id, (desc, fname)) in helpIDMap.iteritems():
+            otherMenu.AppendMenu((win32con.MF_ENABLED | win32con.MF_STRING), id, desc)
+    else:
+        helpMenu.EnableMenuItem(otherHelpMenuPos, (win32con.MF_BYPOSITION | win32con.MF_GRAYED))
+",clears the lower-left from the command .,1,5,4,return the list of files .,1,5,5,create a new displayed of files .,2,5,5,joined the cached bridges of all files in the gui .,4,5,5,read history latest output files from read read information data .,3,4,4
+"def update(directory, composer=None, php=None, runas=None, prefer_source=None, prefer_dist=None, no_scripts=None, no_plugins=None, optimize=None, no_dev=None, quiet=False, composer_home='/root'):
+    result = _run_composer('update', directory=directory, extra_flags='--no-progress', composer=composer, php=php, runas=runas, prefer_source=prefer_source, prefer_dist=prefer_dist, no_scripts=no_scripts, no_plugins=no_plugins, optimize=optimize, no_dev=no_dev, quiet=quiet, composer_home=composer_home)
+    return result
+",optimize a previously-encrypted .,2,5,3,update a gemset .,4,5,5,runs composer not been modified .,3,5,5,updates the package definitions with packages .,3,4,4,uses files files in the transformed directory .,2,3,3
+"def testOnSequenceData(module, dataset):
+    target = dataset.getField('target')
+    output = ModuleValidator.calculateModuleOutput(module, dataset)
+    ends = SequenceHelper.getSequenceEnds(dataset)
+    summed_output = zeros(dataset.outdim)
+    class_output = []
+    class_target = []
+    for j in range(len(output)):
+        summed_output += output[j]
+        if (j in ends):
+            class_output.append(argmax(summed_output))
+            class_target.append(argmax(target[j]))
+            summed_output = zeros(dataset.outdim)
+    class_output = array(class_output)
+    class_target = array(class_target)
+    return Validator.classificationPerformance(class_output, class_target)
+",returns a sorted list of pairs to types .,1,5,3,gets the output of eigenvalues test of different modules .,2,5,5,returns the test representation of the dataset .,3,5,5,returns a dataset class that can be used to test the output of nf .,1,4,4,evaluate the of update the minimum of .,1,3,2
+"@retry_on_failure
+def test_inet_pton():
+    if (not is_cli):
+        return
+    socket.inet_pton(socket.AF_INET, '127.0.0.1')
+    AssertError(socket.error, socket.inet_pton, socket.AF_INET, 'garbage  dkfjdkfjdkfj')
+",tests socket .,3,5,5,tests socket .,3,5,5,tests socket .,3,5,5,tests socket .,3,5,5,check that is .,2,5,2
+"def getPath(edges, pathIndexes, loop, z):
+    path = []
+    for pathIndexIndex in xrange(len(pathIndexes)):
+        pathIndex = pathIndexes[pathIndexIndex]
+        edge = edges[pathIndex]
+        carveIntersection = getCarveIntersectionFromEdge(edge, loop, z)
+        path.append(carveIntersection)
+    return path
+",get the mount point between edge and including the edge plus a path .,4,4,4,get the generator nodes from a path .,3,5,5,get the path from the edge that get the edge .,3,3,3,get get both tcl from path .,2,2,3,get point point from the edge intersections on .,3,2,3
+"def get_load(jid):
+    serv = _get_serv(ret=None)
+    data = serv.get('load:{0}'.format(jid))
+    if data:
+        return json.loads(data)
+    return {}
+",return the load data that marks a specified jid .,5,5,5,return the load data that marks a specified jid .,5,5,5,return the load data that marks a specified jid .,5,5,5,return the load data that marks a specified jid .,5,5,5,return the load data that marks a specified jid .,5,5,5
+"def _default_selem(func):
+    @functools.wraps(func)
+    def func_out(image, selem=None, *args, **kwargs):
+        if (selem is None):
+            selem = ndi.generate_binary_structure(image.ndim, image.ndim)
+        return func(image, selem=selem, *args, **kwargs)
+    return func_out
+",decorator to add a default structuring element to morphology functions .,3,4,4,decorator to add a default structuring element to morphology functions .,3,4,4,generates a cross-shaped structuring element .,2,5,5,decorator to add a cross-shaped structuring element to morphology functions .,4,5,5,return to apply the gradient image image in be in for .,2,3,2
+"@preserve_value(sys, 'dont_write_bytecode')
+def _load_module_no_bytecode(filename, module_file, module_file_path, py_source_description):
+    sys.dont_write_bytecode = 1
+    new_module = imp.load_module(os.path.splitext(filename)[0].replace('-', '_'), module_file, module_file_path, py_source_description)
+    return new_module
+",helper function to load a module while setting sys .,4,5,5,helper function to load a module while setting sys .,4,5,5,helper function to load a module while setting sys .,4,5,5,helper function to load a module while setting sys .,4,5,5,helper function to load a module .,3,5,5
+"def populate_tables(db, prefix, tmp_prefix, bounds):
+    bbox = ('ST_SetSRID(ST_MakeBox2D(ST_MakePoint(%.6f,  %.6f),  ST_MakePoint(%.6f,  %.6f)),  900913)' % bounds)
+    db.execute('BEGIN')
+    for table in ('point', 'line', 'roads', 'polygon'):
+        db.execute(('DELETE  FROM  %(prefix)s_%(table)s  WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+        db.execute(('INSERT  INTO  %(prefix)s_%(table)s\n                                            SELECT  *  FROM  %(tmp_prefix)s_%(table)s\n                                            WHERE  ST_Intersects(way,  %(bbox)s)' % locals()))
+    db.execute('COMMIT')
+",populate permanent tables for all database .,2,5,5,create a changeset tables for all temporary tables .,3,5,5,populate the database tables for osm module .,2,5,4,drop the tables for all temporary tables .,2,5,5,ensure should of of should converting coordinates within .,1,2,1
+"def round_if_near_integer(a, epsilon=0.0001):
+    if (abs((a - round(a))) <= epsilon):
+        return round(a)
+    else:
+        return a
+",round a lowercase array into a float integer .,2,5,5,return true if n is a .,1,5,5,round a 1-d array with the value from a in unknown .,3,5,3,locate for a given value to a range for sub-menu .,2,5,5,normalizes function .,2,5,5
+"def get_linode_id_from_name(name):
+    nodes = _query('linode', 'list')['DATA']
+    linode_id = ''
+    for node in nodes:
+        if (name == node['LABEL']):
+            linode_id = node['LINODEID']
+            return linode_id
+    if (not linode_id):
+        raise SaltCloudNotFound('The  specified  name,  {0},  could  not  be  found.'.format(name))
+",get the linode select id from linode .,5,5,5,given a line-separated .,2,5,3,return the id for a linode .,4,5,5,retrieve all registered f(a) for a given node .,3,5,5,return a linode to to a given .,2,3,3

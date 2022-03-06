@@ -1,0 +1,212 @@
+,write,generate,ref,Adequacy annotator one,Adequacy annotator two,Adequacy annotator three,Conciseness annotator one,Conciseness annotator two,Conciseness annotator three,Fluency annotator one,Fluency annotator two,Fluency annotator three
+"def unregister_hosting_service(name):
+    try:
+        _hosting_service_registry.unregister_by_attr(u'hosting_service_id', name)
+    except ItemLookupError as e:
+        logging.error((u'Failed  to  unregister  unknown  hosting  service  ""%s""' % name))
+        raise e
+",check if given name isunregister .,unregister a previously registered hosting service by name  .,unregister a previously registered hosting service  .,3,5,3,5,5,5,5,4,5
+"def libvlc_media_get_duration(p_md):
+    f = (_Cfunctions.get('libvlc_media_get_duration', None) or _Cfunction('libvlc_media_get_duration', ((1,),), None, ctypes.c_longlong, Media))
+    return f(p_md)
+",get the duration of libvlc media .,get the duration of media descriptor object  .,get duration of media descriptor object item  .,5,5,5,5,5,5,5,5,5
+"def set_config_defaults():
+    set_cors_middleware_defaults()
+",run the inner function .,override all configuration default values  .,this method updates all configuration default values  .,1,2,1,5,5,5,5,5,5
+"def main():
+    errno = pytest.main(['-x', 'spyder', '-v', '-rw', '--durations=10', '--cov=spyder', '--cov-report=term-missing'])
+    sys.exit(errno)
+",run the main function and exit .,a docstring  .,run pytest tests  .,4,2,5,5,5,5,5,5,5
+"def pop(key, default=None):
+    store = load()
+    val = store.pop(key, default)
+    dump(store)
+    return val
+",remove the input element from local data .,get a value from the minion datastore  .,pop a value from the minion datastore  .,5,4,4,5,5,5,5,5,5
+"def to_edgelist(G, nodelist=None):
+    if (nodelist is None):
+        return G.edges(data=True)
+    else:
+        return G.edges(nodelist, data=True)
+",return the edges of a list of nodes .,return a list of edges from a dictionary of edges  .,return a list of edges in the graph  .,5,5,5,5,5,5,5,5,5
+"def summary(worker):
+    return _summary_wrap(_summary_format(_summary_dict(worker), worker))
+",return data from dictionary with format .,return a :class:  .,given a worker  .,5,4,4,5,4,5,5,5,4
+"def google():
+    channel = settings.get_auth_google()
+    if (not channel):
+        redirect(URL(f='user', args=request.args, vars=get_vars))
+    from s3oauth import GooglePlusAccount
+    auth.settings.login_form = GooglePlusAccount(channel)
+    form = auth()
+    return {'form': form}
+",login google .,login using google  .,login using google  .,5,3,5,5,5,5,5,5,5
+"def get_file(src, dest, permissions=None):
+    if (src == dest):
+        return
+    if is_url(src):
+        urlretrieve(src, dest)
+    else:
+        shutil.copyfile(src, dest)
+    if permissions:
+        os.chmod(dest, permissions)
+    return dest
+",get a file from a local copy or url download .,get a file from a directory  .,get a file from src  .,5,3,5,5,4,5,5,5,5
+"def flavor_get_by_flavor_id(context, id, read_deleted=None):
+    return IMPL.flavor_get_by_flavor_id(context, id, read_deleted)
+",returns a dict describing specific flavor_id .,get instance type by flavor id  .,get instance type by flavor id  .,4,3,5,5,5,5,5,5,5
+"def _build_status(data, item):
+    stream = item['stream']
+    if ('Running  in' in stream):
+        data.setdefault('Intermediate_Containers', []).append(stream.rstrip().split()[(-1)])
+    if ('Successfully  built' in stream):
+        data['Id'] = stream.rstrip().split()[(-1)]
+",builds status according to stream infomation .,builds a status update from a docker stream  .,process a status update from a docker build  .,4,5,5,5,5,5,5,5,5
+"def match(value, pattern='', ignorecase=False, multiline=False):
+    return regex(value, pattern, ignorecase, multiline, 'match')
+",match regular expression .,perform a multiline submissions  .,perform a re  .,5,5,5,5,5,5,5,5,5
+"def sqlwhere(dictionary):
+    return ('  AND  '.join([('%s  =  %s' % (k, aparam())) for k in dictionary.keys()]), dictionary.values())
+",converts a 'dictionary' to a sql where clause .,converts dictionary to an sql where clause sqlquery  .,converts a dictionary to an sql where clause in reparam format  .,3,5,5,5,5,5,5,5,5
+"def log(runlevel, message):
+    if runlevel:
+        LOGGER.log(LOG_VALUES[runlevel], message)
+",logs a message when the runlevel matchs .,logs a message at the given runlevel  .,logs a message at the given runlevel  .,5,5,5,5,5,5,4,5,5
+"def fixed_ip_get_by_instance(context, instance_uuid):
+    return IMPL.fixed_ip_get_by_instance(context, instance_uuid)
+",returns fixed ips by instance .,get fixed ips by instance id or raise if none exist  .,get fixed ips by instance or raise if none exist  .,5,4,5,5,5,5,5,5,5
+"def avail_sizes():
+    response = list_common_lookups(kwargs={'lookup': 'server.ram'})
+    ret = {}
+    for item in response['list']:
+        name = item['name']
+        ret[name] = item
+    return ret
+",returns a list of the instance sizes .,available sizes  .,available sizes  .,5,2,5,5,5,5,5,5,5
+"def subSGMLRefs(s):
+    return re_sgmlrefsub(_replSGMLRefs, s)
+",returns the given html string with sgml entity and char references replaced .,return the given html string with entity and char references replaced  .,return the given html string with sgml entity and char references replaced  .,4,2,5,5,5,5,5,5,5
+"def EmailCheck(email):
+    if (not EMAIL_RE.match(email)):
+        raise ValueError((_('Not  a  valid  email:  %s') % email))
+    return email
+",checks if the given email is valid .,checks that user is a valid email  .,verify that a string is a valid email  .,5,5,5,5,5,5,5,5,5
+"def getMin(first, second):
+    return min(first, second)
+",gets the smaller value .,get the app  .,get the min  .,5,3,4,5,5,5,5,5,5
+"def __virtual__():
+    if dns_support:
+        return 'ddns'
+    return (False, 'The  ddns  execution  module  cannot  be  loaded:  dnspython  not  installed.')
+",check if ddns execution module is supported .,confirm pypureomapi is available  .,confirm dnspython is available  .,5,3,5,5,4,5,5,5,5
+"def discretize_linear_1D(model, x_range):
+    x = np.arange((x_range[0] - 0.5), (x_range[1] + 0.5))
+    values_intermediate_grid = model(x)
+    return (0.5 * (values_intermediate_grid[1:] + values_intermediate_grid[:(-1)]))
+",discretize the range of the 1d interval x_range .,discretize model by performing a linear interpolation  .,discretize model by performing a linear interpolation  .,4,5,5,4,5,5,4,5,5
+"def get_password(vm_):
+    return config.get_cloud_config_value('password', vm_, __opts__, default=config.get_cloud_config_value('passwd', vm_, __opts__, search_global=False), search_global=False)
+",get the password from the cloud config value .,returns the password to use  .,return the password to use  .,5,5,5,4,5,5,5,5,5
+"def dict_from_expr(expr, **args):
+    (rep, opt) = _dict_from_expr(expr, build_options(args))
+    return (rep, opt.gens)
+",generate rep and opt from the expression .,transform an expression into a multinomial form  .,transform an expression into a multinomial form  .,5,4,5,5,4,5,4,5,5
+"def cell_update(context, cell_name, values):
+    return IMPL.cell_update(context, cell_name, values)
+","update a cell with context, cell name and values .",update a child cell entry  .,update a child cell entry  .,5,5,5,5,5,5,5,5,5
+"def get_auth_from_url(url):
+    if url:
+        url = unquote(url)
+        parsed = urlparse(url)
+        return (parsed.username, parsed.password)
+    else:
+        return ('', '')
+",parse the url and get the username and password .,given a url with authentication components  .,given a url with authentication components  .,5,5,5,5,3,5,5,5,5
+"def Thing2Literal(o, d):
+    return string_literal(o, d)
+",return the literalness of a string .,convert something into a string representation  .,convert something into a sql string literal  .,5,3,5,5,4,4,5,5,5
+"def is_torrent_or_nzb_file(filename):
+    if (not isinstance(filename, (str, unicode))):
+        return False
+    return (filename.rpartition(u'.')[2].lower() in [u'nzb', u'torrent'])
+",test if the file is a torrent or nzb file .,return true if the provided filename is a torrent file  .,check if the provided filename is a nzb file or a torrent file  .,5,5,4,5,5,5,5,5,5
+"def for_int_dtypes_combination(names=('dtype',), no_bool=False, full=None):
+    if no_bool:
+        types = _int_dtypes
+    else:
+        types = _int_bool_dtypes
+    return for_dtypes_combination(types, names, full)
+",dtype combination of int and bool or just int   .,decorator for parameterized test the given question  .,decorator for parameterized test w  .,4,4,5,5,5,5,5,5,5
+"def fixed_ip_count_by_project(context, project_id, session=None):
+    return IMPL.fixed_ip_count_by_project(context, project_id, session=session)
+","fix the ip with context, project id and session .",count fixed ips used by project  .,count fixed ips used by project  .,5,3,3,5,4,5,5,5,5
+"def restart_process(name):
+    run_as_root(('supervisorctl  restart  %(name)s' % locals()))
+",restart process with the given one .,restart a supervisor process  .,restart a supervisor process  .,5,5,5,5,3,4,5,5,4
+"def ycbcr2rgb(ycbcr):
+    arr = ycbcr.copy()
+    arr[..., 0] -= 16
+    arr[..., 1] -= 128
+    arr[..., 2] -= 128
+    return _convert(rgb_from_ycbcr, arr)
+",convert ycbcr image to rgb .,rgb to rgb color space conversion  .,ycbcr to rgb color space conversion  .,5,5,5,5,5,5,5,5,5
+"def print_bucket_acl_for_user(bucket_name, user_email):
+    storage_client = storage.Client()
+    bucket = storage_client.bucket(bucket_name)
+    bucket.acl.reload()
+    roles = bucket.acl.user(user email).get_roles()
+    print roles",print the bucket acl for user  .,prints out a buckets access control list for a given user .,prints out a buckets access control list for a given user .,5,5,5,5,5,5,5,5,5
+"def find_lexer_class(name):
+    if (name in _lexer_cache):
+        return _lexer_cache[name]
+    for (module_name, lname, aliases, _, _) in LEXERS.itervalues():
+        if (name == lname):
+            _load_lexers(module_name)
+            return _lexer_cache[name]
+    for cls in find_plugin_lexers():
+        if (cls.name == name):
+            return cls
+",return a lexer by name or from the plugin .,get a lexer class by name  .,lookup a lexer class by name  .,4,3,5,5,5,5,5,5,5
+"_docstring('recording')
+def get_recording_by_id(id, includes=[], release_status=[], release_type=[]):
+    params = _check_filter_and_make_params('recording', includes, release_status, release_type)
+    return _do_mb_query('recording', id, includes, params)
+","check the filter, make params and return recording by id .",get the recording with the musicbrainz id as a dict with a recording key  .,get the recording with the musicbrainz id as a dict with a recording key  .,4,3,5,5,4,4,5,5,5
+"def close_file_descriptor_if_open(fd):
+    try:
+        os.close(fd)
+    except OSError as exc:
+        if (exc.errno == errno.EBADF):
+            pass
+        else:
+            error = DaemonOSEnvironmentError(('Failed  to  close  file  descriptor  %(fd)d  (%(exc)s)' % vars()))
+            raise error
+",close file descriptor if the file is open .,close a file descriptor  .,close a file descriptor if already open  .,5,5,5,5,5,5,5,5,5
+"def definite_article(word):
+    return 'the'
+",return definite article 'the' .,returns the definite article for a given word  .,returns the definite article for a given word  .,5,5,5,5,5,5,5,5,5
+"def lineagename_for_filename(config_filename):
+    if (not config_filename.endswith('.conf')):
+        raise errors.CertStorageError('renewal  config  file  name  must  end  in  .conf')
+    return os.path.basename(config_filename[:(- len('.conf'))])
+",return the lineage name for given file .,returns the lineagename for a configuration filename  .,returns the lineagename for a configuration filename  .,5,5,3,5,5,5,5,5,5
+"def _python_installed(ret, python, user=None):
+    default = __salt__['pyenv.default'](runas=user)
+    for version in __salt__['pyenv.versions'](user):
+        if (version == python):
+            ret['result'] = True
+            ret['comment'] = 'Requested  python  exists.'
+            ret['default'] = (default == python)
+            break
+    return ret
+",check python environment and install python .,check to see if given python version is installed  .,check to see if given python is installed  .,5,5,1,5,5,4,5,5,5
+"def get_user(keystone, name):
+    users = [x for x in keystone.users.list() if (x.name == name)]
+    count = len(users)
+    if (count == 0):
+        raise KeyError(('No  keystone  users  with  name  %s' % name))
+    elif (count > 1):
+        raise ValueError(('%d  users  with  name  %s' % (count, name)))
+    else:
+        return users[0]
+",return the given user from given list .,retrieve a user by name  .,retrieve a user by name  .,4,4,5,5,5,5,5,5,5

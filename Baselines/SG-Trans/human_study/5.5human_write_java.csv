@@ -1,0 +1,95 @@
+code,write,generate,ref,Adequacy annotator one,Adequacy annotator two,Adequacy annotator three,Conciseness annotator one,Conciseness annotator two,Conciseness annotator three,Fluency annotator one,Fluency annotator two,Fluency annotator three
+"public static String map2OID ( String algName ) { 
+return alg2OidMap . get ( algName . toUpperCase ( Locale . US ) ) ; }
+",returns the element with the key value of algname in the map .,returns oid for algname .,returns oid for algname .,5,3,5,4,4,5,5,4,5
+"public void fireAnnotationSelected ( WorkflowAnnotation anno ) { 
+List < WorkflowAnnotation > list = new LinkedList < > ( ) ; 
+list . add ( anno ) ; 
+fireAnnotationsChanged ( AnnotationEvent . SELECTED_ANNOTATION_CHANGED , list ) ; }
+",selects and change the current annotation to a new workflowannotation .,fire when an annotation has been selected  .,fire when an annotation has been selected  .,4,3,5,5,5,5,5,5,5
+"public AwsIotConnection ( AbstractAwsIotClient client ) { 
+this . client = client ; }
+",construct the awsiotconnection with a abstractawsiotclient instance .,creates a new connection  .,instantiates a new connection object  .,4,3,5,4,4,5,5,5,5
+"public MetaDataColumnDescriptor ( String columnName , int jdbcType , Object defaultValue ) { 
+_columnName = columnName . toUpperCase ( ) ;
+ _jdbcType = jdbcType ;
+ _defaultValue = defaultValue ; }
+",construct the metadatacolumn by parameters .,creates a new lob  .,creates a new descriptor instance  .,4,4,5,5,5,5,5,5,5
+"public void add ( IPoint pt ) { 
+if ( inProgress ) { 
+throw new ConcurrentModificationException ( STRING ) ; } 
+points . add ( pt ) ; }
+",add an ipoint instance to unused points .,add point to the partial hull  .,add point to the result set  .,5,4,5,5,4,5,5,5,5
+"public static Date parseText ( String dateStr ) { 
+try { return mSimpleTextFormat . parse ( dateStr ) ; } 
+catch ( ParseException e ) { 
+e . printStackTrace ( ) ; 
+throw new RuntimeException ( STRING ) ; } }
+",parse the datestr as a date instance .,parse string to datetime .,parse string to datetime .,5,5,5,5,5,5,5,5,5
+"public void addMessageObserver ( final MessageObserver observer ) { 
+if ( observer == null ) { throw new NullPointerException ( ) ; } 
+else if ( messageObservers == null ) { initMessageObserverList ( ) ; } 
+messageObservers . add ( observer ) ; }
+",add an awful messageobserver to messageobservers .,adds the specified message observer  .,adds the specified message observer  .,4,3,3,5,4,5,5,5,5
+"protected final void updateBorderText ( final String text ) { Preconditions . checkNotNull ( text , STRING ) ; m_titledBorder . setTitle ( text ) ; updateUI ( ) ; }
+",update m_titledborder's settings with text .,updates the border text of the text  .,updates the border text of the component  .,5,3,4,5,5,5,5,5,4
+"public void addColumn ( int idx , Column column ) { if ( column != null ) { columns . add ( idx , column ) ; } }
+",add column to the columns's row at the idx index .,adds a new column at the specified position  .,adds the given column at the specified position  .,5,4,3,4,4,5,5,4,5
+"private Member nextMember ( Member . Type type ) { return new TestMember ( type , new Address ( STRING , ++ port ) , new Address ( STRING , port + _NUM ) ) ; }
+",construct and return the next member according to the parameters .,returns the next member reference  .,returns the next server address  .,5,3,5,4,4,5,5,4,5
+"protected int executePrepareStatement ( List < Column > columns , PreparedStatement statement ) throws SQLException { int bindNo = _NUM ; for ( Column c : columns ) { setColumnValue ( statement , bindNo , c ) ; bindNo ++ ; } return statement . executeUpdate ( ) ; }
+",executes the preparedstatement .,executes a prepared statement using values supplied as arguments  .,executes a prepared statement using values supplied as arguments  .,3,3,5,5,5,5,5,5,5
+"public static String toString ( Reader reader , long timeout ) throws IOException { StringWriter sw = new StringWriter ( _NUM ) ; copy ( toBufferedReader ( reader ) , sw , timeout ) ; sw . close ( ) ; return sw . toString ( ) ; }
+",represents the buffer current value in terms of string .,reads string data from a reader .,reads string data from a reader .,5,3,5,5,5,5,5,5,5
+"ListBasedTokenStream ( AttributeSource attributeSource , List < AttributeSource > tokens ) { super ( attributeSource . getAttributeFactory ( ) ) ; this . tokens = tokens ; addAttributes ( attributeSource ) ; }
+",createss a new listbasedtokenstream which uses the given tokens as its token source .,creates a new listbasedtokenstream which uses the given attribute source  .,creates a new listbasedtokenstream which uses the given tokens as its token source  .,4,4,5,5,3,5,5,5,5
+"protected void appendText ( final String text ) { if ( text != null ) { textBody . append ( text ) ; } }
+",appends the given text if not null .,append text to the start of the buffer  .,append text to the outgoing email body  .,5,5,5,5,5,5,5,5,5
+"public void add ( String methodName , List < Expression > parameters ) { chain . add ( new DotExpressionItem ( methodName , parameters , _BOOL ) ) ; }
+",add dot expression .,add a method to the chain of methods after the chain of parameters  .,add a method to the chain of methods after the dot  .,4,2,4,5,5,5,5,5,5
+"private int calculateTotalHeight ( float starSize , int numberOfStars , float starsSeparation , boolean padding ) { return Math . round ( starSize ) + ( padding ? getPaddingTop ( ) + getPaddingBottom ( ) : _NUM ) ; }
+",calculates the total height  .,calculates total height to occupy based on several parameters .,calculates total height to occupy based on several parameters .,4,5,4,5,5,5,5,5,5
+"public void removeAction ( NetworkUpdateAction action ) { actionList . remove ( action ) ; for ( UpdateManagerListener listener : listeners ) { listener . actionRemoved ( action ) ; } }
+",removes action for all update management listeners .,completely remove an action  .,completely remove an action  .,5,5,5,5,5,5,5,5,5
+"public byte [ ] toByteArray ( ) { return Arrays . copyOf ( buf , cnt ) ; }
+",returns a copy of the original array with the specific length .,creates a newly allocated byte array . its size is the current size of this output stream and the valid contents of the buffer have been copied into it  .,creates a newly allocated byte array . its size is the current size of this output stream and the valid contents of the buffer have been copied into it  .,5,3,4,5,4,5,5,5,5
+"HttpStreamWrapper ( HttpStream stream ) throws IOException { _stream = stream ; }
+",gets http stream .,creates a new http stream wrapper  .,create a new http stream  .,5,5,4,5,5,5,5,5,5
+public static void discard ( ) { current . remove ( ) ; },remove the values in current object .,discards any active baggage currently in this thread .,discards any active baggage currently in this thread .,5,4,5,5,3,5,5,5,5
+"public boolean add ( symbol sym ) throws internal_error { Object previous ; not_null ( sym ) ; previous = _all . put ( sym . name ( ) , sym ) ; return previous == null ; }
+",test if previous symbol is null .,add a single symbol to the set  .,add a single symbol to the set  .,4,2,2,5,5,5,5,5,5
+"private void storePassword ( String password ) { if ( isStore && sharedState != null ) { sharedState . put ( getPwdKey ( ) , password ) ; } }
+",store the password in sharestate .,store a password to the supplied keyboard . this method should be called after successful authentication by each individual user  .,stores password into shared state map . this method may be called after successful authentication by each individual module  .,5,5,5,5,5,5,5,5,5
+"public static long [ ] asLongArray ( final List < Long > l ) { final long [ ] a = new long [ l . size ( ) ] ; for ( int i = _NUM ; i < a . length ; i ++ ) { a [ i ] = l . get ( i ) ; } return a ; }
+",convert long list to long array   .,return list of longs as a primitive array  .,return list of boxed longs as a primitive array  .,5,5,5,5,5,5,5,5,5
+"public boolean isExpired ( ) { return ( cookieExpiryDate != null && cookieExpiryDate . getTime ( ) <= System . currentTimeMillis ( ) ) ; }
+",test if cookie is expired .,returns true if this cookie has expired  .,returns true if this cookie has expired  .,5,5,5,5,5,5,5,5,5
+"public int countArray ( String [ ] array ) { return array . length ; }
+",return the length of an array .,counts the count of values in an array  .,counts the size of an array  .,5,5,5,5,5,5,5,5,5
+"public void removePhoto ( PhotoEntity photo ) { photos . remove ( photo ) ; }
+",remove a photo from photo list .,removes the given photo from this user .,removes the given photo from this user .,5,4,5,5,5,5,5,5,5
+public ActivityResolveInfo ( ResolveInfo resolveInfo ) { this . resolveInfo = resolveInfo ; },assign a value to resolveinfo attribute .,creates a new activity  .,creates a new instance  .,5,4,5,5,5,5,5,5,5
+"public byte [ ] readBytes ( ) throws IOException { int len = readInt ( ) ; if ( len == - _NUM ) { return null ; } byte [ ] b = DataUtils . newBytes ( len ) ; in . readFully ( b ) ; return b ; }
+",read byte stream and return it .,read a byte array completely  .,read a byte array  .,5,5,5,5,5,5,5,5,5
+"public static String cutFromIndexOf ( String string , String substring ) { int i = string . indexOf ( substring ) ; if ( i != - _NUM ) { string = string . substring ( i ) ; } return string ; }
+",cut the substring from the raw string and return it .,cuts the string from the first index of provided substring to the end  .,cuts the string from the first index of provided substring to the end  .,4,5,3,5,5,5,5,5,5
+"public byte [ ] serializeToBuffer ( Object o ) throws IOException { ByteArrayOutputStream bufOut = new ByteArrayOutputStream ( ) ; try { serialize ( bufOut , o ) ; bufOut . flush ( ) ; return bufOut . toByteArray ( ) ; } finally { bufOut . close ( ) ; } }
+",serialize the given object o as byte array .,serializes the object to a byte buffer  .,serializes the object into a byte buffer  .,5,3,3,5,5,5,5,5,5
+"public void addRam ( AttackAction ea ) { pendingRams . addElement ( ea ) ; processGameEvent ( new GameNewActionEvent ( this , ea ) ) ; }
+",add the given attackaction to pendingrams and call event .,adds a pending ramming attack to the list for this phase  .,adds a pending ramming attack to the list for this phase  .,5,5,5,4,5,5,5,5,5
+"public int read ( ) throws IOException { int val ; if ( ( val = is . read ( ) ) < _NUM ) { return - _NUM ; } if ( bo == STRING ) { val = ( char ) ( ( val << _NUM ) | ( is . read ( ) & _NUM ) ) ; } else { val = ( char ) ( ( is . read ( ) << _NUM ) | ( val & _NUM ) ) ; } return val ; }
+",returns the next val read from inputstram is if exists .,reads a single character  .,reads a single character  .,5,4,5,5,4,5,5,5,5
+"public boolean equals ( Object object ) { if ( object == null || ! ( object instanceof SessionID ) ) { return _BOOL ; } SessionID another = ( SessionID ) object ; return encryptedString . equals ( another . encryptedString ) ; }
+",compare whether the parameter is equal to the instance or on the member variable of sessionid .,compares this sessionid to the specified object . the result is true if and only if the argument is not null and the random string and server name are the same in both objects  .,compares this session id to the specified object . the result is true if and only if the argument is not null and the random string and server name are the same in both objects  .,5,5,4,5,4,4,4,5,4
+"public ActivityResolveInfo ( ResolveInfo resolveInfo ) { this . resolveInfo = resolveInfo ; }
+",construct the activityresolveinfo with a resolveinfo instance .,creates a new activity  .,creates a new instance  .,5,5,3,5,5,5,5,5,5
+"public ArrayList < MechSummary > generateUnits ( int num , UnitFilter filter ) { ArrayList < MechSummary > retVal = new ArrayList < > ( ) ; for ( int i = _NUM ; i < num ; i ++ ) { MechSummary ms = generateUnit ( filter ) ; if ( ms != null ) { retVal . add ( ms ) ; } } return retVal ; }
+",return the specified number of mechsummary filtered by unitfilter .,selects a number of units from the table  .,selects a number of units from the table with a filter  .,5,3,5,5,3,5,5,4,5
+"public static String decode ( AbstractMessage msg , Boolean ext , int header ) { if ( ext == _BOOL ) { return decode ( msg ) ; } return STRING + header ; }
+",decode abstractmessage by params .,return a string representation of a decoded canmessage .,return a string representation of a decoded cbus message .,4,5,4,5,5,5,5,5,5
+"public void deleteItem ( int position ) { if ( ! isDataListEmpty ( ) && position >= _NUM && position < mDataList . size ( ) ) { mDataList . remove ( position ) ; notifyItemRemoved ( position ) ; } }
+",delete the item at the specified position .,delete an item by position .,delete an item by position .,5,5,5,5,5,5,5,5,5
+"public int size ( ) { return all . size ( ) ; }
+",returns the size of the element .,return the number of signers in the collection  .,return the number of signers in the collection  .,5,4,5,5,5,5,5,5,5
+"public PWResetException ( String bundleName , String errCode , Object [ ] args ) { super ( bundleName , errCode , args ) ; errList = new ArrayList ( _NUM ) ; errList . add ( getMessage ( ) ) ; }
+",construct the pwresetexception by params .,creates a password reset exception object  .,creates a password reset exception object with localizable error message  .,4,5,2,5,5,5,5,5,5
