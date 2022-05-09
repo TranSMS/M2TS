@@ -18,7 +18,7 @@ In data-pre file, the `get_ast.py` generates ASTs for two Java datasets and `pyt
 ```
 python3 source.code ast.json
 ```
-### BERT Pre-training
+### BERT embedding
 Get here to Install the server and client, detail in [here](https://github.com/hanxiao/bert-as-service)  
 ```
 pip install bert-serving-server  
