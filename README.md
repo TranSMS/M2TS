@@ -49,4 +49,4 @@ scipy 1.1.0
 treelib 1.6.1
 ```
 # Results
-In result file, we give the testing results on the datasets. The `java_pre.txt` is the generated summaries for JAH dataset.
+In result file, we give the testing results on the datasets. The `Python_pre.txt` is the generated summaries for PYB dataset.
