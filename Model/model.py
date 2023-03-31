@@ -3,8 +3,6 @@ import torch
 import math
 import numpy as np
 from Model.fusion_module import Multi_model
-# from gcn_model import AST_Model
-# from Model.gcn_encoder import GCNEncoder
 
 
 class PositionalEncoding(nn.Module):
