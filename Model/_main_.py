@@ -79,7 +79,8 @@ my_sampler1 = MySampler(train_data, args.batch_size)
 my_sampler2 = MySampler(evl_data, args.batch_size)
 evl_data_loader = DataLoader(evl_data, batch_sampler=my_sampler2)
 train_data_loader = DataLoader(train_data, batch_sampler=my_sampler1)
-gcn_model = GCNEncoder().to(device)
+gcn_model = GCNEncoder(nfeat=args.nfeat_dim, nhid=args.nhid_dim, nout=args.nout_dim, d_model=args.dmodel, batch_size=args.batch_size, 
+                       dropout=args.dropout, d_k=args.dk, d_v=args.dv, d_ff=args.dff, n_heads=args.attn_heads, n_layers=args.layers, device=device).to(device)
 trans_model = Transformer(src_vocab_size, tgt_vocab_size, max_ast_node=args.max_ast_node_num, src_max_length=args.src_max_len,
                           nfeat=args.nfeat_dim, nhid=args.nhid_dim, nout=args.nout_dim, d_model=args.dmodel, batch_size=args.batch_size, dropout=args.dropout,
                           d_k=args.dk, d_v=args.dv, d_ff=args.dff, n_heads=args.attn_heads, n_layers=args.layers, device=device).to(device)
@@ -87,28 +88,15 @@ trans_model = Transformer(src_vocab_size, tgt_vocab_size, max_ast_node=args.max_
 criterion = nn.CrossEntropyLoss(ignore_index=0)
 LEARNING_RATE = args.lr
 N_EPOCHS = args.epochs
+gcn_optimizer = optim.SGD(gcn_model.parameters(), lr=LEARNING_RATE, momentum=0.99)
 tran_optimizer = optim.SGD(trans_model.parameters(), lr=LEARNING_RATE, momentum=0.99)
 
 
-def get_parameter_number(model):
-    total_num = sum(p.numel() for p in model.parameters())
-    # trainable_num = sum(p.numel for p in model.parameters() if p.requires_grad)
-    return total_num
-
-# 参数数量
-# Total1 = get_parameter_number(gcn_model)
-# Total2 = get_parameter_number(trans_model)
-# print('num_1:', Total1)
-# print('num_2:', Total2)
-# exit()
-
-
 best_test_loss = float('inf')
-
 for epoch in range(N_EPOCHS):
     start_time = time.time()
-    train_loss = train(tran_optimizer, train_data_loader, trans_model, criterion, device)
-    eval_loss, perplexity = evaluate(evl_data_loader, trans_model, criterion, device)
+    train_loss = train(gcn_optimizer, tran_optimizer, train_data_loader, gcn_model, trans_model, criterion, device)
+    eval_loss, perplexity = evaluate(evl_data_loader, gcn_model, trans_model, criterion, device)
     end_time = time.time()
     epoch_mins, epoch_secs = epoch_time(start_time, end_time)
     print('Epoch:', '%04d' % (epoch + 1),  f'Time: {epoch_mins}m {epoch_secs}s')
@@ -117,17 +105,17 @@ for epoch in range(N_EPOCHS):
     print('\tperplexity: ', '{:.4f}'.format(perplexity))
     if eval_loss < best_test_loss:
         best_test_loss = eval_loss
+        torch.save(gcn_model.state_dict(), 'save_model/gcn_model.pt')
         torch.save(trans_model.state_dict(), 'save_model/trans.pt')
 
 
-def beam_search(trans_model, enc_input, x, a1, a2, a3, a4, a5, start_symbol, nl_max_len):  # 变动
+def beam_search(trans_model, enc_input, ast_outputs, ast_embed, start_symbol):  # 变动
 
     enc_outputs, enc_self_attns = trans_model.encoder(enc_input)
     dec_input = torch.zeros(1, nl_max_len).type_as(enc_input.data)
     next_symbol = start_symbol
     for i in range(0, nl_max_len):
         dec_input[0][i] = next_symbol
-        ast_outputs, ast_embed = trans_model.gcn_encoder(x, a1, a2, a3, a4, a5)
         dec_outputs, _, _, _ = trans_model.decoder1(dec_input, enc_input, enc_outputs, ast_outputs, ast_embed)  # 变动
         projected = trans_model.projection(dec_outputs)
         prob = projected.squeeze(0).max(dim=-1, keepdim=False)[1]
@@ -137,13 +125,21 @@ def beam_search(trans_model, enc_input, x, a1, a2, a3, a4, a5, start_symbol, nl_
 
 
 def predict():
+    # Model = Transformer().to(device)
+    gcn_model.load_state_dict(torch.load('save_model/gcn_model.pt'))
     trans_model.load_state_dict(torch.load('save_model/trans.pt'))
+    # trans2_model.load_state_dict(torch.load('save_model/multi_loss2.pt'))
+    gcn_model.eval()
     trans_model.eval()
+
     a, x, a2, a3, a4, a5, inputs, _, _ = next(iter(evl_data_loader))
     for j in range(len(inputs)):
         a, x, a2, a3, a4, a5 = a.to(device), x.to(device), a2.to(device), a3.to(device), a4.to(device), a5.to(device)
-        greedy_dec_input = beam_search(trans_model, inputs[j].view(1, -1).to(device), x, a, a2, a3, a4, a5, start_symbol=tgt_vocab['SOS'], nl_max_len=args.nl_max_len)  # 变动
-        pred, _, _, _, _ = trans_model(inputs[j].view(1, -1).to(device), greedy_dec_input, x, a, a2, a3, a4, a5)  # 变动
+        ast_outputs, ast_embed = gcn_model(x[j].unsqueeze(0), a[j].unsqueeze(0), a2[j].unsqueeze(0), a3[j].unsqueeze(0), a4[j].unsqueeze(0), a5[j].unsqueeze(0))  # 变动
+        # print(ast_outputs.shape)
+        # exit()
+        greedy_dec_input = beam_search(trans_model, inputs[j].view(1, -1).to(device), ast_outputs, ast_embed, start_symbol=tgt_vocab['SOS'])  # 变动
+        pred, _, _, _, _ = trans_model(inputs[j].view(1, -1).to(device), greedy_dec_input, ast_outputs, ast_embed)  # 变动
         pred = pred.data.max(1, keepdim=True)[1]
 
         summary = [tgt_inv_vocab_dict[n.item()] for n in pred.squeeze()]
