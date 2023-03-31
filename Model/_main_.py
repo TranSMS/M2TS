@@ -150,7 +150,7 @@ def predict():
         s = " ".join(k)
         pred1.append(s)
     # print(pred1)
-    with open('../model/data/hyp.txt', 'w', encoding='utf-8') as ff:
+    with open('../Model/data/hyp.txt', 'w', encoding='utf-8') as ff:
         for z in pred1:
             ff.writelines(z + '\n')
        
