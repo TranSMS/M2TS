@@ -189,9 +189,10 @@ class GCNEncoder(nn.Module):
         '''
         enc_inputs: [batch_size, src_len]
         '''
-        ast_embed = self.ast_output(x, a, a2, a3, a4, a5)  # 变动
+        ast_embed = self.ast_output(x, a, a2, a3, a4, a5) 
         ast_self_attns = []
         for layer in self.layers:
-            ast_outputs, enc_self_attn = layer(ast_embed)  # 变动
+            ast_outputs, enc_self_attn = layer(ast_embed)  
             ast_self_attns.append(enc_self_attn)
-        return ast_outputs, ast_embed  # 变动
+        return ast_outputs, ast_embed  
+    
