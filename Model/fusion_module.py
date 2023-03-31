@@ -34,7 +34,6 @@ class Multi_model(nn.Module):
         '''
         enc_inputs: [batch_size, src_len]
         '''
-
         gcn_embed1 = self.conv1(gcn_embed)
         src_embed1 = self.conv2(src_embed)
         enc_outputs, enc_self_attn = self.enc_self_attn(gcn_embed1, src_embed1, src_embed1)
