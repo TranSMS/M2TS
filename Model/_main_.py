@@ -9,7 +9,7 @@ from Model.get_A import read_batchA
 from Model.get_node_embedding import get_embed
 from Model.util import epoch_time
 from Model.MyDataset import MySet, MySampler
-from Model.GCN_encoder import GCNEncoder
+from Model.gcn_encoder import GCNEncoder
 # from transformer2 import Transformer2
 from Model.model import Transformer
 from Model.trains import train, evaluate
@@ -42,6 +42,8 @@ args = parser.parse_args()
 
 tgt_vocab_size, tgt_inv_vocab_dict, dec_inputs, tgt_vocab, dec_outputs = load_nl_data('../data/train/train.nl', nl_max_len=args.nl_max_len)
 src_vocab_size, enc_inputs, src_vocab = load_code_data('../data/train/train.code', args.src_max_len)
+
+# 首先将源代码解析为AST
 A, A2, A3, A4, A5 = read_batchA('../data/train/train_ast.txt', args.max_ast_node_num)
 X = get_embed('../data/train/train_ast.txt', args.max_ast_node_num)
 
@@ -77,7 +79,7 @@ my_sampler1 = MySampler(train_data, args.batch_size)
 my_sampler2 = MySampler(evl_data, args.batch_size)
 evl_data_loader = DataLoader(evl_data, batch_sampler=my_sampler2)
 train_data_loader = DataLoader(train_data, batch_sampler=my_sampler1)
-
+gcn_model = GCNEncoder().to(device)
 trans_model = Transformer(src_vocab_size, tgt_vocab_size, max_ast_node=args.max_ast_node_num, src_max_length=args.src_max_len,
                           nfeat=args.nfeat_dim, nhid=args.nhid_dim, nout=args.nout_dim, d_model=args.dmodel, batch_size=args.batch_size, dropout=args.dropout,
                           d_k=args.dk, d_v=args.dv, d_ff=args.dff, n_heads=args.attn_heads, n_layers=args.layers, device=device).to(device)
