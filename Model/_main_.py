@@ -37,7 +37,7 @@ parser.add_argument("-v", "--dv", type=int, default=64, help="Transfrmer dimensi
 parser.add_argument("-ff", "--dff", type=int, default=2048, help="Transfrmer dimension")
 parser.add_argument("-m", "--dmodel", type=int, default=512, help="Transfrmer dimension")
 
-parser.add_argument("-tn", "--train_num", type=int, default=69708, help="training number")
+parser.add_argument("-tn", "--train_num", type=int, default=60994, help="training number")
 args = parser.parse_args()
 
 tgt_vocab_size, tgt_inv_vocab_dict, dec_inputs, tgt_vocab, dec_outputs = load_nl_data('../data/train/train.nl', nl_max_len=args.nl_max_len)
@@ -131,7 +131,7 @@ def predict():
     # trans2_model.load_state_dict(torch.load('save_model/multi_loss2.pt'))
     gcn_model.eval()
     trans_model.eval()
-
+    q = []
     a, x, a2, a3, a4, a5, inputs, _, _ = next(iter(evl_data_loader))
     for j in range(len(inputs)):
         a, x, a2, a3, a4, a5 = a.to(device), x.to(device), a2.to(device), a3.to(device), a4.to(device), a5.to(device)
@@ -144,6 +144,15 @@ def predict():
 
         summary = [tgt_inv_vocab_dict[n.item()] for n in pred.squeeze()]
         print(summary)
-
+        q.append(summary)
+    pred1 = []
+    for k in q:
+        s = " ".join(k)
+        pred1.append(s)
+    # print(pred1)
+    with open('../model/data/hyp.txt', 'w', encoding='utf-8') as ff:
+        for z in pred1:
+            ff.writelines(z + '\n')
+       
 if __name__ == '__main__':
     predict()
