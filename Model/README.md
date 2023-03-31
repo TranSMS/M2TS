@@ -1,4 +1,4 @@
-Here we use JAH dataset as an example to train the M2TS. The other two datasets you can also obtain through our proposed URL.
+Here we use JAH dataset to train the M2TS. The other two datasets you can also obtain through our proposed URL.
 Before training the model, you need to do the following preparations
 
 ### Get ASTs
