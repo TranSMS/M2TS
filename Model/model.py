@@ -4,7 +4,7 @@ import math
 import numpy as np
 from Model.fusion_module import Multi_model
 # from gcn_model import AST_Model
-from Model.gcn_encoder import GCNEncoder
+# from Model.gcn_encoder import GCNEncoder
 
 
 class PositionalEncoding(nn.Module):
@@ -357,18 +357,18 @@ class Transformer(nn.Module):
     def __init__(self, src_vocab_size, tgt_vocab_size, max_ast_node, src_max_length, nfeat, nhid, nout, d_model, batch_size, dropout, d_k, d_v, d_ff, n_heads, n_layers, device):
         super(Transformer, self).__init__()
         self.encoder = Encoder(src_vocab_size, d_model, dropout, n_layers, d_k, n_heads, d_v, d_ff, device).to(device)
-        self.gcn_encoder = GCNEncoder(nfeat, nhid, nout, d_model, batch_size, dropout, d_k, d_v, d_ff, n_heads, n_layers, device).to(device)
+        # self.gcn_encoder = GCNEncoder(nfeat, nhid, nout, d_model, batch_size, dropout, d_k, d_v, d_ff, n_heads, n_layers, device).to(device)
         self.decoder1 = MultiDecoder(tgt_vocab_size, max_ast_node, src_max_length, dropout, d_model, n_layers, d_k, n_heads, d_v, d_ff, device).to(device)
         # self.decoder = Decoder(tgt_vocab_size).to(device)
         self.projection = nn.Linear(d_model, tgt_vocab_size, bias=False).to(device)
 
-    def forward(self, enc_inputs, dec_inputs, x, a1, a2, a3, a4, a5):    # 变动
+    def forward(self, enc_inputs, dec_inputs, ast_outputs, ast_embed):   
         '''
         enc_inputs: [batch_size, src_len]
         dec_inputs: [batch_size, tgt_len]
         '''
         enc_outputs, enc_self_attns = self.encoder(enc_inputs)
-        ast_outputs, ast_embed = self.gcn_encoder(x, a1, a2, a3, a4, a5)
+        # ast_outputs, ast_embed = self.gcn_encoder(x, a1, a2, a3, a4, a5)
         dec_outputs1, dec_self_attns, dec_enc_attns, dec_ast_attns = self.decoder1(dec_inputs, enc_inputs, enc_outputs, ast_outputs, ast_embed)   # 变动
         dec_logits1 = self.projection(dec_outputs1)  # dec_logits: [batch_size, tgt_len, tgt_vocab_size]
 
