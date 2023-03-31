@@ -5,13 +5,12 @@ import nltk
 import os
 
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
-
 SOS = 2
 EOS = 1
 PAD = 0
 
 
-def load_nl_data(in_file, nl_max_len,  max_words=50000, sort_by_len=False):
+def load_nl_data(in_file, nl_max_len,  max_words=500000, sort_by_len=False):
     nl = []
     nl2 = []
     with open(in_file, 'r', encoding='UTF-8') as f:
@@ -68,7 +67,7 @@ def load_nl_data(in_file, nl_max_len,  max_words=50000, sort_by_len=False):
     return nl_total_words, nl_inv_word_dict, nl_index, nl_word_dict, nl2_index
 
 
-def load_code_data(in_file, seq_max_len, max_words=60000, sort_by_len=False):
+def load_code_data(in_file, seq_max_len, max_words=500000, sort_by_len=False):
     code = []
     with open(in_file, 'r', encoding='UTF-8') as f:
         lines = f.readlines()
