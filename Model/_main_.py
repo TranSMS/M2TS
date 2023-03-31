@@ -9,7 +9,7 @@ from Model.get_A import read_batchA
 from Model.get_node_embedding import get_embed
 from Model.util import epoch_time
 from Model.MyDataset import MySet, MySampler
-# from gcn_model import AST_Model, GCNEncoder
+from Model.GCN_encoder import GCNEncoder
 # from transformer2 import Transformer2
 from Model.model import Transformer
 from Model.trains import train, evaluate
