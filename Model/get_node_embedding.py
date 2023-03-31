@@ -6,17 +6,14 @@ import scipy.sparse as sp
 import json
 import os
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
-# max_node = 22
 
-
+# 嵌入AST节点特征向量
 def get_embed(ast_file, max_node):
     X = []
-
     file = open(ast_file, 'r', encoding='utf-8')
     papers = []
     for line in file.readlines():
         dic = json.loads(line)
-
         papers.append(dic)
     for ast in papers:
         val = []
@@ -30,7 +27,6 @@ def get_embed(ast_file, max_node):
         for i in range(0, len(ty)):
             if val[i] != '':
                 node.append(ty[i] + '_' +val[i])
-
             else:
                 node.append(ty[i])
         bc = BertClient()
@@ -44,7 +40,5 @@ def get_embed(ast_file, max_node):
             features = torch.zeros(max_node, 768)
             for k in range(feature.size(0)):
                 features[k] = feature[k]
-
         X.append(features)
-
     return X
