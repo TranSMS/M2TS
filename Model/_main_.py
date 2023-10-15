@@ -43,7 +43,7 @@ args = parser.parse_args()
 tgt_vocab_size, tgt_inv_vocab_dict, dec_inputs, tgt_vocab, dec_outputs = load_nl_data('../data/train/train.nl', nl_max_len=args.nl_max_len)
 src_vocab_size, enc_inputs, src_vocab = load_code_data('../data/train/train.code', args.src_max_len)
 
-# 首先将源代码解析为AST
+#
 A, A2, A3, A4, A5 = read_batchA('../data/train/train_ast.txt', args.max_ast_node_num)
 X = get_embed('../data/train/train_ast.txt', args.max_ast_node_num)
 
